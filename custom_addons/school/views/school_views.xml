@@ -40,12 +40,14 @@
 
 
 
+
                             <field name="result"/>
                             <field name="fees"/>
                             <field name="school_address"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
-                            <field name="courses"/>
+
+                            <field name="parking"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
                         <group>
@@ -64,8 +66,8 @@
                         <page string="Phone">
                             <field name="phone" placeholder="school contact no"/>
                         </page>
-                        <page string="Parking">
-                            <field name="parking"/>
+                        <page string="Courses">
+                            <b><field name="courses"/></b>
                         </page>
                     </notebook>
                 </sheet>
