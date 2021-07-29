@@ -21,4 +21,4 @@ class SchoolProfile(models.Model):
     docu_name = fields.Char(string='Documents name')
     upld_schl_img = fields.Image(string=' Upload school image',max_width=100,max_height=100)
     upld_schl_img_name = fields.Char(string='image name')
-    # school_desc = fields.Html(string='School description')
+    school_desc = fields.Html(string='School description')

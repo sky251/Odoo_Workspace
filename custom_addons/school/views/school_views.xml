@@ -21,7 +21,7 @@
                 <field name="docu_name" invisible="1"/>
                 <field name="upld_schl_img" width="25" height="25" widget="image"/>
                 <field name="upld_schl_img_name"/>
-                <!--                <field name="school_desc"/>-->
+                <field name="school_desc"/>
             </tree>
         </field>
     </record>
@@ -52,7 +52,7 @@
                             <field name="docu_name" invisible="1"/>
                             <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
                             <field name="upld_schl_img_name" invisible="1"/>
-                            <!--                            <field name="school_desc" widget="html"/>-->
+                            <field name="school_desc" widget="html_frame"/>
                         </group>
 
                     </group>
@@ -69,7 +69,7 @@
                         </page>
                         <page string="Courses">
                             <group>
-                                    <field name="courses"/>
+                                <field name="courses"/>
                             </group>
                         </page>
                     </notebook>
