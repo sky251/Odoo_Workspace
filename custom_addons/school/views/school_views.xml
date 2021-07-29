@@ -21,7 +21,7 @@
                 <field name="docu_name" invisible="1"/>
                 <field name="upld_schl_img" width="25" height="25" widget="image"/>
                 <field name="upld_schl_img_name"/>
-<!--                <field name="school_desc"/>-->
+                <!--                <field name="school_desc"/>-->
             </tree>
         </field>
     </record>
@@ -34,7 +34,9 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="school_name"/>
+                            <h2>
+                                <field name="school_name"/>
+                            </h2>
                             <field name="email" placeholder="school email address"/>
                             <field name="phone" placeholder="school contact no"/>
                             <field name="parking"/>
@@ -51,11 +53,21 @@
                             <field name="docu_name" invisible="1"/>
                             <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
                             <field name="upld_schl_img_name" invisible="1"/>
-<!--                            <field name="school_desc" widget="html"/>-->
+                            <!--                            <field name="school_desc" widget="html"/>-->
                         </group>
 
                     </group>
+                    <notebook>
+                        <page string="Page 1">
 
+                        </page>
+                        <page string="Page 2">
+
+                        </page>
+                        <page string="Page 3">
+
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
