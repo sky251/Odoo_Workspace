@@ -38,9 +38,6 @@
                                 <field name="school_name"/>
                             </h2>
 
-
-
-
                             <field name="result"/>
                             <field name="fees"/>
                             <field name="school_address"/>
@@ -61,13 +58,19 @@
                     </group>
                     <notebook>
                         <page string="Email">
-                            <field name="email" placeholder="school email address"/>
+                            <group>
+                                <field name="email" placeholder="school email address"/>
+                            </group>
                         </page>
                         <page string="Phone">
-                            <field name="phone" placeholder="school contact no"/>
+                            <group>
+                                <field name="phone" placeholder="school contact no"/>
+                            </group>
                         </page>
                         <page string="Courses">
-                            <b><field name="courses"/></b>
+                            <group>
+                                    <field name="courses"/>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>
