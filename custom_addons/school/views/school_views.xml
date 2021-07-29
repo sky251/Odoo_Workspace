@@ -21,7 +21,7 @@
                 <field name="docu_name" invisible="1"/>
                 <field name="upld_schl_img" width="25" height="25" widget="image"/>
                 <field name="upld_schl_img_name"/>
-                <field name="school_desc"/>
+<!--                <field name="school_desc"/>-->
             </tree>
         </field>
     </record>
@@ -44,16 +44,18 @@
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
                             <field name="courses"/>
-
+                            <field name="documents" filename="docu_name"/>
                         </group>
+                        <group>
+
+                            <field name="docu_name" invisible="1"/>
+                            <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
+                            <field name="upld_schl_img_name" invisible="1"/>
+<!--                            <field name="school_desc" widget="html"/>-->
+                        </group>
+
                     </group>
-                    <group>
-                        <field name="documents" filename="docu_name"/>
-                        <field name="docu_name" invisible="1"/>
-                        <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
-                        <field name="upld_schl_img_name" invisible="1"/>
-                        <field name="school_desc" widget="html"/>
-                    </group>
+
                 </sheet>
             </form>
         </field>
