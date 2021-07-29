@@ -35,7 +35,7 @@
                     <group>
                         <group>
                             <h2>
-                                <field name="school_name"/>
+                                <field name="school_name" placeholder="Name"/>
                             </h2>
 
                             <field name="result"/>
