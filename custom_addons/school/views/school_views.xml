@@ -21,6 +21,7 @@
                 <field name="docu_name" invisible="1"/>
                 <field name="upld_schl_img" width ="25" height="25" widget="image"/>
                 <field name="upld_schl_img_name"/>
+                <field name="school_desc"/>
             </tree>
         </field>
     </record>
@@ -47,7 +48,9 @@
                             <field name="docu_name" invisible="1"/>
                             <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
                             <field name="upld_schl_img_name" invisible="1"/>
+
                         </group>
+                        <field name="school_desc"/>
                     </group>
                 </sheet>
             </form>
