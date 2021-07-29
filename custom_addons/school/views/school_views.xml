@@ -37,9 +37,9 @@
                             <h2>
                                 <field name="school_name"/>
                             </h2>
-                            <field name="email" placeholder="school email address"/>
-                            <field name="phone" placeholder="school contact no"/>
-                            <field name="parking"/>
+
+
+
                             <field name="result"/>
                             <field name="fees"/>
                             <field name="school_address"/>
@@ -58,14 +58,14 @@
 
                     </group>
                     <notebook>
-                        <page string="Page 1">
-
+                        <page string="Email">
+                            <field name="email" placeholder="school email address"/>
                         </page>
-                        <page string="Page 2">
-
+                        <page string="Phone">
+                            <field name="phone" placeholder="school contact no"/>
                         </page>
-                        <page string="Page 3">
-
+                        <page string="Parking">
+                            <field name="parking"/>
                         </page>
                     </notebook>
                 </sheet>
