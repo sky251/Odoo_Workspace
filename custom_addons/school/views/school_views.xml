@@ -7,9 +7,20 @@
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="school_name"/>
-                <field name="email"/>
-                <field name="phone"/>
+                <field name="school_name" />
+                <field name="email" />
+                <field name="phone" />
+                <field name="parking" />
+                <field name="result" />
+                <field name="fees" />
+                <field name="school_address"/>
+                <field name="establish_date"/>
+                <field name="open_date"/>
+                <field name="courses"/>
+                <field name="documents"/>
+                <field name="docu_name" invisible="1"/>
+                <field name="upld_schl_img" width ="25" height="25" widget="image"/>
+                <field name="upld_schl_img_name"/>
             </tree>
         </field>
     </record>
@@ -23,10 +34,19 @@
                     <group>
                         <group>
                             <field name="school_name"/>
-                        </group>
-                        <group>
-                            <field name="email"/>
-                            <field name="phone"/>
+                            <field name="email" placeholder="school email address"/>
+                            <field name="phone" placeholder="school contact no"/>
+                            <field name="parking"/>
+                            <field name="result" />
+                            <field name="fees" />
+                            <field name="school_address"/>
+                            <field name="establish_date" placeholder="MM/DD/YYYY"/>
+                            <field name="open_date"/>
+                            <field name="courses"/>
+                            <field name="documents" filename="docu_name" />
+                            <field name="docu_name" invisible="1"/>
+                            <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
+                            <field name="upld_schl_img_name" invisible="1"/>
                         </group>
                     </group>
                 </sheet>
