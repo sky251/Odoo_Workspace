@@ -22,6 +22,9 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="school_select"/>
+                    </group>
+                    <group>
                         <group>
                             <h2>
                                 <field name="student_name" placeholder="Name"/>
@@ -56,9 +59,9 @@
     </record>
 
 
-    <menuitem id="student_nav" 
-    name="Student Prof"
-    action="action_student_profile" parent="school_root_menu" sequence="2"/>
+    <menuitem id="student_nav"
+              name="Student Prof"
+              action="action_student_profile" parent="school_root_menu" sequence="2"/>
 </odoo>
 
 
