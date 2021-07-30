@@ -97,9 +97,22 @@
     <menuitem
             id="school_root_menu"
             name="School"/>
+
     <menuitem
             name="School Prof"
             id="school_profile_menu"
+            action="action_school_profile"
+            parent="school_root_menu"/>
+
+    <menuitem
+            name="Menu2"
+            id="school_profile_menu2"
+            action="action_school_profile"
+            parent="school_root_menu"/>
+
+    <menuitem
+            name="Menu3"
+            id="school_profile_menu3"
             action="action_school_profile"
             parent="school_root_menu"/>
 
