@@ -10,18 +10,16 @@
                 <field name="school_name"/>
                 <field name="email"/>
                 <field name="phone"/>
-                <field name="parking"/>
+                <!--                <field name="parking"/>-->
                 <field name="result"/>
-                <field name="fees"/>
+                <!--                <field name="fees"/>-->
                 <field name="school_address"/>
-                <field name="establish_date"/>
+                <!--                <field name="establish_date"/>-->
                 <field name="open_date"/>
                 <field name="courses"/>
-                <field name="documents"/>
+                <!--                <field name="documents"/>-->
                 <field name="docu_name" invisible="1"/>
-                <field name="upld_schl_img" width="25" height="25" widget="image"/>
-                <field name="upld_schl_img_name"/>
-                <field name="school_desc"/>
+                <!--                <field name="school_desc"/>-->
             </tree>
         </field>
     </record>
@@ -50,17 +48,29 @@
                         <group>
 
                             <field name="docu_name" invisible="1"/>
-                            <field name="upld_schl_img" widget="image" filename="upld_schl_img_name"/>
-                            <field name="upld_schl_img_name" invisible="1"/>
-                            <field name="school_desc" widget="html_frame"/>
+                            <group>
+                                <field name='image' nolabel="1" widget="image" placeholder="Upload Your Look"
+                                       style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
+                                       class="img img-responsive"/>
+                            </group>
+
+
                         </group>
 
                     </group>
+                    <group>
+                        <field name="school_desc" widget="html_frame"/>
+                    </group>
                     <notebook>
                         <page string="Email">
-                            <group>
-                                <field name="email" placeholder="school email address"/>
-                            </group>
+
+                            <notebook>
+                                <page string="Page inside page">
+                                    <group>
+                                        <field name="email" placeholder="school email address"/>
+                                    </group>
+                                </page>
+                            </notebook>
                         </page>
                         <page string="Phone">
                             <group>
@@ -84,10 +94,14 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="school_root_menu" name="School"/>
-    <menuitem id="school_sub_menu" name="school menu" parent="school_root_menu"/>
-    <menuitem id="school_profile_menu" action="action_school_profile" parent="school_sub_menu" sequence="2"/>
-
+    <menuitem
+            id="school_root_menu"
+            name="School"/>
+    <menuitem
+            name="School Prof"
+            id="school_profile_menu"
+            action="action_school_profile"
+            parent="school_root_menu"/>
 
 </odoo>
 

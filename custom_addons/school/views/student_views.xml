@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="student_list_view" model="ir.ui.view">
+        <field name="name">student_profile.list.view</field>
+        <field name="model">student.profile</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="student_name"/>
+                <field name="student_email"/>
+                <field name="student_phone"/>
+                <field name="student_result"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="student_form_view" model="ir.ui.view">
+        <field name="name">student.form</field>
+        <field name="model">student.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <h2>
+                                <field name="student_name" placeholder="Name"/>
+                            </h2>
+
+                            <field name="student_email"/>
+                            <field name="student_phone"/>
+                            <field name="student_result"/>
+                        </group>
+                        <group>
+                            <field name="student_img" widget="image" filename="upld_schl_img_name"/>
+                        </group>
+
+                    </group>
+
+                    <notebook>
+                        <page string="Student Strength">
+                            <group>
+                                <field name="student_email" placeholder="school email address"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_student_profile" model="ir.actions.act_window">
+        <field name="name">Student Profile</field>
+        <field name="res_model">student.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="student_nav" 
+    name="Student Prof"
+    action="action_student_profile" parent="school_root_menu" sequence="2"/>
+</odoo>
+
+
