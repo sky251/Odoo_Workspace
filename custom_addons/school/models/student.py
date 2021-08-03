@@ -10,3 +10,4 @@ class StudentProfile(models.Model):
     student_result = fields.Float(string='Result')
     student_img = fields.Image(string=' Upload student image', max_width=100, max_height=100)
     school_select_id = fields.Many2one("school.profile", string="Select School")
+    user_signature = fields.Binary(string='Signature')
