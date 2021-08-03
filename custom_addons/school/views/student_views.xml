@@ -7,7 +7,7 @@
         <field name="model">student.profile</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="student_name"/>
+                <field name="name"/>
                 <field name="student_email"/>
                 <field name="student_phone"/>
                 <field name="student_result"/>
@@ -22,17 +22,15 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="school_select"/>
-                    </group>
-                    <group>
                         <group>
                             <h2>
-                                <field name="student_name" placeholder="Name"/>
+                                <field name="name" placeholder=" Student Name"/>
                             </h2>
 
-                            <field name="student_email"/>
+
                             <field name="student_phone"/>
                             <field name="student_result"/>
+                            <field name="school_select_id"/>
                         </group>
                         <group>
                             <field name="student_img" widget="image" filename="upld_schl_img_name"/>

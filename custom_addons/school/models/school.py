@@ -4,9 +4,9 @@ from odoo import models, fields
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
-    _rec_name = "email"
+    # _rec_name = "name"
 
-    name = fields.Char(string='School name', help='Write a school name', required=True, index=True, )
+    name = fields.Char(string='School name', help='Write a school name', index=True, )
     email = fields.Char(string='Email')
     phone = fields.Char(string='Phone')
     parking = fields.Boolean(string='Parking')
@@ -22,7 +22,8 @@ class SchoolProfile(models.Model):
     documents = fields.Binary(string='Documents')
     docu_name = fields.Char(string='Documents name')
     image = fields.Binary(attachment=True, store=True)
-    image_name = fields.Char(string="Image Name", invisible="1")
+    image_name = fields.Char(string='Image Name', invisible='1')
     school_desc = fields.Html(string='School description')
+    student_data_ids = fields.One2many('student.profile','school_select_id',string='Student data')
 
 

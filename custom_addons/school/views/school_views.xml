@@ -43,6 +43,7 @@
                             <field name="open_date"/>
 
                             <field name="parking"/>
+                            <field name="courses"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
                         <group>
@@ -77,10 +78,20 @@
                                 <field name="phone" placeholder="school contact no"/>
                             </group>
                         </page>
-                        <page string="Courses">
-                            <group>
-                                <field name="courses"/>
-                            </group>
+
+                    </notebook>
+
+                    <notebook>
+                        <page string="Student Menu">
+                            <field name="student_data_ids">
+                                <!--  <field name="partner_ids" widget="many2many_tags_avatar" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_128"/> -->
+
+                                <tree editable="true">
+                                    <field name="name"/>
+                                    <field name="student_email"/>
+                                    <field name="student_result"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -94,15 +105,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem
-            id="school_root_menu"
-            name="School"/>
-
-    <menuitem
-            name="School Prof"
-            id="school_profile_menu"
-            action="action_school_profile"
-            parent="school_root_menu"/>
+    <menuitem id="school_root_menu" name="School"/>
+    <menuitem name="School Prof" id="school_profile_menu" action="action_school_profile" parent="school_root_menu"/>
 
 
 </odoo>
