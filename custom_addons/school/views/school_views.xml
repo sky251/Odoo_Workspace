@@ -68,7 +68,7 @@
                             <notebook>
                                 <page string="Page inside page">
                                     <group>
-                                        <field name="email" placeholder="school email address"/>
+                                        <field name="email"/>
                                     </group>
                                 </page>
                             </notebook>
@@ -83,7 +83,7 @@
 
                     <notebook>
                         <page string="Student Menu">
-                            <field name="student_data_ids">
+                            <field name="student_data_ids" widget="checkbox">
                                 <!--  <field name="partner_ids" widget="many2many_tags_avatar" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_128"/> -->
 
                                 <tree editable="true">
