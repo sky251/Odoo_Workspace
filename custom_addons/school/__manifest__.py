@@ -7,7 +7,7 @@
     'sequence': 1,
     'website': 'https://www.google.com/',
     'description': 'This module gives a framework for SMS text messaging',
-    'depends': ['base'],
+    'depends': ['base', ],
     "data": [
         "security/ir.model.access.csv",
         "views/school_views.xml",

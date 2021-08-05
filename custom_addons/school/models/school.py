@@ -24,6 +24,10 @@ class SchoolProfile(models.Model):
     image = fields.Binary(attachment=True, store=True)
     image_name = fields.Char(string='Image Name', invisible='1')
     school_desc = fields.Html(string='School description')
-    student_data_ids = fields.One2many('student.profile','school_select_id',string='Student data')
+    # student_data_ids = fields.One2many('student.profile','school_select_id',string='Student data')
 
-
+#
+# class ExtendSchoolProfile(models.Model):
+#     _inherit = "school.profile"
+#
+#     schldesc = fields.Char(string='Schldesc')

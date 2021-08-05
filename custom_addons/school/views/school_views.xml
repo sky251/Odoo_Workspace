@@ -10,22 +10,18 @@
                 <field name="name"/>
                 <field name="email"/>
                 <field name="phone"/>
-                <!--                <field name="parking"/>-->
                 <field name="result"/>
-                <!--                <field name="fees"/>-->
                 <field name="school_address"/>
-                <!--                <field name="establish_date"/>-->
                 <field name="open_date"/>
                 <field name="courses"/>
-                <!--                <field name="documents"/>-->
                 <field name="docu_name" invisible="1"/>
-                <!--                <field name="school_desc"/>-->
+
             </tree>
         </field>
     </record>
 
     <record id="school_form_view" model="ir.ui.view">
-        <field name="name">school.form</field>
+        <field name="name">school form</field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
             <form>
@@ -35,63 +31,37 @@
                             <h2>
                                 <field name="name" placeholder="Name"/>
                             </h2>
-
                             <field name="result"/>
                             <field name="fees"/>
                             <field name="school_address"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
-
                             <field name="parking"/>
                             <field name="courses"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
                         <group>
-
                             <field name="docu_name" invisible="1"/>
                             <group>
                                 <field name='image' nolabel="1" widget="image" placeholder="Upload Your Look"
                                        style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
                                        class="img img-responsive"/>
                             </group>
-
-
                         </group>
 
-                    </group>
-                    <group>
                         <field name="school_desc" widget="html_frame"/>
                     </group>
                     <notebook>
-                        <page string="Email">
+                        <page string="Email" name='ema'>
+                            <group>
+                                <field name="email"/>
+                            </group>
 
-                            <notebook>
-                                <page string="Page inside page">
-                                    <group>
-                                        <field name="email"/>
-                                    </group>
-                                </page>
-                            </notebook>
                         </page>
-                        <page string="Phone">
+                        <page string="Phone" name="pho">
                             <group>
                                 <field name="phone" placeholder="school contact no"/>
                             </group>
-                        </page>
-
-                    </notebook>
-
-                    <notebook>
-                        <page string="Student Menu">
-                            <field name="student_data_ids" widget="checkbox">
-                                <!--  <field name="partner_ids" widget="many2many_tags_avatar" write_model="calendar.contacts" write_field="partner_id" avatar_field="image_128"/> -->
-
-                                <tree editable="true">
-                                    <field name="name"/>
-                                    <field name="student_email"/>
-                                    <field name="student_result"/>
-                                </tree>
-                            </field>
                         </page>
                     </notebook>
                 </sheet>

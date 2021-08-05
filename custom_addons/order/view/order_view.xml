@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <record id="order_status_list_view" model="ir.ui.view">
+        <field name="name">school profile view</field>
+        <field name="model">school.profile</field>
+        <field name="inherit_id" ref="school.school_list_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="order_name"/>
+                <field name="order_id"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="school_form_view_inherit" model="ir.ui.view">
+        <field name="name">school form</field>
+        <field name="model">school.profile</field>
+        <field name="inherit_id" ref="school.school_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="akash">
+                    <group>
+                        <field name="order_name"/>
+                        <field name="order_id"/>
+                    </group>
+                </page>
+            </xpath>
+             <xpath expr="//notebook/page[@name='pho']/group/field[@name='phone']" position="after">
+                <field name="order_name"/>
+                <field name="order_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
