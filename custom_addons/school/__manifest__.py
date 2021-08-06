@@ -5,7 +5,7 @@
     'category': 'Education',
     'summary': 'School management system',
     'sequence': 1,
-    'website': 'https://www.google.com/',
+    'website': 'https://www.aktivesoftware.com/',
     'description': 'This module gives a framework for SMS text messaging',
     'depends': ['base', ],
     "data": [

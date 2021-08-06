@@ -27,18 +27,23 @@
                 <sheet>
                     <group>
                         <group>
+
+
                             <h2>
                                 <field name="name" placeholder="Name"/>
                             </h2>
+
                             <field name="result" widget="monetary"/>
-                            <field name="fees" widget='float_time'/>
-                            <field name="school_address"/>
+                            <field name="fees" Widget="color_picker" />
+                            <field name="school_address" widget="text_emojis"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
                             <field name="parking"/>
                             <field name="courses" widget="checkbox"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
+
+
                         <group>
                             <field name="docu_name" invisible="1"/>
                             <group>
@@ -49,18 +54,35 @@
                         </group>
                         <field name="school_desc" widget="html_frame"/>
                     </group>
+
+
                     <notebook>
+                    <!--Page 1-->
                         <page string="Email" name='ema'>
                             <group>
                                 <field name="email"/>
                             </group>
                         </page>
+
+                    <!--Page 2-->
+
                         <page string="Phone" name="pho">
                             <group>
                                 <field name="phone" placeholder="school contact no"/>
                             </group>
                         </page>
+
+                        <!--Page 3-->
+
+                        <page string="Student data" name="stud_data">
+                            <group>
+                                <field name="student_data_ids"/>
+                            </group>
+                        </page>
+
                     </notebook>
+
+
                 </sheet>
             </form>
         </field>
