@@ -1,11 +1,11 @@
 from odoo import models, fields
 
 class Documentation(models.Model):
-    _name = "documentation"
+    _name = "docu.item"
     _description = "This is documentation task"
 
-    dname = fields.Char(string = "Document name")
-    description_sort = fields.Char(string = "Sort desc")
-    description_long = fields.Char(string = "Long desc")
+    name = fields.Char(string = "Document name")
+    description_sort = fields.Char(string = "Sort description")
+    description_long = fields.Char(string = "Long description")
     video_url = fields.Char(string="Video url")
-    ggl_doc_url = fields.Binary(string="")
+    google_document_url = fields.Char(string="Google doc url")

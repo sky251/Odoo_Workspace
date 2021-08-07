@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <!-- LIST VIEW -->
+    <record id="docu_item_list_view" model="ir.ui.view">
+        <field name="name">docu.item.list.view</field>
+        <field name="model">docu.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="video_url" />
+                <field name="google_document_url"  />
+                <field name="description_sort"/>
+                <field name="description_long" />
+            </tree>
+        </field>
+    </record>
 
+    <!-- FORM VIEW -->
+    <record id="docu_item_form_view" model="ir.ui.view">
+        <field name="name">docu.item.form.view</field>
+        <field name="model">docu.item</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <h2>
+                            <field name="name" placeholder="Doc title"/>
+                        </h2>
+                        <field name="video_url" widget="website_urls" placeholder="eg. www.xyz.com"/>
+                        <field name="google_document_url" widget="Document url"/>
+                        <field name="description_sort" placeholder="Sort description"/>
+                        <field name="description_long" placeholder="Long description"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="docu_item_search_view" model="ir.ui.view">
+        <field name="name">docu.item.search.view</field>
+        <field name="model">docu.item</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Document name" filter_domain="[('name' ,'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_docu_item" model="ir.actions.act_window">
+        <field name="name">docu.item.action</field>
+        <field name="res_model">docu.item</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENUITEM -->
+    <menuitem id="docu_item_root_menu" name="Document"/>
+    <menuitem name="Document manage" id="docu_item_menu" action="action_docu_item" parent="docu_item_root_menu"/>
 
 </odoo>

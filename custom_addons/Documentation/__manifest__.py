@@ -7,8 +7,8 @@
     "description": "This module manage all document related work",
     'depends': ['base', ],
     "data": [
-        "security/ir.model.access.csv"
-        "views/docu_views.xml"
+        "security/ir.model.access.csv",
+        "views/docu_views.xml",
     ],
     "demo": [],
     "sequence": 2,
