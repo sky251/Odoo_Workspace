@@ -8,10 +8,10 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="video_url" />
-                <field name="google_document_url"  />
+                <field name="video_url"/>
+                <field name="google_document_url"/>
                 <field name="description_sort"/>
-                <field name="description_long" />
+                <field name="description_long"/>
             </tree>
         </field>
     </record>
@@ -24,14 +24,15 @@
             <form>
                 <sheet>
                     <group>
-                        <h2>
-                            <field name="name" placeholder="Doc title"/>
-                        </h2>
-                        <field name="video_url" widget="website_urls" placeholder="eg. www.xyz.com"/>
-                        <field name="google_document_url" widget="Document url"/>
-                        <field name="description_sort" placeholder="Sort description"/>
-                        <field name="description_long" placeholder="Long description"/>
-
+                        <group>
+                            <h1>
+                                <field name="name" placeholder="Doc title"/>
+                            </h1>
+                            <field name="video_url" widget="website_urls" placeholder="eg. www.xyz.com"/>
+                            <field name="google_document_url" widget="Document url"/>
+                            <field name="description_sort" placeholder="Sort description"/>
+                            <field name="description_long" placeholder="Long description" widget=""/>
+                        </group>
                     </group>
                 </sheet>
             </form>
@@ -44,7 +45,8 @@
         <field name="model">docu.item</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" string="Document name" filter_domain="[('name' ,'ilike', self)]"/>
+                <field name="name" string="Document name" filter_domain="[('name' ,'', self)]"/>
+                <field name="name" string="frname"/>
             </search>
         </field>
     </record>

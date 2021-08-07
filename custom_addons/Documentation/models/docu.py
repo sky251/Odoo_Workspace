@@ -5,6 +5,7 @@ class Documentation(models.Model):
     _description = "This is documentation task"
 
     name = fields.Char(string = "Document name")
+
     description_sort = fields.Char(string = "Sort description")
     description_long = fields.Char(string = "Long description")
     video_url = fields.Char(string="Video url")
