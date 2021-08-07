@@ -1,7 +1,7 @@
 {
     "name": "Documentation management",
     "version": "14.0.1.0.0",
-    "website": "https://www.youtube.com",
+    "website": "https://www.aktivesoftware.com",
     "category": "Document",
     "summary": """Document related work""",
     "description": "This module manage all document related work",
