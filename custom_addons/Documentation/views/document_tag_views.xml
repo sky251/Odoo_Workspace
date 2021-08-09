@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="docu_tag_list_view" model="ir.ui.view">
+        <field name="name">docu.tag.list.view</field>
+        <field name="model">docu.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="docu_tag_form_view" model="ir.ui.view">
+        <field name="name">docu.tag.form.view</field>
+        <field name="model">docu.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Document tag"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- SEARCH VIEW -->
+    <record id="docu_item_search_view" model="ir.ui.view">
+        <field name="name">docu.tag.search.view</field>
+        <field name="model">docu.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Document tag" filter_domain="[('name' ,'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <record id="action_docu_tag" model="ir.actions.act_window">
+        <field name="name">docu.tag.action</field>
+        <field name="res_model">docu.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- MENUITEM -->
+    <!--    <menuitem id="docu_item_root_menu" name="Document"/>-->
+    <menuitem id="docu_item_root_menu" name="Document"/>
+    <menuitem name="Document tag" id="docu_nav1" action="action_docu_tag" parent="docu_item_root_menu"/>
+
+</odoo>

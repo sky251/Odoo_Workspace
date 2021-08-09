@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+
+        <record id="school_list_view" model="ir.ui.view">
+        <field name="name">school_profile.list.view</field>
+        <field name="model">school.profile</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="name"/>
+            </form>
+        </field>
+    </record>
+
 
     <record id="school_list_view" model="ir.ui.view">
         <field name="name">school_profile.list.view</field>
@@ -55,7 +65,7 @@
                                        class="img img-responsive"/>
                             </group>
                         </group>
-                        <field name="school_desc" widget="html_frame"/>
+                        <field name="school_desc" />
                     </group>
 
 
