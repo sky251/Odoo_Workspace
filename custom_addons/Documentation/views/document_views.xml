@@ -78,7 +78,7 @@
                 <field name="description_sort" string="Short desc" filter_domain="[('description_sort' ,'ilike', self)]"/>
                 <field name="tag_ids" string="Document tag" filter_domain="[('tag_ids' ,'=', self)]"/>
                 <field name="doc_version_ids" string="document Version" filter_domain="[('doc_version_ids' ,'=', self)]"/>
-<!--                <field name="doc_version_ids"/>-->
+
                 <group string="Version">
                     <filter string="12" name="doc_version_ids" domain="[('doc_version_ids','=', '12')]"/>
                     <filter string="13" name="doc_version_ids" domain="[('doc_version_ids','=', '13')]"/>
