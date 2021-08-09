@@ -25,15 +25,29 @@
                 <sheet>
                     <group>
                         <group>
+
                             <h1>
-                                <field name="name" placeholder="Doc title"/>
+                                <field name="name" placeholder="Document title"/>
                             </h1>
                             <field name="video_url" widget="website_urls" placeholder="eg. www.xyz.com"/>
                             <field name="google_document_url" widget="Document url"/>
-                            <field name="description_sort" placeholder="Sort description"/>
-                            <field name="description_long" placeholder="Long description" widget=""/>
                         </group>
+                        <group>
+                            <field name="description_sort" placeholder="Sort description" widget="text_emojis"/>
+                            <label for="lang"/>
+                            <div class="o_row">
+                                <field name="lang"/>
+                                <button type="action" name="53" class="btn-sm btn-link mb4 fa fa-globe"
+                                        aria-label="More languages" groups="base.group_system" title="More languages"/>
+                            </div>
+                        </group>
+
                     </group>
+
+                    <group>
+                        <field name="description_long" placeholder="Long description" widget="html_frame"/>
+                    </group>
+
                 </sheet>
             </form>
         </field>
