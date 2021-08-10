@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-        <record id="school_list_view" model="ir.ui.view">
+    <record id="school_list_view" model="ir.ui.view">
         <field name="name">school_profile.list.view</field>
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
@@ -22,10 +22,12 @@
                 <field name="student_data_ids"/>
                 <field name="phone"/>
                 <field name="parking"/>
-                <field name="fees"/>
+
                 <field name="result"/>
                 <field name="school_address"/>
                 <field name="open_date"/>
+                <field name="fees"/>
+                <field name="salary"/>
                 <field name="courses"/>
                 <field name="docu_name" invisible="1"/>
             </tree>
@@ -47,12 +49,14 @@
                             </h2>
 
                             <field name="result" widget="monetary"/>
-                            <field name="fees" Widget="color_picker" />
+
                             <field name="school_address" widget="text_emojis"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
                             <field name="parking"/>
                             <field name="courses" widget="checkbox"/>
+                            <field name="fees" />
+                            <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
 
@@ -65,19 +69,19 @@
                                        class="img img-responsive"/>
                             </group>
                         </group>
-                        <field name="school_desc" />
+                        <field name="school_desc"/>
                     </group>
 
 
                     <notebook>
-                    <!--Page 1-->
+                        <!--Page 1-->
                         <page string="Email" name='ema'>
                             <group>
                                 <field name="email"/>
                             </group>
                         </page>
 
-                    <!--Page 2-->
+                        <!--Page 2-->
 
                         <page string="Phone" name="pho">
                             <group>
@@ -109,7 +113,7 @@
                 <field name="fees" string="Fees" filter_domain="[('fees','>',self)]"/>
                 <field name="student_data_ids" string="Student ids" filter_domain="[('name','ilike',self)]"/>
 
-                <filter name="parking" string="Parking" domain="[('parking','=',0)]" />
+                <filter name="parking" string="Parking" domain="[('parking','=',0)]"/>
 
                 <group>
                     <filter name="grp_email" string="Email" context="{'group_by':'email'}"/>

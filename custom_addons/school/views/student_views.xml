@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="calculate"/>
                 <field name="student_email"/>
                 <field name="school_select_id"/>
                 <field name="student_phone"/>
@@ -31,6 +32,7 @@
 
                             <widget name="web_ribbon" text="Akash"/>
                             <field name="is_parking"/>
+                            <field name="calculate"/>
                             <field name="student_phone"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>
