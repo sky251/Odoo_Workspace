@@ -12,6 +12,7 @@
                 <field name="school_select_id"/>
                 <field name="student_phone"/>
                 <field name="student_result"/>
+                <field name="is_parking"/>
             </tree>
         </field>
     </record>
@@ -29,6 +30,7 @@
                             </h2>
 
                             <widget name="web_ribbon" text="Akash"/>
+                            <field name="is_parking"/>
                             <field name="student_phone"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>
