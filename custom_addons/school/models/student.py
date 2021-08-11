@@ -21,10 +21,14 @@ class StudentProfile(models.Model):
     user_signature = fields.Binary(string='Signature')
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
     calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
-    state = fields.Selection([('one','One'),('two','Two'),('three','Three')], default='one', string="Status")
+    state = fields.Selection([('create', 'Create'), ('received', 'Received'), ('done', 'Done'), ('cancelled', 'Cancelled')],
+                             default='create', string="Status")
 
     def action_confirm(self):
-        self.state = 'two'
+        self.state = 'received'
 
     def action_done(self):
-        self.state = "three"
+        self.state = 'done'
+
+    def action_cancel(self):
+        self.state = 'cancelled'

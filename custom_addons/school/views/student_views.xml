@@ -27,7 +27,8 @@
                 <header>
                     <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-outline-danger" type="object"/>
                     <button id="button_done" name="action_done" string="Done" class="btn-outline-success" type="object"/>
-                    <field name="state" class="text-success" widget="statusbar" options="{'clickable':1}" statusbar_visible="one,two"/>
+                    <button id="button_cancel" name="action_cancel" string="Cancel" states="create,received,done" type="object"/>
+                    <field name="state" class="text-success" widget="statusbar" options="{'clickable':1}" statusbar_visible="create,done,received"/>
                 </header>
                 <sheet>
                     <group>
