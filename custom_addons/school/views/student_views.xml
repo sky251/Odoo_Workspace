@@ -14,6 +14,7 @@
                 <field name="student_phone"/>
                 <field name="student_result"/>
                 <field name="is_parking"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -23,14 +24,17 @@
         <field name="model">student.profile</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state"  options="{'clickable':'1'}" statusbar_visible="one,two"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
+
                             <h2>
                                 <field name="name" placeholder=" Student Name"/>
                             </h2>
 
-                            <widget name="web_ribbon" text="Akash"/>
                             <field name="is_parking"/>
                             <field name="calculate"/>
                             <field name="student_phone"/>
@@ -62,7 +66,8 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="student_nav" name="Student Prof" action="action_student_profile" parent="school_root_menu" sequence="2"/>
+    <menuitem id="student_nav" name="Student Prof" action="action_student_profile" parent="school_root_menu"
+              sequence="2"/>
 </odoo>
 
 

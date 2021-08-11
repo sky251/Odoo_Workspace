@@ -21,3 +21,4 @@ class StudentProfile(models.Model):
     user_signature = fields.Binary(string='Signature')
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
     calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
+    state = fields.Selection([('one','One'),('two','Two'),('three','Three')], default='one', string="Status")

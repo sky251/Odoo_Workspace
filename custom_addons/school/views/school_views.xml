@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-   
+
 
     <record id="school_list_view" model="ir.ui.view">
         <field name="name">school_profile.list.view</field>
@@ -23,7 +23,6 @@
                 <field name="student_data_ids"/>
                 <field name="phone"/>
                 <field name="parking"/>
-
                 <field name="result"/>
                 <field name="school_address"/>
                 <field name="open_date"/>
@@ -44,19 +43,17 @@
                     <group>
                         <group>
 
-
                             <h2>
                                 <field name="name" placeholder="Name"/>
                             </h2>
 
                             <field name="result" widget="monetary"/>
-
                             <field name="school_address" widget="text_emojis"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>
                             <field name="open_date"/>
                             <field name="parking"/>
                             <field name="courses" widget="checkbox"/>
-                            <field name="fees" />
+                            <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
                         </group>
@@ -75,6 +72,7 @@
 
 
                     <notebook>
+
                         <!--Page 1-->
                         <page string="Email" name='ema'>
                             <group>
@@ -83,7 +81,6 @@
                         </page>
 
                         <!--Page 2-->
-
                         <page string="Phone" name="pho">
                             <group>
                                 <field name="phone" placeholder="school contact no"/>
@@ -91,12 +88,12 @@
                         </page>
 
                         <!--Page 3-->
-
                         <page string="Student data" name="stud_data">
                             <group>
                                 <field name="student_data_ids"/>
                             </group>
                         </page>
+
                     </notebook>
                 </sheet>
             </form>

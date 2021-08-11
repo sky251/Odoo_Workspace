@@ -4,7 +4,6 @@ from odoo import api, models, fields
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
-
     # _rec_name = "name"
 
     @api.depends("courses")
@@ -17,7 +16,7 @@ class SchoolProfile(models.Model):
             elif cor.courses == "automobile":
                 cor.salary = 32000
             elif cor.courses == "civil":
-                cor.salary = 30000
+                cor.salary = 27000
             else:
                 cor.salary = 10000
 
