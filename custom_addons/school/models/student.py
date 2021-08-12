@@ -12,6 +12,8 @@ class StudentProfile(models.Model):
             elif rec.is_parking == False:
                 rec.calculate = 100
 
+
+
     name = fields.Char(string='Student name')
     student_email = fields.Char(string='Email')
     student_phone = fields.Char(string='Phone')
