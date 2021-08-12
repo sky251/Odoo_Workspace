@@ -2,6 +2,7 @@
 
 <odoo>
 
+
     <record id="student_list_view" model="ir.ui.view">
         <field name="name">student_profile.list.view</field>
         <field name="model">student.profile</field>
@@ -25,12 +26,29 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button id="button_confirm" name="action_confirm" string="Confirm" icon="fa-heart" class="border border-danger btn-outline-danger" type="object"/>
-                    <button id="button_done" name="action_done" string="Done" icon="fa-bitcoin" class="border border-success btn-outline-success" type="object"/>
-                    <button id="button_cancel" name="action_cancel" string="Cancel" class="border border-dark btn-outline-dark" icon="fa-window-close" states="create,received,done" type="object"/>
-                    <field name="state" class="btn btn-outline-primary" widget="statusbar"  options="{'clickable':1}" statusbar_visible="create,done,received"/>
+                    <button id="button_confirm" name="action_confirm" string="Confirm" icon="fa-heart"
+                            class="border border-danger btn-outline-danger" type="object"/>
+
+                    <button id="button_done" name="action_done" string="Done" icon="fa-bitcoin"
+                            class="border border-success btn-outline-success" type="object"/>
+
+
+                    <button id="button_cancel" name="action_cancel" string="Cancel"
+                            class="border border-dark btn-outline-dark" icon="fa-window-close"
+                            states="create,received,done" type="object"/>
+                    <field name="state" class="btn btn-outline-primary" widget="statusbar" options="{'clickable':1}"
+                           statusbar_visible="create,done,received"/>
                 </header>
+
                 <sheet>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button type="action" string="Home" icon="fa-home" class="oe_stat_button"
+                                name="%(action_student_profile)d"/>
+                        <button type="object" string="Reset Form" class="oe_stat_button" icon="fa-warning"
+                                name="clear_record_data"/>
+                    </div>
+
                     <group>
                         <group>
 
@@ -46,10 +64,11 @@
                             <field name="user_signature" widget="signature"/>
                         </group>
                         <group>
-                            <field name='student_img' filename="upld_schl_img_name" nolabel="1" widget="image" placeholder="Upload Your Look"
-                                       style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
-                                       class="img img-responsive"/>
-<!--                            <field name="student_img" widget="image" filename="upld_schl_img_name"/>-->
+                            <field name='student_img' filename="upld_schl_img_name" nolabel="1" widget="image"
+                                   placeholder="Upload Your Look"
+                                   style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
+                                   class="img img-responsive"/>
+                            <!--                            <field name="student_img" widget="image" filename="upld_schl_img_name"/>-->
                         </group>
 
                     </group>
@@ -65,6 +84,7 @@
             </form>
         </field>
     </record>
+
 
     <record id="action_student_profile" model="ir.actions.act_window">
         <field name="name">Student Profile</field>
