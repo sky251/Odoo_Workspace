@@ -26,18 +26,16 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button id="button_confirm" name="action_confirm" string="Confirm" icon="fa-heart"
-                            class="border border-danger btn-outline-danger" type="object"/>
-
-                    <button id="button_done" name="action_done" string="Done" icon="fa-bitcoin"
-                            class="border border-success btn-outline-success" type="object"/>
-
-
-                    <button id="button_cancel" name="action_cancel" string="Cancel"
-                            class="border border-dark btn-outline-dark" icon="fa-window-close"
-                            states="create,received,done" type="object"/>
-                    <field name="state" class="btn btn-outline-primary" widget="statusbar" options="{'clickable':1}"
-                           statusbar_visible="create,done,received"/>
+                    <button id="button_confirm" name="action_confirm" string="Confirm"
+                            class="btn btn-primary" type="object" states="draft"/>
+                    <button id="button_done" name="action_done" string="Done" icon="fa-heart"
+                            class="btn btn-primary" type="object" states="confirm"/>
+                    <button id="button_cancel" name="action_cancel" string="Cancel" icon="fa-heart"
+                            class="btn btn-primary" type="object" states="confirm,done"/>
+                    <button id="button_reset" name="action_reset" string="Reset" icon="fa-heart"
+                            class="btn btn-primary" type="object" states="cancel"/>
+                    <field name="state" class="btn btn-outline-primary" widget="statusbar"
+                           statusbar_visible="draft,confirm,done,cancel"/>
                 </header>
 
                 <sheet>
@@ -56,9 +54,9 @@
                                 <field name="name" placeholder=" Student Name"/>
                             </h2>
 
-                            <field name="is_parking"/>
+                            <field name="is_parking" attrs="{'invisible': [('state','=','confirm')]}"/>
                             <field name="calculate"/>
-                            <field name="student_phone"/>
+                            <field name="student_phone" attrs="{'required': [('state','=','confirm')], 'invisible': [('state','=','draft')]}"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>
                             <field name="user_signature" widget="signature"/>
@@ -68,7 +66,6 @@
                                    placeholder="Upload Your Look"
                                    style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
                                    class="img img-responsive"/>
-                            <!--                            <field name="student_img" widget="image" filename="upld_schl_img_name"/>-->
                         </group>
 
                     </group>

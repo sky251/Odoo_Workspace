@@ -1,10 +1,10 @@
-from odoo import models, fields
+from odoo import api, fields, models
 
 
 class StudentProfile(models.Model):
     _name = 'student.profile'
     _description = 'Student Information'
-
+    @api.depends("is_parking")
     def _compute_total_calcu(self):
         for rec in self:
             if rec.is_parking == True:
@@ -24,26 +24,43 @@ class StudentProfile(models.Model):
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
     calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
     state = fields.Selection(
-        [('create', 'Create'), ('received', 'Received'), ('done', 'Done'), ('cancelled', 'Cancelled')],
-        default='create', string="Status")
+        [('draft', 'draft'), ('confirm', 'confirm'), ('done', 'done'), ('cancel', 'cancel')],
+        default='draft', string="Status")
+
+    @api.model_create_multi
+    def create(self, vals):
+        rtn = super(StudentProfile, self).create(vals)
+        return rtn
+
+    def write(self, vals):
+        rtn = super(StudentProfile, self).write(vals)
+        return rtn
+
+    def unlink(self):
+        rtn = super(StudentProfile, self).unlink()
+        print("\n\n\nrtn\n\n\n", rtn)
+        return rtn
 
     def action_confirm(self):
-        self.state = 'received'
+        self.state = 'confirm'
 
     def action_done(self):
         self.state = 'done'
 
     def action_cancel(self):
-        self.state = 'cancelled'
+        self.state = 'cancel'
+
+    def action_reset(self):
+        self.state = 'draft'
 
     def clear_record_data(self):
         self.write({
-            'name': '',
-            'student_email': '',
-            'student_phone': '',
-            'student_result': '',
-            'student_img': '',
-            'user_signature': '',
-            'is_parking': '',
-            'calculate': '',
+            'name': None,
+            'student_email': None,
+            'student_phone': None,
+            'student_result': None,
+            'student_img': None,
+            'user_signature': None,
+            'is_parking': None,
+            'calculate': None,
         })

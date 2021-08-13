@@ -8,7 +8,7 @@ from odoo.addons.purchase.models.purchase import PurchaseOrder as Purchase
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    l10n_in_journal_id = fields.Many2one('account.journal', string="Journal", \
+    l10n_in_journal_id = fields.Many2one('account.journal', string="Journal",
         states=Purchase.READONLY_STATES, domain="[('type', '=', 'purchase')]")
     l10n_in_gst_treatment = fields.Selection([
             ('regular', 'Registered Business - Regular'),

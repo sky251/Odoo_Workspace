@@ -8,7 +8,7 @@
             <tree>
                 <field name="name"/>
                 <field name="email"/>
-                <field name="student_data_ids"/>
+                <!--                <field name="student_data_ids"/>-->
                 <field name="phone"/>
                 <field name="parking"/>
                 <field name="result"/>
@@ -28,6 +28,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="button_click" class="oe_stat_button" icon="fa-male">
+                            <field name="delivery_count" widget="statinfo" string="Delivery"/>
+                        </button>
+                    </div>
                     <group>
                         <group>
 
@@ -44,8 +49,8 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-                        </group>
 
+                        </group>
 
                         <group>
                             <field name="docu_name" invisible="1"/>
@@ -78,7 +83,7 @@
                         <!--Page 3-->
                         <page string="Student data" name="stud_data">
                             <group>
-                                <field name="student_data_ids"/>
+                                <!--                                <field name="student_data_ids"/>-->
                             </group>
                         </page>
 
@@ -97,7 +102,7 @@
                 <field name="email" string="Email" filter_domain="[('email','=',self)]"/>
                 <field name="phone" string="Phone" filter_domain="[('phone','=',self)]"/>
                 <field name="fees" string="Fees" filter_domain="[('fees','>',self)]"/>
-                <field name="student_data_ids" string="Student ids" filter_domain="[('name','ilike',self)]"/>
+                <!--                <field name="student_data_ids" string="Student ids" filter_domain="[('name','ilike',self)]"/>-->
 
                 <filter name="parking" string="Parking" domain="[('parking','=',0)]"/>
 

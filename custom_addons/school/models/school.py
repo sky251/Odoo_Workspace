@@ -44,3 +44,22 @@ class SchoolProfile(models.Model):
     school_desc = fields.Html(string='School description')
     student_data_ids = fields.One2many('student.profile', 'school_select_id', string='Student data')
 
+
+    delivery_count = fields.Integer(string='Delivery Orders', compute='_compute_picking_ids')
+    # picking_ids = fields.One2many('stock.picking', 'sale_id', string='Transfers')
+
+    @api.depends('delivery_count')
+    def _compute_picking_ids(self):
+        for stud in self:
+            stud.delivery_count = self.env['student.profile'].search_count([('school_select_id.id', '=' , self.id)])
+
+    def button_click(self):
+        print("smart button click")
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'student',
+            'view_mode': 'tree',
+            'res_model': 'student.profile',
+            'domain': [('school_select_id.id', '=', self.id)],
+        }
