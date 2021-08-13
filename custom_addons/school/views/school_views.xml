@@ -30,7 +30,7 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button type="object" name="button_click" class="oe_stat_button" icon="fa-male">
-                            <field name="delivery_count" widget="statinfo" string="Delivery"/>
+                            <field name="delivery_count" widget="statinfo" string="Selected"/>
                         </button>
                     </div>
                     <group>
@@ -49,8 +49,8 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-
                         </group>
+
 
                         <group>
                             <field name="docu_name" invisible="1"/>
