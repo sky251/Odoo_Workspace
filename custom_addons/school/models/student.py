@@ -20,6 +20,8 @@ class StudentProfile(models.Model):
     student_result = fields.Float(string='Result')
     student_img = fields.Image(string=' Upload student image', max_width=100, max_height=100)
     school_select_id = fields.Many2one("school.profile", string="Select School")
+    sc_select_id = fields.Many2many("school.profile", string="Selectssss")
+    # sc_select_id = fields.One2many("school.profile", string="Selectssss")
     user_signature = fields.Binary(string='Signature')
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
     calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
@@ -27,7 +29,7 @@ class StudentProfile(models.Model):
         [('draft', 'draft'), ('confirm', 'confirm'), ('done', 'done'), ('cancel', 'cancel')],
         default='draft', string="Status")
 
-    @api.model_create_multi
+    @api.model_create_multi  # or   @api.model
     def create(self, vals):
         rtn = super(StudentProfile, self).create(vals)
         return rtn

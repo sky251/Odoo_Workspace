@@ -10,9 +10,9 @@
     'depends': ['base', ],
     "data": [
         "security/ir.model.access.csv",
+        "data/docu_version_data.xml",
         "views/school_views.xml",
         "views/student_views.xml",
-
     ],
     "demo": [],
     "installable": True,

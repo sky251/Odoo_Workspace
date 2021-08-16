@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo noupdate="0">
+
+<!--    SCHOOL DATA-->
+    <record id="school_data_1" model="school.profile">
+        <field name="name">kite</field>
+        <field name="email">k@gmail.com</field>
+        <field name="phone">012365479</field>
+        <field name="fees">28000</field>
+    </record>
+
+    <record id="school_data_2" model="school.profile">
+        <field name="name">Spec</field>
+        <field name="email">k@gmail.com</field>
+        <field name="phone">0362514789</field>
+        <field name="fees">29000</field>
+    </record>
+
+    <record id="school_data_3" model="school.profile">
+        <field name="name">LD</field>
+        <field name="email">l@gmail.com</field>
+        <field name="phone">1236547890</field>
+        <field name="fees">30000</field>
+    </record>
+
+    <record id="school_data_4" model="school.profile">
+        <field name="name">GH</field>
+        <field name="email">g@gmail.com</field>
+        <field name="phone">0326514798</field>
+        <field name="fees">31000</field>
+    </record>
+
+    <record id="school_data_5" model="school.profile">
+        <field name="name">Adit</field>
+        <field name="email">ad@gmail.com</field>
+        <field name="phone">0159847326</field>
+        <field name="fees">32000</field>
+    </record>
+
+<!--    STUDENT DATA-->
+    <record id="student_data_6" model="student.profile">
+        <field name="name">Akash</field>
+        <field name="student_email">akash@gmail.com</field>
+        <field name="student_phone">013254697854</field>
+        <field name="student_result">98</field>
+    </record>
+
+    <record id="student_data_7" model="student.profile">
+        <field name="name">Dhruvish</field>
+        <field name="student_email">dhruvish@gmail.com</field>
+        <field name="student_phone">1325469780</field>
+        <field name="student_result">77</field>
+    </record>
+
+    <record id="student_data_8" model="student.profile">
+        <field name="name">Komal</field>
+        <field name="student_email">komal@gmail.com</field>
+        <field name="student_phone">0123654789</field>
+        <field name="student_result">66</field>
+    </record>
+
+    <record id="student_data_9" model="student.profile">
+        <field name="name">Yash</field>
+        <field name="student_email">yash@gmail.com</field>
+        <field name="student_phone">7896541230</field>
+        <field name="student_result">76</field>
+    </record>
+
+</odoo>

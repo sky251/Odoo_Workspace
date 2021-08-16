@@ -46,7 +46,6 @@ class SchoolProfile(models.Model):
 
 
     delivery_count = fields.Integer(string='Delivery Orders', compute='_compute_picking_ids')
-    # picking_ids = fields.One2many('stock.picking', 'sale_id', string='Transfers')
 
     @api.depends('delivery_count')
     def _compute_picking_ids(self):

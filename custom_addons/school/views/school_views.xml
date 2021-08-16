@@ -83,7 +83,7 @@
                         <!--Page 3-->
                         <page string="Student data" name="stud_data">
                             <group>
-                                <!--                                <field name="student_data_ids"/>-->
+                                <field name="student_data_ids"/>
                             </group>
                         </page>
 

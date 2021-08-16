@@ -53,10 +53,11 @@
                             <h2>
                                 <field name="name" placeholder=" Student Name"/>
                             </h2>
-
+                            <field name="student_email" placeholder="school email address"/>
                             <field name="is_parking" attrs="{'invisible': [('state','=','confirm')]}"/>
                             <field name="calculate"/>
-                            <field name="student_phone" attrs="{'required': [('state','=','confirm')], 'invisible': [('state','=','draft')]}"/>
+                            <field name="student_phone"
+                                   attrs="{'required': [('state','=','confirm')], 'invisible': [('state','=','draft')]}"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>
                             <field name="user_signature" widget="signature"/>
@@ -71,9 +72,16 @@
                     </group>
 
                     <notebook>
-                        <page string="Student Strength">
+                        <page string="Student Many2many">
                             <group>
-                                <field name="student_email" placeholder="school email address"/>
+                                <field name="sc_select_id">
+                                    <tree editable="top">
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                        <field name="phone"/>
+                                        <field name="parking"/>
+                                    </tree>
+                                </field>
                             </group>
                         </page>
                     </notebook>
