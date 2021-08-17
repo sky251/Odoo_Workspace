@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo noupdate="0">
 
-<!--    SCHOOL DATA-->
+    <!--    SCHOOL DATA-->
     <record id="school_data_1" model="school.profile">
         <field name="name">kite</field>
         <field name="email">k@gmail.com</field>
         <field name="phone">012365479</field>
         <field name="fees">28000</field>
+        <field name="parking">True</field>
+        <field name="courses">computer</field>
+        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
+
     </record>
 
     <record id="school_data_2" model="school.profile">
@@ -14,6 +18,9 @@
         <field name="email">k@gmail.com</field>
         <field name="phone">0362514789</field>
         <field name="fees">29000</field>
+        <field name="parking">True</field>
+        <field name="courses">civil</field>
+        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
     </record>
 
     <record id="school_data_3" model="school.profile">
@@ -21,6 +28,10 @@
         <field name="email">l@gmail.com</field>
         <field name="phone">1236547890</field>
         <field name="fees">30000</field>
+        <field name="parking">False</field>
+        <field name="courses">electrical</field>
+        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
+
     </record>
 
     <record id="school_data_4" model="school.profile">
@@ -28,6 +39,9 @@
         <field name="email">g@gmail.com</field>
         <field name="phone">0326514798</field>
         <field name="fees">31000</field>
+        <field name="parking">True</field>
+        <field name="courses">automobile</field>
+        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
     </record>
 
     <record id="school_data_5" model="school.profile">
@@ -35,9 +49,15 @@
         <field name="email">ad@gmail.com</field>
         <field name="phone">0159847326</field>
         <field name="fees">32000</field>
+        <field name="parking">False</field>
+        <field name="courses">mechanical</field>
+        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
     </record>
 
-<!--    STUDENT DATA-->
+
+    <!--    STUDENT DATA-->
+
+
     <record id="student_data_6" model="student.profile">
         <field name="name">Akash</field>
         <field name="student_email">akash@gmail.com</field>
