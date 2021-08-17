@@ -7,7 +7,7 @@
     'sequence': 1,
     'website': 'https://www.aktivesoftware.com/',
     'description': 'This module gives a framework for SMS text messaging',
-    'depends': ['base', ],
+    'depends': ['base', 'mail', ],
     "data": [
         "security/ir.model.access.csv",
         "data/docu_version_data.xml",

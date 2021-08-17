@@ -4,6 +4,7 @@ from odoo import api, models, fields
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
+    _inherit = ['mail.thread','mail.activity.mixin']
     # _rec_name = "name"
 
     @api.depends("courses")
@@ -43,6 +44,7 @@ class SchoolProfile(models.Model):
     image_name = fields.Char(string='Image Name', invisible='1')
     school_desc = fields.Html(string='School description')
     student_data_ids = fields.One2many('student.profile', 'school_select_id', string='Student data')
+    student_data_id = fields.Many2one('student.profile', string='Studeadfasdnt data')
 
 
     delivery_count = fields.Integer(string='Delivery Orders', compute='_compute_picking_ids')

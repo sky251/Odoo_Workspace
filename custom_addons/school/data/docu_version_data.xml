@@ -7,10 +7,10 @@
         <field name="email">k@gmail.com</field>
         <field name="phone">012365479</field>
         <field name="fees">28000</field>
-        <field name="parking">True</field>
+        <field name="parking" eval="True"/>
         <field name="courses">computer</field>
-        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
 
+<!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
     <record id="school_data_2" model="school.profile">
@@ -18,9 +18,10 @@
         <field name="email">k@gmail.com</field>
         <field name="phone">0362514789</field>
         <field name="fees">29000</field>
-        <field name="parking">True</field>
+        <field name="parking" eval="False"/>
         <field name="courses">civil</field>
-        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
+
+<!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
     <record id="school_data_3" model="school.profile">
@@ -28,10 +29,10 @@
         <field name="email">l@gmail.com</field>
         <field name="phone">1236547890</field>
         <field name="fees">30000</field>
-        <field name="parking">False</field>
+        <field name="parking" eval="False"/>
         <field name="courses">electrical</field>
-        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
 
+<!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
     <record id="school_data_4" model="school.profile">
@@ -39,9 +40,9 @@
         <field name="email">g@gmail.com</field>
         <field name="phone">0326514798</field>
         <field name="fees">31000</field>
-        <field name="parking">True</field>
+        <field name="parking" eval="True"/>
         <field name="courses">automobile</field>
-        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
+<!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
     <record id="school_data_5" model="school.profile">
@@ -49,9 +50,10 @@
         <field name="email">ad@gmail.com</field>
         <field name="phone">0159847326</field>
         <field name="fees">32000</field>
-        <field name="parking">False</field>
+        <field name="parking" eval="True"/>
         <field name="courses">mechanical</field>
-        <field name="image" type="base64" file="/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/school/static/my_img/my_logo.png"/>
+        <field name="student_data_id" ref="student_data_6"/>
+<!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
 

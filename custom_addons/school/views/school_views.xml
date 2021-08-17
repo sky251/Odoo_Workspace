@@ -49,6 +49,8 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
+                            <field name="student_data_id"/>
+
                         </group>
 
 
@@ -89,6 +91,14 @@
 
                     </notebook>
                 </sheet>
+
+<!--                CHATTER BOX-->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="message_ids"/>
+                    <field name="activity_ids"/>
+                </div>
+
             </form>
         </field>
     </record>
