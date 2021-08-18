@@ -43,6 +43,13 @@ class StudentProfile(models.Model):
         print("\n\n\nrtn\n\n\n", rtn)
         return rtn
 
+    def copy(self, default={}):
+        default['name'] = "copy("+self.name+")"
+        print("\n\n\nself data\n\n\n", self)
+        rtn = super(StudentProfile, self).copy(default=default)
+        print("\n\n\nrtn", rtn,"\n\n\n")
+        return rtn
+
     def action_confirm(self):
         self.state = 'confirm'
 
@@ -57,12 +64,12 @@ class StudentProfile(models.Model):
 
     def clear_record_data(self):
         self.write({
-            'name': None,
-            'student_email': None,
-            'student_phone': None,
-            'student_result': None,
-            'student_img': None,
-            'user_signature': None,
-            'is_parking': None,
-            'calculate': None,
+            'name': '',
+            'student_email': '',
+            'student_phone': '',
+            'student_result': '',
+            'student_img': '',
+            'user_signature': '',
+            'is_parking': '',
+            'calculate': '',
         })

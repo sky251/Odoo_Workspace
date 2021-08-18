@@ -33,6 +33,7 @@
                             <field name="delivery_count" widget="statinfo" string="Selected"/>
                         </button>
                     </div>
+
                     <group>
                         <group>
 
@@ -92,7 +93,7 @@
                     </notebook>
                 </sheet>
 
-<!--                CHATTER BOX-->
+                <!--CHATTER BOX-->
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="message_ids"/>

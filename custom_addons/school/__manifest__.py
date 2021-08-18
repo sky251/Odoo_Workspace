@@ -10,7 +10,8 @@
     'depends': ['base', 'mail', ],
     "data": [
         "security/ir.model.access.csv",
-        "data/docu_version_data.xml",
+        "data/school_data.xml",
+        "data/student_data.xml",
         "views/school_views.xml",
         "views/student_views.xml",
     ],
