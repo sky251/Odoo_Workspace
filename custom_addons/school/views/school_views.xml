@@ -30,7 +30,7 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button type="object" name="button_click" class="oe_stat_button" icon="fa-male">
-                            <field name="delivery_count" widget="statinfo" string="Selected"/>
+                            <field name="delivery_count" widget="statinfo" icon="fa-home" string="Selected"/>
                         </button>
                     </div>
 

@@ -61,6 +61,14 @@ class SchoolProfile(models.Model):
     def _compute_picking_ids(self):
         for stud in self:
             stud.delivery_count = self.env['student.profile'].search_count([('school_select_id.id', '=' , self.id)])
+            # if stud.delivery_count == 0:
+            #     stud.delivery_count = '%'
+            #     print("\n\n\n\n\n jdhnasfjiadh  \n\n\n\n\n\n")
+            #     return stud.delivery_count
+            # else:
+            #     print("\n\n\n\n\n zzzzzzzzzz  \n\n\n\n\n\n")
+            #     stud.delivery_count
+            #     return stud.delivery_count
 
     def button_click(self):
         print("smart button click")
