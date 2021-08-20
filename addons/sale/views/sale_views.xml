@@ -349,7 +349,7 @@
                     <notebook>
                         <page string="Order Lines" name="order_lines">
                             <field
-                                name="order_line"
+                                name="order_line0"
                                 widget="section_and_note_one2many"
                                 mode="tree,kanban"
                                 attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"
@@ -441,10 +441,7 @@
                                     <field name="state" invisible="1"/>
                                     <field name="company_id" invisible="1"/>
                                 </form>
-                                <tree
-                                    string="Sales Order Lines"
-                                    editable="bottom"
-                                >
+                                <tree string="Sales Order Lines" editable="bottom" >
                                     <control>
                                         <create name="add_product_control" string="Add a product"/>
                                         <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
