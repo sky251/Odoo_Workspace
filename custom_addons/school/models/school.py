@@ -4,7 +4,8 @@ from odoo import api, models, fields
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
-    _inherit = ['mail.thread','mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
     # _rec_name = "name"
 
     @api.depends("courses")
@@ -27,7 +28,7 @@ class SchoolProfile(models.Model):
     parking = fields.Boolean(string='Parking')
     result = fields.Float(string='Result')
     fees = fields.Integer(string='Fees')
-    salary = fields.Integer(compute="_compute_course_wise_salary", string='Salary', readonly=True,store=True)
+    salary = fields.Integer(compute="_compute_course_wise_salary", string='Salary', readonly=True, store=True)
     school_address = fields.Text(string='School address')
     establish_date = fields.Date(string='Establish date')
     open_date = fields.Datetime(string='open date')
@@ -52,7 +53,7 @@ class SchoolProfile(models.Model):
     def _compute_count_total_student(self):
         stu = self.env['student.profile'].search_count([])
         total = len(stu)
-        print("\n\n\n\n",total,"\n\n\n\n\n")
+        print("\n\n\n\n", total, "\n\n\n\n\n")
 
     def button_on_click(self):
         print("smart button click")
@@ -60,15 +61,7 @@ class SchoolProfile(models.Model):
     @api.depends('delivery_count')
     def _compute_picking_ids(self):
         for stud in self:
-            stud.delivery_count = self.env['student.profile'].search_count([('school_select_id.id', '=' , self.id)])
-            # if stud.delivery_count == 0:
-            #     stud.delivery_count = '%'
-            #     print("\n\n\n\n\n jdhnasfjiadh  \n\n\n\n\n\n")
-            #     return stud.delivery_count
-            # else:
-            #     print("\n\n\n\n\n zzzzzzzzzz  \n\n\n\n\n\n")
-            #     stud.delivery_count
-            #     return stud.delivery_count
+            stud.delivery_count = self.env['student.profile'].search_count([('school_select_id.id', '=', self.id)])
 
     def button_click(self):
         print("smart button click")
