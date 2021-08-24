@@ -349,7 +349,7 @@
                     <notebook>
                         <page string="Order Lines" name="order_lines">
                             <field
-                                name="order_line0"
+                                name="order_line"
                                 widget="section_and_note_one2many"
                                 mode="tree,kanban"
                                 attrs="{'readonly': [('state', 'in', ('done','cancel'))]}"

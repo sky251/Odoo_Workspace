@@ -14,7 +14,7 @@ class SaleOrder(models.Model):
             total_capacity = 0
             for line in order.order_line:
                 total_capacity += line.max_qty_allowed
-            calculate.update({"total_capacity": total_capacity})
+            order.update({"total_capacity": total_capacity})
 
 
 class SaleOrderLine(models.Model):
