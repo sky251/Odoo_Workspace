@@ -1,7 +1,5 @@
-from odoo import fields, models
+from odoo import api, fields, models
 from odoo.tools.translate import _
-
-# from .product import ProductProduct
 
 
 class SaleOrder(models.Model):
@@ -20,6 +18,14 @@ class SaleOrder(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    max_qty_allowed = fields.Float(
-        related="product_id.qty_on_order", string=_("Max Qty Allowed")
-    )
+    # max_qty_allowed = fields.Float(related="product_id.qty_on_order", string=_("Max Qty Allowed"))
+    max_qty_allowed = fields.Float(string=_("Max Qty Allowed"))
+
+    @api.onchange('product_id')
+    def onchange_max_qty_allowed(self):
+        for r in self:
+            r.max_qty_allowed = r.product_id.qty_on_order
+
+# product_id = fields.Many2one(
+#         'product.product', string='Product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+#         change_default=True, ondelete='restrict', check_company=True
