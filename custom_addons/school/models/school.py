@@ -49,11 +49,11 @@ class SchoolProfile(models.Model):
     delivery_count = fields.Integer(string='Delivery Orders', compute='_compute_picking_ids')
     total_student_count = fields.Integer(string="Total Student", compute='_compute_count_total_student')
 
-    @api.depends('total_student_count')
-    def _compute_count_total_student(self):
-        stu = self.env['student.profile'].search_count([])
-        total = len(stu)
-        print("\n\n\n\n", total, "\n\n\n\n\n")
+    # @api.depends('total_student_count')
+    # def _compute_count_total_student(self):
+    #     stu = self.env['student.profile'].search_count([])
+    #     total = len(stu)
+    #     print("\n\n\n\n", total, "\n\n\n\n\n")
 
     def button_on_click(self):
         print("smart button click")

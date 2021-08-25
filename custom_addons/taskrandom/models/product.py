@@ -4,40 +4,72 @@ from odoo import api, fields, models
 from odoo.tools.translate import _
 
 
-class ProductTemplate(models.Model):
+class Product(models.Model):
     _inherit = "product.template"
 
-    rndm_str = fields.Char(
+    random_string = fields.Char(
         string=_("Random String"),
-        compute="_compute_standard_price",
-        inverse="_set_standard_price",
+        compute="_compute_random_string",
+        inverse="_set_random_string",
     )
 
-    @api.depends("product_variant_ids", "product_variant_ids.rndm_str")
-    def _compute_standard_price(self):
-        unique_variants = self.filtered(
-            lambda template: len(template.product_variant_ids) == 1
+    @api.depends("product_variant_ids", "product_variant_ids.random_string")
+    def _compute_random_string(self):
+        print("\n\n\n\n\n _compute_random_string\n\n\n self before loop: ", self)
+
+        unique_variants = self.filtered(lambda temp: len(temp.product_variant_ids) == 1)
+        print("\n\n\n\n\n unique_variants: ", unique_variants)
+
+        for temp in unique_variants:
+            print("\n\n\n\n\n temp inside loop:[]", temp)
+            temp.random_string = temp.product_variant_ids.random_string
+            print(
+                "\n\n\n\n\n temp.product_variant_ids.random_string:[] and temp.random_string:[] ",
+                temp.product_variant_ids.random_string,
+                temp.random_string,
+            )
+
+    def _set_random_string(self):
+        print("\n\n\n\n\n _set_random_string\n\n\n self before loop: ", self)
+        for temp in self:
+            print("\n\n\n\n\n self inside loop:[]: [] ", self, temp)
+
+            if len(temp.product_variant_ids) == 1:
+                print(
+                    "\n\n\n\n\n temp.product_variant_ids inside if:[] and len:[] ",
+                    temp.product_variant_ids,
+                    len(temp.product_variant_ids),
+                )
+
+                temp.product_variant_ids.random_string = temp.random_string
+                print(
+                    "\n\n\n\n\n temp.product_variant_ids.random_string inside if:[] and temp.random_string:[] ",
+                    temp.product_variant_ids.random_string,
+                    temp.random_string,
+                )
+
+    def generate_random_string(self):
+        print("\n\n\n\n\n generate_random_string 1.0\n\n\n", self)
+
+        str = "".join(
+            random.choices(
+                string.ascii_uppercase + string.digits + string.ascii_lowercase, k=5
+            )
         )
-        for template in unique_variants:
-            template.rndm_str = template.product_variant_ids.rndm_str
-
-    def _set_standard_price(self):
-        for template in self:
-            if len(template.product_variant_ids) == 1:
-                template.product_variant_ids.rndm_str = template.rndm_str
-
-    def random_string_generate(self):
-        all_chars = list(string.ascii_letters)
-        random.shuffle(all_chars)
-        self.rndm_str = "".join(all_chars[:4]).upper()
+        self.update({"random_string": str})
 
 
-class ProductProduct(models.Model):
+class Productvatiant(models.Model):
     _inherit = "product.product"
 
-    rndm_str = fields.Char(string=_("Random String"))
+    random_string = fields.Char(readonly=True, string=_("Random String"))
 
-    def random_string_generate(self):
-        all_chars = list(string.ascii_letters)
-        random.shuffle(all_chars)
-        self.rndm_str = "".join(all_chars[:4]).upper()
+    def generate_random_string(self):
+        print("\n\n\n\n\n generate_random_string 1.1\n\n\n", self)
+
+        str = "".join(
+            random.choices(
+                string.ascii_uppercase + string.digits + string.ascii_lowercase, k=5
+            )
+        )
+        self.update({"random_string": str})
