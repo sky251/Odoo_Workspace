@@ -8,14 +8,16 @@
         <field name="model">student.profile</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field class="text-danger" name="name" />
                 <field name="calculate"/>
                 <field name="student_email"/>
                 <field name="school_select_id"/>
                 <field name="student_phone"/>
                 <field name="student_result"/>
                 <field name="is_parking"/>
-                <field name="state"/>
+                <field name="state" decoration-info="state == 'draft'" decoration-primary="state == 'confirm'"
+                       decoration-success="state == 'done'" decoration-danger="state == 'cancel'" widget="badge"
+                       optional="show"/>
             </tree>
         </field>
     </record>
@@ -34,7 +36,7 @@
                             class="btn btn-primary" type="object" states="confirm,done"/>
                     <button id="button_reset" name="action_reset" string="Reset" icon="fa-heart"
                             class="btn btn-primary" type="object" states="cancel"/>
-                    <field name="state" class="btn btn-outline-primary" widget="statusbar"
+                    <field name="state" widget="statusbar"
                            statusbar_visible="draft,confirm,done,cancel"/>
                 </header>
 

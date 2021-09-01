@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<odoo noupdate="0">
+<odoo noupdate="1">
 
     <!--    SCHOOL DATA-->
     <record id="school_data_1" model="school.profile">
@@ -52,40 +52,24 @@
         <field name="fees">32000</field>
         <field name="parking" eval="True"/>
         <field name="courses">mechanical</field>
-        <field name="student_data_id" ref="student_data_6"/>
 <!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
     </record>
 
-
-    <!--    STUDENT DATA-->
-
-
-    <record id="student_data_6" model="student.profile">
-        <field name="name">Akash</field>
-        <field name="student_email">akash@gmail.com</field>
+    <record id="student_data_1" model="student.profile">
+        <field name="name">zzxzzzxz</field>
+        <field name="student_email">cxxzxczczakash@gmail.com</field>
         <field name="student_phone">013254697854</field>
         <field name="student_result">98</field>
+         <field name="sc_select_id" eval="[(6, 0, [ref('school_data_1'),ref('school_data_2')])]" />
     </record>
 
-    <record id="student_data_7" model="student.profile">
+    <record id="student_data_2" model="student.profile">
         <field name="name">Dhruvish</field>
         <field name="student_email">dhruvish@gmail.com</field>
         <field name="student_phone">1325469780</field>
         <field name="student_result">77</field>
     </record>
 
-    <record id="student_data_8" model="student.profile">
-        <field name="name">Komal</field>
-        <field name="student_email">komal@gmail.com</field>
-        <field name="student_phone">0123654789</field>
-        <field name="student_result">66</field>
-    </record>
 
-    <record id="student_data_9" model="student.profile">
-        <field name="name">Yash</field>
-        <field name="student_email">yash@gmail.com</field>
-        <field name="student_phone">7896541230</field>
-        <field name="student_result">76</field>
-    </record>
 
 </odoo>

@@ -73,3 +73,16 @@ class SchoolProfile(models.Model):
             'res_model': 'student.profile',
             'domain': [('school_select_id.id', '=', self.id)],
         }
+
+    @api.model
+    def name_create(self, name):
+        print("\n\nself", self)
+        print("\n\nSchool name", name)
+        rtn = self.create({'name': name,'email':'addd@gmail.com'})
+        print("\n\nrtn", rtn)
+        print("\n\nrtn.name_get()[0]", rtn.name_get()[0])
+        return rtn.name_get()[0]
+
+    # def name_create(self,name):
+    #     print("name_create calling...",name)
+    #     return super(StudentProfile, self).name_create(name)

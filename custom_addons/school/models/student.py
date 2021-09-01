@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class StudentProfile(models.Model):
     _name = 'student.profile'
     _description = 'Student Information'
+
     @api.depends("is_parking")
     def _compute_total_calcu(self):
         for rec in self:
@@ -11,8 +12,6 @@ class StudentProfile(models.Model):
                 rec.calculate = 50
             elif rec.is_parking == False:
                 rec.calculate = 100
-
-
 
     name = fields.Char(string='Student name')
     student_email = fields.Char(string='Email')
@@ -26,7 +25,7 @@ class StudentProfile(models.Model):
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
     calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
     state = fields.Selection(
-        [('draft', 'draft'), ('confirm', 'confirm'), ('done', 'done'), ('cancel', 'cancel')],
+        [('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')],
         default='draft', string="Status")
 
     @api.model_create_multi  # or   @api.model
@@ -44,11 +43,33 @@ class StudentProfile(models.Model):
         return rtn
 
     def copy(self, default={}):
-        default['name'] = "copy("+self.name+")"
+        default['name'] = "copy(" + self.name + ")"
         print("\n\n\nself data\n\n\n", self)
         rtn = super(StudentProfile, self).copy(default=default)
-        print("\n\n\nrtn", rtn,"\n\n\n")
+        print("\n\n\nrtn", rtn, "\n\n\n")
         return rtn
+
+
+
+
+
+    @api.model
+    def default_get(self, field_list=[]):
+        print("\n\n\n\n\nfiled List", field_list)
+        rtn = super(StudentProfile, self).default_get(field_list)
+        print("\n\n\n\n\n\n\nbefore  Edit", rtn)
+        # rtn['name'] = "Qqqqq"
+        print("\n\n\n\n\n\n\nAfter  Edit", rtn)
+        return rtn
+
+    # def fields_view_get(self,view_id=None, view_type='form', toolbar=False, submenu=False):
+    #     print("\n\n\n\n\n\nView Id",view_id)
+    #     print("\n\n\n\n\n\nView Type",view_type)
+    #     print("\n\n\n\n\n\nToolbar",toolbar)
+    #     print("\n\n\n\n\n\nSubmenu",submenu)
+    #     rtn = super(StudentProfile, self).fields_view_get(view_id=view_id,view_type=view_type, toolbar=toolbar, submenu=submenu)
+    #     print("\n\n\n\n\n\nReturn Disc",rtn)
+    #     return rtn
 
     def action_confirm(self):
         self.state = 'confirm'
