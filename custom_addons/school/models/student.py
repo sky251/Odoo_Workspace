@@ -49,10 +49,6 @@ class StudentProfile(models.Model):
         print("\n\n\nrtn", rtn, "\n\n\n")
         return rtn
 
-
-
-
-
     @api.model
     def default_get(self, field_list=[]):
         print("\n\n\n\n\nfiled List", field_list)
@@ -62,14 +58,14 @@ class StudentProfile(models.Model):
         print("\n\n\n\n\n\n\nAfter  Edit", rtn)
         return rtn
 
-    # def fields_view_get(self,view_id=None, view_type='form', toolbar=False, submenu=False):
-    #     print("\n\n\n\n\n\nView Id",view_id)
-    #     print("\n\n\n\n\n\nView Type",view_type)
-    #     print("\n\n\n\n\n\nToolbar",toolbar)
-    #     print("\n\n\n\n\n\nSubmenu",submenu)
-    #     rtn = super(StudentProfile, self).fields_view_get(view_id=view_id,view_type=view_type, toolbar=toolbar, submenu=submenu)
-    #     print("\n\n\n\n\n\nReturn Disc",rtn)
-    #     return rtn
+    def fields_view_get(self,view_id=None, view_type='form', toolbar=False, submenu=False):
+        print("\n\n\n\n\n\nView Id",view_id)
+        print("\n\n\n\n\n\nView Type",view_type)
+        print("\n\n\n\n\n\nToolbar",toolbar)
+        print("\n\n\n\n\n\nSubmenu",submenu)
+        rtn = super(StudentProfile, self).fields_view_get(view_id=view_id,view_type=view_type, toolbar=toolbar, submenu=submenu)
+        print("\n\n\n\n\n\nReturn Disc",rtn)
+        return rtn
 
     def action_confirm(self):
         self.state = 'confirm'

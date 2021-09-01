@@ -23,7 +23,7 @@ class SchoolProfile(models.Model):
                 cor.salary = 10000
 
     name = fields.Char(string='School name', help='Write a school name', index=True, )
-    email = fields.Char(string='Email')
+    email = fields.Char(string='Email', default="xyz@gmail.com")
     phone = fields.Char(string='Phone')
     parking = fields.Boolean(string='Parking')
     result = fields.Float(string='Result')
