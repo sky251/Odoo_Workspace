@@ -39,32 +39,33 @@ class StudentProfile(models.Model):
 
     def unlink(self):
         rtn = super(StudentProfile, self).unlink()
-        print("\n\n\nrtn\n\n\n", rtn)
+        print("\n\n\nrtn", rtn)
         return rtn
 
     def copy(self, default={}):
         default['name'] = "copy(" + self.name + ")"
-        print("\n\n\nself data\n\n\n", self)
+        print("\n\n\nself data", self)
         rtn = super(StudentProfile, self).copy(default=default)
-        print("\n\n\nrtn", rtn, "\n\n\n")
+        print("\n\n\nrtn", rtn)
         return rtn
 
     @api.model
     def default_get(self, field_list=[]):
-        print("\n\n\n\n\nfiled List", field_list)
+        print("\n\n\nfiled List", field_list)
         rtn = super(StudentProfile, self).default_get(field_list)
-        print("\n\n\n\n\n\n\nbefore  Edit", rtn)
+        print("\n\n\nbefore  Edit", rtn)
         # rtn['name'] = "Qqqqq"
-        print("\n\n\n\n\n\n\nAfter  Edit", rtn)
+        print("\n\n\nAfter  Edit", rtn)
         return rtn
 
-    def fields_view_get(self,view_id=None, view_type='form', toolbar=False, submenu=False):
-        print("\n\n\n\n\n\nView Id",view_id)
-        print("\n\n\n\n\n\nView Type",view_type)
-        print("\n\n\n\n\n\nToolbar",toolbar)
-        print("\n\n\n\n\n\nSubmenu",submenu)
-        rtn = super(StudentProfile, self).fields_view_get(view_id=view_id,view_type=view_type, toolbar=toolbar, submenu=submenu)
-        print("\n\n\n\n\n\nReturn Disc",rtn)
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+        print("\n\n\nView Id", view_id)
+        print("\n\n\nView Type", view_type)
+        print("\n\n\nToolbar", toolbar)
+        print("\n\n\nSubmenu", submenu)
+        rtn = super(StudentProfile, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar,
+                                                          submenu=submenu)
+        print("\n\n\nReturn Disc", rtn)
         return rtn
 
     def action_confirm(self):

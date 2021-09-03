@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="type"/>
                 <field name="email"/>
                 <!--                <field name="student_data_ids"/>-->
                 <field name="phone"/>
@@ -40,7 +41,7 @@
                             <h2>
                                 <field name="name" placeholder="Name"/>
                             </h2>
-
+                            <field name="type" widget="radio" options="{'horizontal': true}"/>
                             <field name="result" widget="monetary"/>
                             <field name="school_address" widget="text_emojis"/>
                             <field name="establish_date" placeholder="MM/DD/YYYY"/>

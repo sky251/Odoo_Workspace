@@ -58,7 +58,7 @@
                             <field name="student_email" placeholder="school email address"/>
                             <field name="is_parking" attrs="{'invisible': [('state','=','confirm')]}"/>
                             <field name="calculate"/>
-                            <field name="student_phone"
+                            <field name="student_phone" widget="phone"
                                    attrs="{'required': [('state','=','confirm')], 'invisible': [('state','=','draft')]}"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>

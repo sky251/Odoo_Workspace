@@ -5,7 +5,6 @@ class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-
     # _rec_name = "name"
 
     @api.depends("courses")
@@ -23,6 +22,7 @@ class SchoolProfile(models.Model):
                 cor.salary = 10000
 
     name = fields.Char(string='School name', help='Write a school name', index=True, )
+    type = fields.Selection([('public', 'Public'),('private', 'Private')],string='Type')
     email = fields.Char(string='Email', default="xyz@gmail.com")
     phone = fields.Char(string='Phone')
     parking = fields.Boolean(string='Parking')
@@ -75,14 +75,35 @@ class SchoolProfile(models.Model):
         }
 
     @api.model
-    def name_create(self, name):
-        print("\n\nself", self)
-        print("\n\nSchool name", name)
-        rtn = self.create({'name': name,'email':'addd@gmail.com'})
-        print("\n\nrtn", rtn)
-        print("\n\nrtn.name_get()[0]", rtn.name_get()[0])
-        return rtn.name_get()[0]
+    def name_create(self,name):
+        print("name_create calling...",name)
+        rtn = super(StudentProfile, self).name_create(name)
+        return rtn
 
-    # def name_create(self,name):
-    #     print("name_create calling...",name)
-    #     return super(StudentProfile, self).name_create(name)
+    # def name_create(self, name):
+    #     print("\n\nself", self)
+    #     print("\n\nSchool name", name)
+    #     rtn = self.create({'name': name,'email':'addd@gmail.com'})
+    #     print("\n\nrtn", rtn)
+    #     print("\n\nrtn.name_get()[0]", rtn.name_get()[0])
+    #     return rtn.name_get()[0]
+
+    # def name_get(self):
+    #     student_list = []
+    #     print("\n\n\nstudent list",student_list)
+    #     for school in self:
+    #         print("Type of school", type(school.type))
+    #
+    #         print("school",school)
+    #         if school.type:
+    #             print("Type of school",type(school.type))
+    #             name = school.name + " " + school.type
+    #         # name = school.name + " " + str(school.type)
+    #             print("School name",school.name)
+    #             print("name",name,"\n\n\n")
+    #             student_list.append((school.id,name))
+    #     return student_list
+
+
+
+
