@@ -30,7 +30,7 @@
                         class="btn btn-success" type="object" states="draft"/>
 
                 <button id="button_createapp" name="action_createapp" string="Create Application"
-                        class="btn btn-primary" type="object" states="approved"/>
+                        class="btn btn-primary" type="button" states="approved"/>
 
                 <button id="button_cancel" name="action_cancel" string="Cancel"
                         class="btn btn-danger" type="object" states="approved,draft"/>

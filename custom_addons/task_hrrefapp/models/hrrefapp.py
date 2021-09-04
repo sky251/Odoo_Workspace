@@ -22,8 +22,8 @@ class HrReferralApplication(models.Model):
     def action_approved(self):
         self.state = "approved"
 
-    def action_createapp(self):
-        pass
+    # def action_createapp(self):
+    #     pass
 
     def action_cancel(self):
         self.state = "cancel"
