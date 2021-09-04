@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="hr_ref_app_list_view" model="ir.ui.view">
+        <field name="name">hr.referral.application.tree.view</field>
+        <field name="model">hr.referral.application</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field class="text-danger" name="name"/>
+                <field name="email"/>
+                <field name="referral_name"/>
+                <field name="degree"/>
+                <field name="department"/>
+                <field name="expected_salary"/>
+                <field name="expected_joining_date"/>
+                <field name="state" decoration-warning="state == 'draft'" decoration-success="state == 'approved'"
+                       decoration-danger="state == 'cancel'" widget="badge"
+                       optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_ref_app_form_view" model="ir.ui.view">
+        <field name="name">hr.referral.application.form.view</field>
+        <field name="model">hr.referral.application</field>
+        <field name="arch" type="xml">
+            <header>
+                <button id="button_approve" name="action_approved" string="Approve"
+                        class="btn btn-success" type="object" states="draft"/>
+
+                <button id="button_createapp" name="action_createapp" string="Create Application"
+                        class="btn btn-primary" type="object" states="approved"/>
+
+                <button id="button_cancel" name="action_cancel" string="Cancel"
+                        class="btn btn-danger" type="object" states="approved,draft"/>
+
+                <button id="button_draft" name="action_draft" string="Reset"
+                        class="btn btn-warning" type="object" states="cancel"/>
+                <field class="" name="state" widget="statusbar"
+                       statusbar_visible="draft,approved,cancel"/>
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field class="text-danger" name="name"/>
+                        <field name="email" widget="email"/>
+                        <field name="referral_name"/>
+                        <field name="degree"/>
+                        <field name="department"/>
+                        <field name="expected_salary"/>
+                        <field name="expected_joining_date"/>
+                        <field name="summary"/>
+                    </group>
+                </group>
+            </sheet>
+        </field>
+    </record>
+
+
+    <record id="action_hr_referral_application" model="ir.actions.act_window">
+        <field name="name">Hr referral Application</field>
+        <field name="res_model">hr.referral.application</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hr_referral_application_root_menu" name="Hr"/>
+    <menuitem name="Hr ref app" id="hr_ref_app_menu" action="action_hr_referral_application"
+              parent="hr_referral_application_root_menu"/>
+</odoo>
+
+
