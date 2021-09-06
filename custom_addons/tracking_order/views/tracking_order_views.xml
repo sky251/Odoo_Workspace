@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+
+    <record id="tracking_order_list_view" model="ir.ui.view">
+        <field name="name">tracking.order.tree.view</field>
+        <field name="model">tracking.order</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="user_name_id"/>
+                <field name="sale_order_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_tracking_order" model="ir.actions.act_window">
+        <field name="name">Action.Tracking.Order</field>
+        <field name="res_model">tracking.order</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="sales_order_tracking" name="Order Tracking" parent="sale.menu_sale_config"
+              action="action_tracking_order" sequence="2"/>
+</odoo>
+
+

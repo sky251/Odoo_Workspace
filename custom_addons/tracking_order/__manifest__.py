@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 
 {
-    "name": "Hr Referral Application",
+    "name": "Tracking order",
     "summary": """""",
     "description": """""",
     "author": "Akash Patel",
     "website": "aktivsoftware.com",
     # for the full list
-    "category": "",
+    "category": "sale",
     "version": "14.0.1.0.0",
     # any module necessary for this one to work correctly
-    "depends": [
-        "base",
-    ],
+    "depends": ["base", "sale_management", "sale"],
     # always loaded
     "data": [
         "security/ir.model.access.csv",
-        "views/hr_ref_app_views.xml",
+        "views/tracking_order_views.xml",
     ],
     "installable": True,
     "application": True,
