@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@name='standard_price_uom']" position="after">
                 <label for="rndm_str"/>
-                <div class="o_row">
+                <div class="row">
                     <field name="rndm_str" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
                     <button class="oe_highlight" name="random_string_generate"
                             string="Generate" type="object" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}"/>
