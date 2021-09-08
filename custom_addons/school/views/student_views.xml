@@ -8,7 +8,7 @@
         <field name="model">student.profile</field>
         <field name="arch" type="xml">
             <tree>
-                <field class="text-danger" name="name" />
+                <field class="text-danger" name="name"/>
                 <field name="calculate"/>
                 <field name="student_email"/>
                 <field name="school_select_id"/>
@@ -44,7 +44,7 @@
 
                     <div class="oe_button_box" name="button_box">
                         <button type="action" string="Home" icon="fa-home" class="oe_stat_button"
-                                name="%(action_student_profile)d"/>
+                                name="%(school.action_school_profile)d"/>
                         <button type="object" string="Reset Form" class="oe_stat_button" icon="fa-warning"
                                 name="clear_record_data"/>
                     </div>

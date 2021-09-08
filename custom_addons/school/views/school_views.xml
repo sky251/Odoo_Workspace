@@ -6,6 +6,7 @@
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="seq" widget="handle"/>
                 <field name="name"/>
                 <field name="type"/>
                 <field name="email"/>
@@ -13,7 +14,6 @@
                 <field name="phone"/>
                 <field name="parking"/>
                 <field name="result"/>
-                <field name="school_address"/>
                 <field name="open_date"/>
                 <field name="fees"/>
                 <field name="salary"/>
@@ -51,7 +51,7 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-                            <field name="student_data_id"/>
+<!--                            <field name="student_data_id"/>-->
 
                         </group>
 

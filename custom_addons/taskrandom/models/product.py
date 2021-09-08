@@ -48,7 +48,7 @@ class Product(models.Model):
                     temp.random_string,
                 )
 
-    def generate_random_string(self):
+    def random_string_generate(self):
         print("\n\n\n\n\n generate_random_string 1.0\n\n\n", self)
 
         str = "".join(
@@ -64,7 +64,7 @@ class Productvatiant(models.Model):
 
     random_string = fields.Char(readonly=True, string=_("Random String"))
 
-    def generate_random_string(self):
+    def random_string_generate(self):
         print("\n\n\n\n\n generate_random_string 1.1\n\n\n", self)
 
         str = "".join(

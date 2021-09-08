@@ -7,8 +7,7 @@
     "website": "https://www.aktivesoftware.com/",
     "description": "Showing button in product and product variant,that generate randon string",
     "depends": [
-        "sale",
-        "purchase",
+        "sale_management",
     ],
     "data": [
         "views/product_views.xml",

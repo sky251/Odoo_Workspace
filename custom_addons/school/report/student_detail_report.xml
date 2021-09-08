@@ -8,8 +8,7 @@
                     <div class="page">
                         <!--                        <div class="oe_structure"/>-->
                         <div class="row">
-                            <div class="col-xs-2" style="margin:100px;">
-                            </div>
+
                             <center>
                                 <div class="col-xs-8" style="margin:auto">
                                     <!--                                    <span t-field="o.student_img" t-field-options='{"widget": "image"}'/>-->
