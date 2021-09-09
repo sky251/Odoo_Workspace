@@ -2,21 +2,19 @@
 
 <odoo>
     <template id="qty_order_field_add" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//table[@class='table table-sm o_main_table']
+        <xpath expr="//table[hasclass('o_main_table')]
 		/thead/tr/th[@name='th_description']" position="after">
             <th name="th_qty_order" class="text-right">Max qty Order</th>
         </xpath>
 
-        <xpath expr="//t[@t-call='web.external_layout']/div[@class='page']
-        		/table[@class='table table-sm o_main_table']/tbody[@class='sale_tbody']/t[@t-as='line']
-        		/tr/t[@t-if='not line.display_type']/td[@name='td_name']"
-               position="after">
+        <xpath expr="//t[@t-call='web.external_layout']/div[hasclass('page')]/table/tbody[hasclass('sale_tbody')]
+        /t/tr/t/td[@name='td_name']" position="after">
             <td name="td_qty_order" class="text-center">
                 <span t-field="line.max_qty_allowed"/>
             </td>
         </xpath>
 
-        <xpath expr="//div[@class='clearfix']/div/div/table[@class='table table-sm']" position="after">
+        <xpath expr="//div[hasclass('clearfix')]/div/div/table[hasclass('table-sm')]" position="before">
 
             <table class="table table-sm">
                 <thead style="display: table-row-group">
