@@ -15,7 +15,6 @@
         </xpath>
 
         <xpath expr="//div[hasclass('clearfix')]/div/div/table[hasclass('table-sm')]" position="before">
-
             <table class="table table-sm">
                 <thead style="display: table-row-group">
                     <tr>

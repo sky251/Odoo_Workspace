@@ -15,7 +15,7 @@
         "views/student_views.xml",
         "report/student_detail_report.xml",
         "report/school_detail_report.xml",
-        "report/sale_order_inherit_report.xml",
+        "wizard/create_wizard_views.xml",
     ],
     "demo": [],
     "installable": True,

@@ -28,6 +28,10 @@
         <field name="model">school.profile</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button type="action" string="Form" class="btn btn-primary" icon="fa-edit"
+                            name="%(school.action_create_wizard)d"/>
+                </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button type="object" name="button_click" class="oe_stat_button" icon="fa-male">
@@ -51,7 +55,7 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-<!--                            <field name="student_data_id"/>-->
+                            <!--                            <field name="student_data_id"/>-->
 
                         </group>
 
@@ -114,10 +118,7 @@
                 <field name="email" string="Email" filter_domain="[('email','=',self)]"/>
                 <field name="phone" string="Phone" filter_domain="[('phone','=',self)]"/>
                 <field name="fees" string="Fees" filter_domain="[('fees','>',self)]"/>
-                <!--                <field name="student_data_ids" string="Student ids" filter_domain="[('name','ilike',self)]"/>-->
-
                 <filter name="parking" string="Parking" domain="[('parking','=',0)]"/>
-
                 <group>
                     <filter name="grp_email" string="Email" context="{'group_by':'email'}"/>
                 </group>
