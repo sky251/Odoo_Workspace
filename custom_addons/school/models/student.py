@@ -28,6 +28,17 @@ class StudentProfile(models.Model):
         [('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')],
         default='draft', string="Status")
 
+    def test(self):
+        return "Akash"
+
+    def test1(self):
+        lst = [1,2,"sky",True]
+        return "This is list ",lst
+
+    def test2(self):
+        dict = {"Akash":"Sky","Topi":"Cap"}
+        return "This is dictionary ", dict
+
     @api.model_create_multi  # or   @api.model
     def create(self, vals):
         rtn = super(StudentProfile, self).create(vals)
