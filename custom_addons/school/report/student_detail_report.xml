@@ -6,19 +6,15 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <t t-foreach="o.test()" t-as="ak">
+                        <t t-foreach="o.test1()" t-as="ak">
                             <p><span t-esc="ak"></span></p>
-                        </t><br></br>
-                        <t t-esc="o.test1()"></t><br></br>
+                        </t>
+                        <br></br>
                         <t t-esc="o.test2()"></t>
-                        <!--                        <div class="oe_structure"/>-->
                         <div class="row">
-
                             <center>
                                 <div class="col-xs-8" style="margin:auto">
-                                    <!--                                    <span t-field="o.student_img" t-field-options='{"widget": "image"}'/>-->
                                     <table class="table table-condensed" style="border: 3px solid black !important;">
-                                        <!--                                        <img t-attf-src="'data:image/*;base64,{{image_field}}'"/>-->
                                         <tr>
                                             <td width="40%">
                                                 <p>

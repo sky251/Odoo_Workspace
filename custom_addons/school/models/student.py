@@ -6,7 +6,7 @@ class StudentProfile(models.Model):
     _description = 'Student Information'
 
     @api.depends("is_parking")
-    def _compute_total_calcu(self):
+    def _compute_total_calculate(self):
         for rec in self:
             if rec.is_parking == True:
                 rec.calculate = 50
@@ -23,7 +23,7 @@ class StudentProfile(models.Model):
     # sc_select_id = fields.One2many("school.profile", string="Selectssss")
     user_signature = fields.Binary(string='Signature')
     is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
-    calculate = fields.Integer(compute="_compute_total_calcu", string="Calculate")
+    calculate = fields.Integer(compute="_compute_total_calculate", string="Calculate")
     state = fields.Selection(
         [('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')],
         default='draft', string="Status")
@@ -33,7 +33,7 @@ class StudentProfile(models.Model):
 
     def test1(self):
         lst = [1,2,"sky",True]
-        return "This is list ",lst
+        return lst
 
     def test2(self):
         dict = {"Akash":"Sky","Topi":"Cap"}

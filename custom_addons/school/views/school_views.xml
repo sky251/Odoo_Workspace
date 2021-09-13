@@ -10,7 +10,6 @@
                 <field name="name"/>
                 <field name="type"/>
                 <field name="email"/>
-                <!--                <field name="student_data_ids"/>-->
                 <field name="phone"/>
                 <field name="parking"/>
                 <field name="result"/>
@@ -55,7 +54,6 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-                            <!--                            <field name="student_data_id"/>-->
 
                         </group>
 
@@ -74,21 +72,18 @@
 
                     <notebook>
 
-                        <!--Page 1-->
                         <page string="Email" name='ema'>
                             <group>
                                 <field name="email"/>
                             </group>
                         </page>
 
-                        <!--Page 2-->
                         <page string="Phone" name="pho">
                             <group>
                                 <field name="phone" placeholder="school contact no"/>
                             </group>
                         </page>
 
-                        <!--Page 3-->
                         <page string="Student data" name="stud_data">
                             <group>
                                 <field name="student_data_ids"/>
@@ -98,7 +93,6 @@
                     </notebook>
                 </sheet>
 
-                <!--CHATTER BOX-->
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
                     <field name="message_ids"/>
