@@ -40,7 +40,6 @@
 
                     <group>
                         <group>
-
                             <h2>
                                 <field name="name" placeholder="Name"/>
                             </h2>
@@ -54,7 +53,6 @@
                             <field name="fees"/>
                             <field name="salary"/>
                             <field name="documents" filename="docu_name"/>
-
                         </group>
 
 
@@ -129,7 +127,6 @@
 
     <menuitem id="school_root_menu" name="School"/>
     <menuitem name="School Prof" id="school_profile_menu" action="action_school_profile" parent="school_root_menu"/>
-
 
 </odoo>
 

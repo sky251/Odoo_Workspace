@@ -28,9 +28,6 @@
                         <field name="total_capacity"/>
                     </div>
                 </button>
-                <!--                <button type="object" class="btn btn-primary" string="Total capicity" name="total_cap_on_button_click">-->
-                <!--                    <field name="total_capacity" icon="fa-home"/>-->
-                <!--                </button>-->
             </xpath>
         </field>
     </record>

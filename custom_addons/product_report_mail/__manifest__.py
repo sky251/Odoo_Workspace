@@ -2,10 +2,10 @@
     "name": "Product Report Mail",
     "version": "14.0.1.0.0",
     "category": "Product",
-    "summary": "Product management system",
+    "summary": "Product Report management system",
     "sequence": 1,
     "website": "https://www.aktivesoftware.com/",
-    "description": "Inherit report and create mail",
+    "description": "Inherit report and create mail in Product",
     "depends": [
         "sale_management","stock"
     ],

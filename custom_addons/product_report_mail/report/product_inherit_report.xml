@@ -2,7 +2,6 @@
 
 <odoo>
     <template id="qty_order_field_add" inherit_id="sale.report_saleorder_document">
-        <!--        <div t-if="o.partner_id.type == 'product'">-->
         <xpath expr="//table[hasclass('o_main_table')]
 		/thead/tr/th[@name='th_description']" position="after">
             <th name="th_qty_order" class="text-center">Tracking</th>
@@ -19,18 +18,5 @@
                 <td></td>
             </t>
         </xpath>
-
-    <!--        <xpath expr="//div[hasclass('clearfix')]/div/div/table[hasclass('table-sm')]" position="before">-->
-    <!--            <table class="table table-sm">-->
-    <!--                <thead style="display: table-row-group">-->
-    <!--                    <tr>-->
-    <!--                        <th name="th_description" class="text-left">Total Capacity</th>-->
-    <!--                        <th name="th_total_capacity">-->
-    <!--                            <span t-field="doc.total_capacity"/>-->
-    <!--                        </th>-->
-    <!--                    </tr>-->
-    <!--                </thead>-->
-    <!--            </table>-->
-    <!--        </xpath>-->
-</template>
-        </odoo>
+    </template>
+</odoo>
