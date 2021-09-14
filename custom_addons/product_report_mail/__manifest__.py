@@ -10,7 +10,10 @@
         "sale_management","stock"
     ],
     "data": [
-        "report/product_inherit_report.xml",
+        "security/ir.model.access.csv",
+        # "wizard/email_wizard_views.xml",
+        "report/product_inherit_report_views.xml",
+        "views/sale_order_inherit_views.xml",
     ],
     "demo": [],
     "installable": True,

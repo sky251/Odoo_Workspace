@@ -37,7 +37,7 @@ class StudentProfile(models.Model):
 
     def test2(self):
         dict = {"Akash":"Sky","Topi":"Cap"}
-        return "This is dictionary ", dict
+        return dict
 
     @api.model_create_multi  # or   @api.model
     def create(self, vals):

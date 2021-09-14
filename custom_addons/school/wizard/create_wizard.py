@@ -9,3 +9,4 @@ class CreateWizard(models.TransientModel):
 
     def cancel_object(self):
         pass
+
