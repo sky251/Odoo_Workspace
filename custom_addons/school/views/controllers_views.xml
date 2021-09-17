@@ -1,0 +1,33 @@
+<odoo>
+    <template id="school_details_page" name="School page">
+        <t t-call="website.layout">
+            <t t-set="title">School Detail</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="thead-dark">
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="school_data" t-as="td">
+                                <td>
+                                    <t t-esc="td.image_1920" t-options='{"widget":"image"}'/>
+                                </td>
+                                <td>
+                                    <t t-esc="td.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="td.email"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

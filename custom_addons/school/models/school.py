@@ -1,10 +1,12 @@
 from odoo import api, models, fields
+from openerp.exceptions import ValidationError
 
 
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'
     _inherit = ['mail.thread', 'mail.activity.mixin']
+
     # _rec_name = "name"
 
     @api.depends("courses")
@@ -22,7 +24,7 @@ class SchoolProfile(models.Model):
                 cor.salary = 10000
 
     name = fields.Char(string='School name', help='Write a school name', index=True, )
-    type = fields.Selection([('public', 'Public'),('private', 'Private')],string='Type')
+    type = fields.Selection([('public', 'Public'), ('private', 'Private')], string='Type')
     email = fields.Char(string='Email', default="xyz@gmail.com")
     phone = fields.Char(string='Phone')
     parking = fields.Boolean(string='Parking')
@@ -50,11 +52,30 @@ class SchoolProfile(models.Model):
     total_student_count = fields.Integer(string="Total Student", compute='_compute_count_total_student')
     seq = fields.Integer(default=1)
 
-    # @api.depends('total_student_count')
-    # def _compute_count_total_student(self):
-    #     stu = self.env['student.profile'].search_count([])
-    #     total = len(stu)
-    #     print("\n\n\n\n", total, "\n\n\n\n\n")
+    _sql_constraints = [
+        ('name_unique',
+         'unique(name)',
+         "please enter unique school name, Given school name already exists."),
+
+        ('notnull_order_line',
+         "CHECK((email IS NOT NULL AND phone IS NOT NULL) OR (email IS NULL))",
+         'The Project Sale Order Items.'),
+
+    ]
+
+    # ('email_unique',
+    #  'unique(email)',
+    #  "please enter unique email id, Given email id already exist."),
+    #
+    # ('phone_unique',
+    #  'unique(phone)',
+    #  "please enter another phone number, Given phone number already exist.")
+
+    # @api.constrains('result')
+    # def _check_something(self):
+    #     for record in self:
+    #         if record.result < 33.0:
+    #             raise ValidationError("YOU ARE FAIL!!!!")
 
     def button_on_click(self):
         print("smart button click")
@@ -76,35 +97,7 @@ class SchoolProfile(models.Model):
         }
 
     @api.model
-    def name_create(self,name):
-        print("name_create calling...",name)
+    def name_create(self, name):
+        print("name_create calling...", name)
         rtn = super(StudentProfile, self).name_create(name)
         return rtn
-
-    # def name_create(self, name):
-    #     print("\n\nself", self)
-    #     print("\n\nSchool name", name)
-    #     rtn = self.create({'name': name,'email':'addd@gmail.com'})
-    #     print("\n\nrtn", rtn)
-    #     print("\n\nrtn.name_get()[0]", rtn.name_get()[0])
-    #     return rtn.name_get()[0]
-
-    # def name_get(self):
-    #     student_list = []
-    #     print("\n\n\nstudent list",student_list)
-    #     for school in self:
-    #         print("Type of school", type(school.type))
-    #
-    #         print("school",school)
-    #         if school.type:
-    #             print("Type of school",type(school.type))
-    #             name = school.name + " " + school.type
-    #         # name = school.name + " " + str(school.type)
-    #             print("School name",school.name)
-    #             print("name",name,"\n\n\n")
-    #             student_list.append((school.id,name))
-    #     return student_list
-
-
-
-

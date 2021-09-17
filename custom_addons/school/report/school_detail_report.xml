@@ -11,9 +11,11 @@
                             <u>Address:</u>
                         </strong>
                         <br></br>
-                        <span t-field="o.school_address"/><br></br>
+                        <span t-field="o.school_address"/>
+                        <br></br>
                         <strong>
-                            <span t-field="o.email"/><br></br>
+                            <span t-field="o.email"/>
+                            <br></br>
                         </strong>
                         <strong>
                             <span t-field="o.phone"/>
@@ -85,10 +87,20 @@
                         <div class="float-right">
                             <div>
                                 School Result
-                                    <p t-field="o.result"></p>
+                                <p t-field="o.result"></p>
 
                             </div>
                         </div>
+                        <t t-foreach="students_list" t-as="stud">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <t t-esc="stud['name']"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+
                     </div>
                 </t>
             </t>
