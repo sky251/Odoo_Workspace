@@ -7,10 +7,57 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                <div class="app_settings_block" data-string="School" string="School" data-key="school">
+
+                    <h2>School Management</h2>
+
+                    <div class="row mt16 o_settings_container" id="pricing_setting_container">
+
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             id="discount_sale_order_lines"
+                             title="Apply manual discounts on sales order lines or display discounts computed from pricelists (option to activate in the pricelist configuration).">
+                            <div class="o_setting_left_pane">
+                                <field name="active" widget="booolea"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="active"/>
+                                <div class="text-muted">
+                                    System Parameter using config_parameter
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box"
+                             id="discount_sale_order_lines"
+                             title="It will automatically install Inventory module">
+                            <div class="o_setting_left_pane">
+                                <field name="module_stock"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_stock"/>
+                                <div class="text-muted">
+                                    It will install Inventory
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </xpath>
         </field>
     </record>
+
+    <record id="action_school_config_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="base.res_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{"context" : "school"}</field>
+    </record>
+
+    <menuitem id="menu_school_configuration" name="Configuration" parent="school_root_menu" sequence="100"/>
+
+    <menuitem id="menu_school_settings" name="Settings" parent="menu_school_configuration" sequence="100"
+              action="action_school_config_settings"/>
 </odoo>

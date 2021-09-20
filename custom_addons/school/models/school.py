@@ -1,7 +1,6 @@
 from odoo import api, models, fields
 from openerp.exceptions import ValidationError
 
-
 class SchoolProfile(models.Model):
     _name = 'school.profile'
     _description = 'School Information'

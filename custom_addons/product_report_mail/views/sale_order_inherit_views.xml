@@ -10,6 +10,9 @@
                 <button name="mail_wizard_button" string="Send mail by Akash"
                         class="oe_highlight" type="object"/>
             </xpath>
+            <field name="name" position="after">
+                <field name="partner_cust_ids" widget="many2many_tags"/>
+            </field>
         </field>
     </record>
 </odoo>
