@@ -9,7 +9,6 @@
 <!--                        <t t-foreach="o.test1()" t-as="ak">-->
 <!--                            <p><span t-esc="ak"></span></p>-->
 <!--                        </t>-->
-<!--                        <br></br>-->
 <!--                        <t t-esc="o.test2()"></t>-->
                         <div class="row">
                             <center>
