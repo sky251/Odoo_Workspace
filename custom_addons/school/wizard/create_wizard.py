@@ -8,5 +8,5 @@ class CreateWizard(models.TransientModel):
     name = fields.Char(string="Name")
 
     def cancel_object(self):
-        pass
+        print("Akash")
 

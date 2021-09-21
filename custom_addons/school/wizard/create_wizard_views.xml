@@ -4,17 +4,17 @@
         <field name="name">Create Wizard Form View</field>
         <field name="model">create.wizard</field>
         <field name="arch" type="xml">
-            <sheet>
-                <form>
+            <form>
+                <sheet>
                     <group>
                         <field name="name"/>
                     </group>
-                </form>
-            </sheet>
-            <footer>
-                <button id="button_wizard" string="Cancel" icon="fa-window-close" name="cancel_object"
-                        class="btn btn-outline-danger" type="object"/>
-            </footer>
+                </sheet>
+            </form>
+<!--            <footer>-->
+<!--                <button id="button_wizard" string="Cancel" name="cancel_object"-->
+<!--                        class="btn btn-outline-danger" type="object"/>-->
+<!--            </footer>-->
         </field>
     </record>
 

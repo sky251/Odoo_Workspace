@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="menu_school_page" model="website.menu">
+            <field name="name">School</field>
+            <field name="url">/school</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">3</field>
+<!--            <field name="page_id" ref="school.school_details_page"/>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence" type="int">3</field>-->
+        </record>
+    </data>
+</odoo>

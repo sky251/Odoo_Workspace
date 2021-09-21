@@ -9,14 +9,15 @@
     'depends': ['mail', 'website_sale'],
     "data": [
         "security/ir.model.access.csv",
+        "data/school_website_data.xml",
+        "wizard/create_wizard_views.xml",
         "views/controllers_views.xml",
         "views/school_views.xml",
         "views/student_views.xml",
-        # "views/controllers_views.xml"
+        "wizard/create_wizard_views.xml",
         "report/student_detail_report.xml",
         "report/school_detail_report.xml",
-        "wizard/create_wizard_views.xml",
-        "views/school_settings_views.xml"
+        "views/school_settings_views.xml",
     ],
     "demo": ["data/school_data.xml",
              ],

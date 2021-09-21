@@ -47,12 +47,6 @@
                             <group>
                                 <field name="partner_ids" widget="many2many_tags"/>
                             </group>
-<!--                            <div class="o_setting_left_pane">-->
-<!--                                <label for="partner_ids"/>-->
-<!--                            </div>-->
-<!--                            <div class="o_setting_right_pane">-->
-<!--                                <field name="partner_ids" widget="many2many_tags"/>-->
-<!--                            </div>-->
                         </div>
                     </div>
                 </div>

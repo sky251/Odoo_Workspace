@@ -30,4 +30,11 @@
             </div>
         </t>
     </template>
+
+    <template id="today_date_view" inherit_id="website_sale.product" priority="4">
+        <xpath expr="//a[@id='add_to_cart']" position="after">
+            <div><span t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"/></div>
+        </xpath>
+    </template>
+
 </odoo>
