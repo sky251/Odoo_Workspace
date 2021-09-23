@@ -8,7 +8,7 @@ class SaleOrder(models.Model):
     partner_cust_ids = fields.Many2many('res.partner','partner_rel','sa_id','par_id',string="Partner")
 
     def mail_wizard_button(self):
-        print("\n\n\n\n\n Mail Wizard Button")
+        print("\n\n\n\n update M2M calling.... \n\n\n\n")
         # self.partner_cust_ids= [(6,0,[14,23,33])]
         # self.partner_cust_ids = [(4,27)]
         # self.partner_cust_ids = [(5,)]
@@ -47,19 +47,19 @@ class SaleOrder(models.Model):
         #     'force_email': True,
         #     'model_description': self.with_context(lang=lang).type_name,
         # }
-        ctx= {
-            'default_phone':'84555555532',
-            'my_name':'arti'
-        }
-        return {
-            'type': 'ir.actions.act_window',
-            'view_mode': 'form',
-            'res_model': 'res.partner',
-            'views': [(False, 'form')],
-            'view_id': False,
-            'target': 'new',
-            'context': ctx,
-        }
+        # ctx= {
+        #     'default_phone':'84555555532',
+        #     'my_name':'arti'
+        # }
+        # return {
+        #     'type': 'ir.actions.act_window',
+        #     'view_mode': 'form',
+        #     'res_model': 'res.partner',
+        #     'views': [(False, 'form')],
+        #     'view_id': False,
+        #     'target': 'new',
+        #     'context': ctx,
+        # }
     # User Define constraint
     # def action_confirm(self):
     #     result = super(SaleOrder, self).action_confirm()
