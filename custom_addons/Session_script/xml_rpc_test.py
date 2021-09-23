@@ -1,28 +1,31 @@
-url = 'https://127.0.0.1:7014'  # url:url of where odoo service is running
-db = 'sale_discount_limit_v14' # db: db which is defined in odoo service
+url = 'http://127.0.0.1:9993'  # url:url of where odoo service is running
+db = 'odoo_script_db' # db: db which is defined in odoo service
 username = 'admin' #username : username through which we will login in db and make changes
 password = 'admin' #password: password of user name
 
-import xmlrpc.client #import to user xmlrpc API
-import csv # Imported to read csv files
+import xmlrpc.client  #import to user xmlrpc API
+import csv  # Imported to read csv files
 from datetime import datetime
 import os
 
 common = xmlrpc.client.ServerProxy('%s/xmlrpc/2/common' % url) # for authentication
 version = common.version() # to check if connection is correct before authentication
+print("======<Version>======",version)
 uid = common.authenticate(db, username, password, {}) # Used as parameter while calling methods
+print("======<Uid>======",uid)
 models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url)) # Used as parameter while calling method
+print("======<Models>======",models)
 
 start_time = datetime.now()
 
-with open('/home/odoo/Downloads/product_template.csv', newline='') as csv_file:
+with open('/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/Session_script/res.partner.csv', newline='') as csv_file:
     csv_file = csv.DictReader(csv_file)
     '''We use this variable for us while executing csv or excel file in xmlrc
     to know how many records are updated or inserted or if
     scripts stops its execution due to any reasons at that time we can get the
     row number of xls or csv file at which row script stops its execution.'''
     excel_row = 2
-    print('\n csv>>>>file>>>>>>>>', csv_file)
+    print('\n csv >>>> file >>>>>>>>', csv_file)
 
     # To count existing product's count
     product_count = models.execute_kw(db, uid, password, 'product.template','search_count',[[]])
@@ -55,5 +58,5 @@ with open('/home/odoo/Downloads/product_template.csv', newline='') as csv_file:
         excel_row += 1
 
 # Below print statements are used to get the start and end timings of the script execution.
-print(":::::::::::::start::::::::::",start_time)
+print("::::::::::::: start ::::::::::",start_time)
 print("::::::End Time:::::::::", datetime.now())
