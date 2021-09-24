@@ -1,6 +1,6 @@
 # if use https get error SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1131)
-url = 'http://127.0.0.1:4545'
-db = 'partner_script_test'
+url = 'http://127.0.0.1:9993'
+db = 'pa_db'
 username = 'admin'
 password = 'admin'
 
@@ -16,7 +16,7 @@ models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))  # Used as 
 
 start_time = datetime.now()
 
-with open('/home/admin123/Aarti/workspace/custom_addons/partner_odoo_script/res.partner.csv', newline='') as csv_file:
+with open('/res.partner.csv', newline='') as csv_file:
     csv_file = csv.DictReader(csv_file)
     print("===csv_filee", csv_file)
 
