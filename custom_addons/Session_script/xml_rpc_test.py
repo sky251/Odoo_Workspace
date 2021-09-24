@@ -1,14 +1,13 @@
 url = "http://127.0.0.1:9993"  # url:url of where odoo service is running
 db = "odoo_script_db"  # db: db which is defined in odoo service
-username = (
-    "admin"  # username : username through which we will login in db and make changes
-)
+username = ("admin"  # username : username through which we will login in db and make changes
+            )
 password = "admin"  # password: password of user name
 
-import xmlrpc.client  # import to user xmlrpc API
 import csv  # Imported to read csv files
-from datetime import datetime
 import os
+import xmlrpc.client  # import to user xmlrpc API
+from datetime import datetime
 
 common = xmlrpc.client.ServerProxy("%s/xmlrpc/2/common" % url)  # for authentication
 version = common.version()  # to check if connection is correct before authentication
@@ -25,8 +24,7 @@ print("======<Models>======", models)
 start_time = datetime.now()
 
 with open(
-    "/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/Session_script/res.partner.csv",
-    newline="",
+        "/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/Session_script/res.partner.csv",newline="",
 ) as csv_file:
     csv_file = csv.DictReader(csv_file)
     """We use this variable for us while executing csv or excel file in xmlrc
