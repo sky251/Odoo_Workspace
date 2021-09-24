@@ -6,9 +6,7 @@
     "sequence": 1,
     "website": "https://www.aktivesoftware.com/",
     "description": "Inherit report and create mail in Product",
-    "depends": [
-        "sale_management","stock"
-    ],
+    "depends": ["sale_management", "stock"],
     "data": [
         "security/ir.model.access.csv",
         # "wizard/email_wizard_views.xml",

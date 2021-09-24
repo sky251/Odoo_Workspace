@@ -1,10 +1,11 @@
 from odoo import api, models, fields
 from openerp.exceptions import ValidationError
 
+
 class SchoolProfile(models.Model):
-    _name = 'school.profile'
-    _description = 'School Information'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _name = "school.profile"
+    _description = "School Information"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     # _rec_name = "name"
 
@@ -22,44 +23,66 @@ class SchoolProfile(models.Model):
             else:
                 cor.salary = 10000
 
-    name = fields.Char(string='School name', help='Write a school name', index=True, )
-    type = fields.Selection([('public', 'Public'), ('private', 'Private')], string='Type')
-    email = fields.Char(string='Email', default="xyz@gmail.com")
-    phone = fields.Char(string='Phone')
-    parking = fields.Boolean(string='Parking')
-    result = fields.Float(string='Result')
-    fees = fields.Integer(string='Fees')
-    salary = fields.Integer(compute="_compute_course_wise_salary", string='Salary', readonly=True, store=True)
-    school_address = fields.Text(string='School address')
-    establish_date = fields.Date(string='Establish date')
-    open_date = fields.Datetime(string='open date')
-    courses = fields.Selection([
-        ('computer', 'Computer'),
-        ('automobile', 'Auto Mobile'),
-        ('civil', 'Civil'),
-        ('mechanical', 'Mechanical'),
-        ('electrical', 'Electrical')],
-        string='Course selection')
-    documents = fields.Binary(string='Documents')
-    docu_name = fields.Char(string='Documents name')
+    name = fields.Char(
+        string="School name",
+        help="Write a school name",
+        index=True,
+    )
+    type = fields.Selection(
+        [("public", "Public"), ("private", "Private")], string="Type"
+    )
+    email = fields.Char(string="Email", default="xyz@gmail.com")
+    phone = fields.Char(string="Phone")
+    parking = fields.Boolean(string="Parking")
+    result = fields.Float(string="Result")
+    fees = fields.Integer(string="Fees")
+    salary = fields.Integer(
+        compute="_compute_course_wise_salary",
+        string="Salary",
+        readonly=True,
+        store=True,
+    )
+    school_address = fields.Text(string="School address")
+    establish_date = fields.Date(string="Establish date")
+    open_date = fields.Datetime(string="open date")
+    courses = fields.Selection(
+        [
+            ("computer", "Computer"),
+            ("automobile", "Auto Mobile"),
+            ("civil", "Civil"),
+            ("mechanical", "Mechanical"),
+            ("electrical", "Electrical"),
+        ],
+        string="Course selection",
+    )
+    documents = fields.Binary(string="Documents")
+    docu_name = fields.Char(string="Documents name")
     image = fields.Binary(attachment=True, store=True)
-    image_name = fields.Char(string='Image Name', invisible='1')
-    school_desc = fields.Html(string='School description')
-    student_data_ids = fields.One2many('student.profile', 'school_select_id', string='Student data')
+    image_name = fields.Char(string="Image Name", invisible="1")
+    school_desc = fields.Html(string="School description")
+    student_data_ids = fields.One2many(
+        "student.profile", "school_select_id", string="Student data"
+    )
     # student_data_id = fields.Many2one('student.profile', string='Studeadfasdnt data')
-    delivery_count = fields.Integer(string='Delivery Orders', compute='_compute_picking_ids')
-    total_student_count = fields.Integer(string="Total Student", compute='_compute_count_total_student')
+    delivery_count = fields.Integer(
+        string="Delivery Orders", compute="_compute_picking_ids"
+    )
+    total_student_count = fields.Integer(
+        string="Total Student", compute="_compute_count_total_student"
+    )
     seq = fields.Integer(default=1)
 
     _sql_constraints = [
-        ('name_unique',
-         'unique(name)',
-         "please enter unique school name, Given school name already exists."),
-
-        ('notnull_order_line',
-         "CHECK((email IS NOT NULL AND phone IS NOT NULL) OR (email IS NULL))",
-         'The Project Sale Order Items.'),
-
+        (
+            "name_unique",
+            "unique(name)",
+            "please enter unique school name, Given school name already exists.",
+        ),
+        (
+            "notnull_order_line",
+            "CHECK((email IS NOT NULL AND phone IS NOT NULL) OR (email IS NULL))",
+            "The Project Sale Order Items.",
+        ),
     ]
 
     # ('email_unique',
@@ -79,20 +102,22 @@ class SchoolProfile(models.Model):
     def button_on_click(self):
         print("smart button click")
 
-    @api.depends('delivery_count')
+    @api.depends("delivery_count")
     def _compute_picking_ids(self):
         for stud in self:
-            stud.delivery_count = self.env['student.profile'].search_count([('school_select_id.id', '=', self.id)])
+            stud.delivery_count = self.env["student.profile"].search_count(
+                [("school_select_id.id", "=", self.id)]
+            )
 
     def button_click(self):
         print("smart button click")
         self.ensure_one()
         return {
-            'type': 'ir.actions.act_window',
-            'name': 'student',
-            'view_mode': 'tree',
-            'res_model': 'student.profile',
-            'domain': [('school_select_id.id', '=', self.id)],
+            "type": "ir.actions.act_window",
+            "name": "student",
+            "view_mode": "tree",
+            "res_model": "student.profile",
+            "domain": [("school_select_id.id", "=", self.id)],
         }
 
     @api.model

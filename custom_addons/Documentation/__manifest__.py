@@ -5,7 +5,10 @@
     "category": "Document",
     "summary": """Document related work""",
     "description": "This module manage all document related work",
-    'depends': ['base', 'mail',],
+    "depends": [
+        "base",
+        "mail",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/document_views.xml",
@@ -17,5 +20,4 @@
     "application": True,
     "installable": True,
     "auto-install": False,
-
 }

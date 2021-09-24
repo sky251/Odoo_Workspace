@@ -2,8 +2,8 @@ from odoo import api, fields, models
 
 
 class StudentProfile(models.Model):
-    _name = 'student.profile'
-    _description = 'Student Information'
+    _name = "student.profile"
+    _description = "Student Information"
 
     @api.depends("is_parking")
     def _compute_total_calculate(self):
@@ -13,29 +13,40 @@ class StudentProfile(models.Model):
             elif rec.is_parking == False:
                 rec.calculate = 100
 
-    name = fields.Char(string='Student name')
-    student_email = fields.Char(string='Email')
-    student_phone = fields.Char(string='Phone')
-    student_result = fields.Float(string='Result')
-    student_img = fields.Image(string=' Upload student image', max_width=100, max_height=100)
+    name = fields.Char(string="Student name")
+    student_email = fields.Char(string="Email")
+    student_phone = fields.Char(string="Phone")
+    student_result = fields.Float(string="Result")
+    student_img = fields.Image(
+        string=" Upload student image", max_width=100, max_height=100
+    )
     school_select_id = fields.Many2one("school.profile", string="Select School")
     sc_select_id = fields.Many2many("school.profile", string="Selectssss")
-    user_signature = fields.Binary(string='Signature')
-    is_parking = fields.Boolean(related="school_select_id.parking", string="Is parking", store=True)
+    user_signature = fields.Binary(string="Signature")
+    is_parking = fields.Boolean(
+        related="school_select_id.parking", string="Is parking", store=True
+    )
     calculate = fields.Integer(compute="_compute_total_calculate", string="Calculate")
     state = fields.Selection(
-        [('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')],
-        default='draft', string="Status")
+        [
+            ("draft", "Draft"),
+            ("confirm", "Confirm"),
+            ("done", "Done"),
+            ("cancel", "Cancel"),
+        ],
+        default="draft",
+        string="Status",
+    )
 
     def test(self):
         return "Akash"
 
     def test1(self):
-        lst = [1,2,"sky",True]
+        lst = [1, 2, "sky", True]
         return lst
 
     def test2(self):
-        dict = {"Akash":"Sky","Topi":"Cap"}
+        dict = {"Akash": "Sky", "Topi": "Cap"}
         return dict
 
     @api.model_create_multi  # or   @api.model
@@ -53,7 +64,7 @@ class StudentProfile(models.Model):
         return rtn
 
     def copy(self, default={}):
-        default['name'] = "copy(" + self.name + ")"
+        default["name"] = "copy(" + self.name + ")"
         print("\n\n\nself data", self)
         rtn = super(StudentProfile, self).copy(default=default)
         print("\n\n\nrtn", rtn)
@@ -68,36 +79,41 @@ class StudentProfile(models.Model):
         print("\n\n\nAfter  Edit", rtn)
         return rtn
 
-    def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+    def fields_view_get(
+        self, view_id=None, view_type="form", toolbar=False, submenu=False
+    ):
         print("\n\n\nView Id", view_id)
         print("\n\n\nView Type", view_type)
         print("\n\n\nToolbar", toolbar)
         print("\n\n\nSubmenu", submenu)
-        rtn = super(StudentProfile, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar,
-                                                          submenu=submenu)
+        rtn = super(StudentProfile, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
+        )
         print("\n\n\nReturn Disc", rtn)
         return rtn
 
     def action_confirm(self):
-        self.state = 'confirm'
+        self.state = "confirm"
 
     def action_done(self):
-        self.state = 'done'
+        self.state = "done"
 
     def action_cancel(self):
-        self.state = 'cancel'
+        self.state = "cancel"
 
     def action_reset(self):
-        self.state = 'draft'
+        self.state = "draft"
 
     def clear_record_data(self):
-        self.write({
-            'name': '',
-            'student_email': '',
-            'student_phone': '',
-            'student_result': '',
-            'student_img': '',
-            'user_signature': '',
-            'is_parking': '',
-            'calculate': '',
-        })
+        self.write(
+            {
+                "name": "",
+                "student_email": "",
+                "student_phone": "",
+                "student_result": "",
+                "student_img": "",
+                "user_signature": "",
+                "is_parking": "",
+                "calculate": "",
+            }
+        )

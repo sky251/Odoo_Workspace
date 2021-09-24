@@ -5,7 +5,9 @@
     "category": "Hardwork management",
     "summary": """This module manage all efforts""",
     "description": "This module provides total analyses of your all orders",
-    "depends": ['sale', ],
+    "depends": [
+        "sale",
+    ],
     "data": [
         "views/practice_views.xml",
     ],
@@ -14,5 +16,4 @@
     "application": True,
     "installable": True,
     "auto-install": False,
-
 }

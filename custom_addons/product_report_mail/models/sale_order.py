@@ -5,7 +5,9 @@ from odoo.exceptions import UserError
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    partner_cust_ids = fields.Many2many('res.partner','partner_rel','sa_id','par_id',string="Partner")
+    partner_cust_ids = fields.Many2many(
+        "res.partner", "partner_rel", "sa_id", "par_id", string="Partner"
+    )
 
     def mail_wizard_button(self):
         print("\n\n\n\n update M2M calling.... \n\n\n\n")
@@ -23,9 +25,6 @@ class SaleOrder(models.Model):
 
         # self.partner_cust_ids= [(2,44)] - Delete
         # self.partner_cust_ids= [(1,43,{'phone':'8460232337'})]
-
-
-
 
         # self.ensure_one()
         # template_id = self._find_mail_template()
@@ -60,6 +59,7 @@ class SaleOrder(models.Model):
         #     'target': 'new',
         #     'context': ctx,
         # }
+
     # User Define constraint
     # def action_confirm(self):
     #     result = super(SaleOrder, self).action_confirm()

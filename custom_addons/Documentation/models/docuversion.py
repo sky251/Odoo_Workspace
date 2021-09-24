@@ -6,8 +6,5 @@ class DocumentTag(models.Model):
     _description = "This is documentation tag"
     _rec_name = "ver_no"
 
-
-    ver_no = fields.Integer(string='Version no')
+    ver_no = fields.Integer(string="Version no")
     active = fields.Boolean(string="Active")
-
-

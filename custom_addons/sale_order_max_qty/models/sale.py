@@ -21,9 +21,11 @@ class SaleOrderLine(models.Model):
 
     # max_qty_allowed = fields.Float(related="product_id.qty_on_order", string=_("Max Qty Allowed"))
     # max_qty_allowed = fields.Float(string=_("Max Qty Allowed"))
-    max_qty_allowed = fields.Float(string=_("Max Qty Allowed"),compute="_compute_onchange_max_qty_allowed")
+    max_qty_allowed = fields.Float(
+        string=_("Max Qty Allowed"), compute="_compute_onchange_max_qty_allowed"
+    )
 
-    @api.onchange('product_id')
+    @api.onchange("product_id")
     def onchange_max_qty_allowed(self):
         for r in self:
             r.max_qty_allowed = r.product_id.qty_on_order
@@ -34,8 +36,6 @@ class SaleOrderLine(models.Model):
             r.max_qty_allowed = r.product_id.qty_on_order
 
 
-
 # product_id = fields.Many2one(
 #         'product.product', string='Product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]",
 #         change_default=True, ondelete='restrict', check_company=True
-
