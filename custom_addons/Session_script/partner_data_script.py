@@ -1,6 +1,6 @@
 # if use https get error SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1131)
 url = 'http://127.0.0.1:9993'
-db = 'pa_db'
+db = 'partner_db'
 username = 'admin'
 password = 'admin'
 
@@ -16,7 +16,7 @@ models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))  # Used as 
 
 start_time = datetime.now()
 
-with open('/res.partner.csv', newline='') as csv_file:
+with open('res.partner.csv', newline='') as csv_file:
     csv_file = csv.DictReader(csv_file)
     print("===csv_filee", csv_file)
 
@@ -34,6 +34,8 @@ with open('/res.partner.csv', newline='') as csv_file:
     for row in csv_file:
         rec = dict(row)
         print("Rec -------------------", rec)
+        print('\n Excel Row>>>>>>>>', excel_row)
+
         if excel_row >= 2:
             # We used strip() method to remove white spaces from the record.
 
@@ -43,32 +45,32 @@ with open('/res.partner.csv', newline='') as csv_file:
             print("====partner id brder val==", partner_id)
 
             # country_id
-            country_id = models.execute_kw(db, uid, password, 'res.country', 'search',
-                                           [[['name', '=', rec['country_id'].strip()]]])
-            print("====country_id==", country_id)
-            print("====country_id==", type(country_id))
-
-            # company_id
-            company_id = models.execute_kw(db, uid, password, 'res.company', 'search',
-                                           [[['name', '=', rec['company_id'].strip()]]])
-            print("====company_id==", company_id)
-            print("====company_id==", type(company_id))
+            # country_id = models.execute_kw(db, uid, password, 'res.country', 'search',
+            #                                [[['name', '=', rec['country_id'].strip()]]])
+            # print("====country_id==", country_id)
+            # print("====country_id==", type(country_id))
+            #
+            # # company_id
+            # company_id = models.execute_kw(db, uid, password, 'res.company', 'search',
+            #                                [[['name', '=', rec['company_id'].strip()]]])
+            # print("====company_id==", company_id)
+            # print("====company_id==", type(company_id))
 
             vals = {
                 'name': rec['name'].strip(),
                 'phone': rec['phone'].strip(),
                 'email': rec['email'].strip(),
                 'city': rec['city'].strip(),
-                'country_id':country_id[0],
+                # 'country_id':country_id[0],
                 # 'company_id':company_id[0],
             }
-            if not partner_id and not country_id:
+            if not partner_id:
                 print("====in if partner===")
                 partner_id = models.execute_kw(db, uid, password, 'res.partner', 'create', [vals])
             else:
                 print('==else== partner==')
                 partner_id = models.execute_kw(db, uid, password, 'res.partner', 'write',
-                                               [[partner_id[0],[country_id[0]]], vals])
+                                               [[partner_id[0]], vals])
                 # if company_id[0]:
                 #     print("=====in if compnay id===")
                 #     partner_id = models.execute_kw(db, uid, password, 'res.partner', 'write',
@@ -78,21 +80,21 @@ with open('/res.partner.csv', newline='') as csv_file:
                 #     partner_id = models.execute_kw(db, uid, password, 'res.partner', 'write',
                 #                                    [[partner_id[0], [country_id[0]]], vals])
 
-            if rec['city'] == 'Berlin':
-                print("=Berlin=====")
-                remove_partner_id = models.execute_kw(db, uid, password, 'res.partner', 'search',
-                                                      [[['city', '=', 'Berlin']]])
-                print("====remove partner jhdhhfd==", remove_partner_id)
-
-                models.execute_kw(db, uid, password, 'res.partner', 'unlink',
-                                  [[partner for partner in remove_partner_id]])
-                print(":::::::::remove::::::")
-            print("\n\n:::::::::excel_row:::::::::::::::", excel_row)
+            # if rec['city'] == 'Berlin':
+            #     print("=Berlin=====")
+            #     remove_partner_id = models.execute_kw(db, uid, password, 'res.partner', 'search',
+            #                                           [[['city', '=', 'Berlin']]])
+            #     print("====remove partner jhdhhfd==", remove_partner_id)
+            #
+            #     models.execute_kw(db, uid, password, 'res.partner', 'unlink',
+            #                       [[partner for partner in remove_partner_id]])
+            #     print(":::::::::remove::::::")
+            # print("\n\n:::::::::excel_row:::::::::::::::", excel_row)
 
             # Example of read method to fetch specific field like emails and name of partner
             # Read method default returns Id field.
             # partner_details = models.execute_kw(db, uid, password, 'res.partner', 'read',[partner_id[0]],{'fields':['name', 'email']})
-            # print("partner_detail-------------", partner_details)
+            print("\n\n\n\npartner_detail-------------")
 
         excel_row += 1
 
