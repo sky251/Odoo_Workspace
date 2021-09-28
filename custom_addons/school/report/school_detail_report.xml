@@ -91,14 +91,16 @@
 
                             </div>
                         </div>
-                        <t t-foreach="students_list" t-as="stud">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <t t-esc="stud['name']"/>
-                                    </td>
-                                </tr>
-                            </table>
+                        <t t-if="additional_info">
+                            <t t-foreach="students_list" t-as="stud">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <t t-esc="stu.name"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
                         </t>
 
                     </div>
