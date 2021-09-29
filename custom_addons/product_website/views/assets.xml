@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_assets_frontend" name="Frontend assets" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+
+            <!--Css / sccs-->
+            <link rel="stylesheet" type="text/css" href="/product_website/static/src/css/frontend.css"/>
+
+            <!--JS-->
+            <script type="text/javascript" src="/product_website/static/src/js/frontend.js"></script>
+        </xpath>
+    </template>
+</odoo>

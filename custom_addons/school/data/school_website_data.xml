@@ -6,9 +6,6 @@
             <field name="url">/school</field>
             <field name="parent_id" ref="website.main_menu"/>
             <field name="sequence" type="int">3</field>
-<!--            <field name="page_id" ref="school.school_details_page"/>-->
-<!--            <field name="parent_id" ref="website.main_menu"/>-->
-<!--            <field name="sequence" type="int">3</field>-->
         </record>
     </data>
 </odoo>

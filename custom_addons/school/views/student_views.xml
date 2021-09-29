@@ -2,6 +2,37 @@
 
 <odoo>
 
+    <record model="ir.ui.view" id="student_profile_kanban_view">
+        <field name="name">student.profile.kanban</field>
+        <field name="model">student.profile</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div>
+                                <img t-att-src="kanban_image('student.profile','student_img',record.id.raw_value)"
+                                     style="margin: auto; width:10rem;"
+                                />
+                            </div>
+                            <!--                            <div class="o_kanban_image_fill_left d-none d-md-block">-->
+                            <!--                                <img class="o_kanban_image_inner_pic" t-att-src="kanban_image('student.profile','student_img',record.id.raw_value)"/>-->
+                            <!--                            </div>-->
+                            <div class="oe_kanban_details d-flex flex-column">
+                                <strong class="o_kanban_record_title oe_partner_heading">
+                                    <field name="name"/>
+                                </strong>
+                                <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                <field name="student_email"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
 
     <record id="student_list_view" model="ir.ui.view">
         <field name="name">student_profile.list.view</field>
@@ -70,7 +101,6 @@
                                    style="margin-top: 1rem; margin-left:6rem; width:7rem; background-color:#B2A6C6;"
                                    class="img img-responsive"/>
                         </group>
-
                     </group>
 
                     <notebook>
@@ -92,11 +122,10 @@
         </field>
     </record>
 
-
     <record id="action_student_profile" model="ir.actions.act_window">
         <field name="name">Student Profile</field>
         <field name="res_model">student.profile</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <menuitem id="student_nav" name="Student Prof" action="action_student_profile" parent="school_root_menu"
