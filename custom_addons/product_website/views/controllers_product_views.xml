@@ -16,6 +16,9 @@
                         <tbody>
                             <tr t-foreach="product_data" t-as="pd">
                                 <td>
+                                    <a class="anchor_image" target="_self" href="/"></a>
+                                </td>
+                                <td>
                                     <span class="product_image" t-field="pd.image_1920" t-options='{"widget":"image"}'/>
                                 </td>
                                 <td>
