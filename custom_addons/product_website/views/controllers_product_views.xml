@@ -11,21 +11,26 @@
                                 <th>Product Image</th>
                                 <th>Type</th>
                                 <th>Stock on hand</th>
+                                <th>No</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="product_data" t-as="pd">
+                            <tr t-foreach="product_data" t-as="product">
+
                                 <td>
-                                    <a class="anchor_image" target="_self" href="/"></a>
+                                    <span class="product_image" t-field="product.image_1920"
+                                          t-options='{"widget":"image"}'/>
                                 </td>
                                 <td>
-                                    <span class="product_image" t-field="pd.image_1920" t-options='{"widget":"image"}'/>
+                                    <t t-esc="product.name"/>
                                 </td>
                                 <td>
-                                    <t t-esc="pd.name"/>
+                                    <t t-esc="product.qty_available"/>
                                 </td>
                                 <td>
-                                    <t t-esc="pd.qty_available"/>
+                                    <a class="anchor_image" target="_self" t-attf-href="/product/prod/#{product.id}">
+                                        Description
+                                    </a>
                                 </td>
                             </tr>
                         </tbody>

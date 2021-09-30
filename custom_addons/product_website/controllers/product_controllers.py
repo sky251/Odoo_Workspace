@@ -11,3 +11,10 @@ class Controller(http.Controller):
         return request.render(
             "product_website.product_detail_list", {"product_data": product_data}
         )
+
+class ButtonController(http.Controller):
+    @http.route("/product/prod/<model('product.template'):product>/", type="http", website=True, auth="public")
+    def button_click(self,product):
+        print("\n\n\n\n\n\n click on button \n\n\n\n\n\n")
+        print("\n\n\n\n\n\n button id \n\n\n\n\n\n",product)
+        return request.render("product_website.product_descriptions_page",{"product_description":product})

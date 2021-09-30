@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_descriptions_page">
+        <t t-call="website.layout">
+            <t t-set="title">Product Description</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div class="product_description_container" t-foreach="product_description" t-as="product_desc">
+                        <div class="left_section">
+                            <span class="product_description_image" t-field="product_desc.image_1920"
+                                  t-options='{"widget":"image"}'/>
+                        </div>
+                        <div class="right_section">
+                            <u><i><h1 t-esc="product_desc.name"/></i></u>
+                            <h5>Price : <span t-esc="product_desc.list_price"/> <i class="fa fa-euro" style="font-size:16px"></i> </h5>
+                            <h5>Type : <span t-esc="product_desc.type"/></h5>
+                            <h5>Items left : <span t-esc="product_desc.qty_available"/></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

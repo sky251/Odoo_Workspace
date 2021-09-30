@@ -10,6 +10,7 @@
         "data/product_website_data.xml",
         "views/assets.xml",
         "views/controllers_product_views.xml",
+        "views/product_description_views.xml",
     ],
     "demo": [],
     "installable": True,

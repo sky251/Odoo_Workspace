@@ -6,6 +6,10 @@
             <!--Css / sccs-->
             <link rel="stylesheet" type="text/css" href="/product_website/static/src/css/frontend.css"/>
 
+            <!-- Font Awesome -->
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
             <!--JS-->
             <script type="text/javascript" src="/product_website/static/src/js/frontend.js"></script>
         </xpath>
