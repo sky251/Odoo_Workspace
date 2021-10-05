@@ -9,8 +9,7 @@
         <field name="fees">28000</field>
         <field name="parking" eval="True"/>
         <field name="courses">computer</field>
-
-        <!--        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>-->
+        <field name="image" type="base64" file="school/static/my_img/my_logo.png"/>
     </record>
 
     <record id="school_data_2" model="school.profile">

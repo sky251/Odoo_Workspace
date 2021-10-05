@@ -11,10 +11,58 @@
                                   t-options='{"widget":"image"}'/>
                         </div>
                         <div class="right_section">
-                            <u><i><h1 t-esc="product_desc.name"/></i></u>
-                            <h5>Price : <span t-esc="product_desc.list_price"/> <i class="fa fa-euro" style="font-size:16px"></i> </h5>
-                            <h5>Type : <span t-esc="product_desc.type"/></h5>
-                            <h5>Items left : <span t-esc="product_desc.qty_available"/></h5>
+                            <u>
+                                <i>
+                                    <h1 t-esc="product_desc.name"/>
+                                </i>
+                            </u>
+                            <h5>Price :
+                                <span t-esc="product_desc.list_price"/>
+                                <i class="fa fa-euro" style="font-size:16px"></i>
+                            </h5>
+                            <h5>Type :
+                                <span t-esc="product_desc.type"/>
+                            </h5>
+                            <h5>Items left :
+                                <span t-esc="product_desc.qty_available"/>
+                            </h5>
+                            <table>
+                                <t t-foreach="product_desc.attribute_line_ids" t-as="line">
+                                    <tbody class="sale_tbody">
+                                        <tr style="border:1px solid black;">
+                                            <td name="varient" style="border:1px solid black;">
+                                                <t t-esc="line.attribute_id.name"/>
+                                            </td>
+
+                                            <td t-foreach="line.value_ids" t-as="values">
+                                                <t t-esc="values.name"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <br/>
+                                </t>
+                            </table>
+                            <t t-if="a.display_type == 'color'">
+                                <t t-foreach="a.value_ids" t-as="v">
+                                    <label t-attf-style="background-color:#{v.html_color or v.name}"
+                                           t-attf-class="css_attribute_color">
+                                        <input type="checkbox" name="attrib" t-att-value="'%s-%s' % (a.id,v.id)"
+                                               t-att-checked="checked"
+                                               t-att-title="v.name"/>
+                                    </label>
+                                </t>
+                            </t>
+                            <form>
+                                <t t-foreach="product_desc.attribute_line_ids" t-as="line">
+                                    <h6 t-esc="line.attribute_id.name"/>
+                                    <span t-foreach="line.value_ids" t-as="values">
+                                        <input class="js_variant_change always" type="radio" name=""/>
+                                        <label for="css">
+                                            <t t-esc="values.name" class="js_variant_change always"/>
+                                        </label>
+                                    </span>
+                                </t>
+                            </form>
                         </div>
                     </div>
                 </div>

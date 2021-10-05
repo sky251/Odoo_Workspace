@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="contacts_list" name="Contacts list">
+        <t t-call="website.layout">
+            <t t-set="title">Contacts List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div class="contacts_list_wrapper">
+                        <table class="contact_list_tbl">
+                            <thead>
+                                <tr>
+                                    <th class="contact_image_col display_web">Image</th>
+                                    <th class="contact_name_col display_web">Name</th>
+                                    <th class="contact_email_col display_web">Email</th>
+                                    <th class="contact_name_col display_web">Mobile</th>
+                                    <th class="contact_name_col display_web">Address</th>
+                                    <th class="contact_tl_col display_web">TL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="contacts" t-as="contact">
+
+                                    <tr>
+<!--                                        <td>-->
+<!--                                            <a class="btn btn-primary contact_name_col" target="_blank"-->
+<!--                                               t-attf-href="/contact/#{contact.id}">Button-->
+<!--                                            </a>-->
+<!--                                        </td>-->
+                                        <td class="contact_image_col">
+                                            <div class="contact_image_main_wrapper">
+                                                <div class="contact_image_wrapper">
+                                                    <img t-att-src="'/web/image/res.partner/%s/image_1920' % contact.id"
+                                                         class="contact_image"/>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="contact_name_col display_web">
+                                            <t t-esc="contact.name"/>
+                                        </td>
+                                        <td class="contact_email_col display_web">
+                                            <t t-esc="contact.email"/>
+                                        </td>
+                                        <td class="contact_name_col display_web">
+                                            <t t-esc="contact.phone"/>
+                                        </td>
+                                        <td class="contact_name_col display_web">
+                                            <t t-esc="contact.contact_address"/>
+                                        </td>
+                                        <td class="contact_tl_col display_web">
+                                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
+                                        </td>
+                                    </tr>
+                                </t>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -3,38 +3,23 @@
     <template id="product_detail_list">
         <t t-call="website.layout">
             <t t-set="title">Product List</t>
-            <div class="oe_structure">
-                <div class="container">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="thead-dark">
-                                <th>Product Image</th>
-                                <th>Type</th>
-                                <th>Stock on hand</th>
-                                <th>No</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr t-foreach="product_data" t-as="product">
+            <div class="container-fluid">
+                <div class="row x">
+                    <div class="card" t-foreach="product_data" t-as="product">
+                        <span class="card-img-top"  t-field="product.image_1920" t-options='{"widget":"image"}'
+                              alt="Product Image"/>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <t t-esc="product.name"/>
+                            </h5>
 
-                                <td>
-                                    <span class="product_image" t-field="product.image_1920"
-                                          t-options='{"widget":"image"}'/>
-                                </td>
-                                <td>
-                                    <t t-esc="product.name"/>
-                                </td>
-                                <td>
-                                    <t t-esc="product.qty_available"/>
-                                </td>
-                                <td>
-                                    <a class="anchor_image" target="_self" t-attf-href="/product/prod/#{product.id}">
-                                        Description
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <p class="card-text">Some quick example text to.</p>
+
+                            <a class="btn btn-primary" target="_blank" t-attf-href="/product/prod/#{product.id}">
+                                Description
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </t>

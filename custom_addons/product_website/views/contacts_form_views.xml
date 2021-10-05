@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="contacts_form_views" name="Contacts form">
+        <t t-call="website.layout">
+            <t t-set="title">Contacts List</t>
+            <div class="partner_form_view" t-foreach="partner" t-as="partner_desc">
+                <div class="left_section">
+                    <span t-field="partner_desc.image_1920"
+                          t-options='{"widget":"image"}'/>
+                </div>
+                <h1 t-esc="partner_desc.contact_address"/>
+
+                <!--                    <h5>Type :-->
+                <!--                        <t t-esc="product_desc.type"/>-->
+                <!--                    </h5>-->
+            </div>
+
+        </t>
+    </template>
+</odoo>

@@ -1,16 +1,42 @@
-td,th{
-    text-align: center;
+img.img.img-fluid{
+    height: inherit;
+}
+
+.container-fluid{
+width:100%;
+background-color:black;
+}
+
+.card-title{
+    width: 80%;
 }
 
 .product_image img{
     width:80px;
 }
 
-.anchor_image{
-    border:1px solid black;
-    padding:0 20px 15px 20px;
-    border-radius:15px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+.x {
+    width:100%;
+}
+
+div.card-body{
+    height: 240px;
+    width: 240px;
+}
+
+div.card{
+    border:1px groove silver ;
+    background-color:LightGray;
+    margin:5px;
+}
+
+.card-text{
+    width:100px;
+}
+
+.card-img-top {
+    width: 15rem;
+    height: 230px;
 }
 
 .product_description_container{
@@ -33,17 +59,83 @@ td,th{
 .right_section,h1,h5{
     padding:5px;
 }
+
 .right_section h1{
     font-family: cursive;
 }
 
 .product_description_image img{
-    margin:10px;
-    height:300px;
-    width:400px;
-    transform: translate(70px, 0px);
+    height:250px;
+    width:300px;
 }
 
-a:hover{
-    text-decoration:none;
+div.container{
+width:100%
+}
+
+.contact_list_tbl{
+    width: 100%;
+}
+
+.contact_list_tbl thead tr th, .contact_list_tbl tbody tr td{
+    text-align: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+.contact_image_wrapper{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.contact_image{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+.contact_name_col{
+    width: 30%;
+}
+
+.contact_tl_col{
+    width:20%;
+}
+.contact_email_col{
+    width: 20%;
+}
+
+@media screen and (min-width: 768px) {
+    .display_mobile{
+        display: none !important;
+    }
+    .contact_image_col{
+        width: 80px;
+        max-width: 110px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .display_web{
+        display: none !important;
+    }
+    .contacts_list_wrapper{
+        width: 100%;
+        padding: 30px 10px;
+    }
+    .contact_image_main_wrapper{
+        display: flex;
+        align-items: center;
+    }
+    .contact_image_wrapper{
+        margin-right: 10px;
+    }
+    .contact_mobile_details_wrapper{
+        max-width: calc(100% - 90px);
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
 }
