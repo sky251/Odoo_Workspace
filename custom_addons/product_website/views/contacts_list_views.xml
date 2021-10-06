@@ -6,26 +6,20 @@
             <div class="oe_structure">
                 <div class="container">
                     <div class="contacts_list_wrapper">
-                        <table class="contact_list_tbl">
-                            <thead>
+                        <table class="table table-hover contact_list_tbl">
+                            <thead class="thead-dark">
                                 <tr>
                                     <th class="contact_image_col display_web">Image</th>
                                     <th class="contact_name_col display_web">Name</th>
                                     <th class="contact_email_col display_web">Email</th>
                                     <th class="contact_name_col display_web">Mobile</th>
-                                    <th class="contact_name_col display_web">Address</th>
+                                    <th class="display_web">Address</th>
                                     <th class="contact_tl_col display_web">TL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <t t-foreach="contacts" t-as="contact">
-
                                     <tr>
-<!--                                        <td>-->
-<!--                                            <a class="btn btn-primary contact_name_col" target="_blank"-->
-<!--                                               t-attf-href="/contact/#{contact.id}">Button-->
-<!--                                            </a>-->
-<!--                                        </td>-->
                                         <td class="contact_image_col">
                                             <div class="contact_image_main_wrapper">
                                                 <div class="contact_image_wrapper">
@@ -43,15 +37,14 @@
                                         <td class="contact_name_col display_web">
                                             <t t-esc="contact.phone"/>
                                         </td>
-                                        <td class="contact_name_col display_web">
+                                        <td style="text-align: center;" class="contact_address_col display_web">
                                             <t t-esc="contact.contact_address"/>
                                         </td>
                                         <td class="contact_tl_col display_web">
-                                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
+                                            <t t-if="contact.boolean_tl == True"><input type="checkbox" checked="checked" onclick="return false;"/></t>
                                         </td>
                                     </tr>
                                 </t>
-
                             </tbody>
                         </table>
                     </div>

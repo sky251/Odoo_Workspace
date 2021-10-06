@@ -78,9 +78,10 @@ width:100%
 }
 
 .contact_list_tbl thead tr th, .contact_list_tbl tbody tr td{
-    text-align: center;
     border-bottom: 1px solid #dcdcdc;
+    padding:5px;
 }
+
 .contact_image_wrapper{
     width: 80px;
     height: 80px;
@@ -98,14 +99,21 @@ width:100%
 }
 .contact_name_col{
     width: 30%;
+    text-align: center;
 }
 
 .contact_tl_col{
     width:20%;
+    align-items:center;
 }
 .contact_email_col{
     width: 20%;
 }
+
+.contact_address_col{
+    width: 30%;
+}
+
 
 @media screen and (min-width: 768px) {
     .display_mobile{

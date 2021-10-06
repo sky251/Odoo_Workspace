@@ -16,3 +16,5 @@ class ResPartner(models.Model):
         "team.member", "partner_id", string="Team member id"
     )
 
+    boolean_tl = fields.Boolean(string="TL", default=True)
+

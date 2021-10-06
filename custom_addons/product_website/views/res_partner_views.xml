@@ -6,9 +6,13 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
-                <page name="team_member" string="Team Member">
+                <page name="team_member" string="Team Member" attrs="{'invisible': [('boolean_tl','=',False)]}">
                     <field name="team_member_ids" widget="one2many"/>
                 </page>
+            </xpath>
+
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="boolean_tl" widget="boolean"/>
             </xpath>
         </field>
     </record>
