@@ -5,7 +5,6 @@ class TeamMember(models.Model):
     _name = "team.member"
     _description = "Team member"
 
-    name = fields.Char(string="Name", default="Akash")
     partner_id = fields.Many2one("res.partner", string="Partner")
 
 

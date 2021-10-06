@@ -7,7 +7,12 @@
         <field name="arch" type="xml">
             <xpath expr="//notebook" position="inside">
                 <page name="team_member" string="Team Member" attrs="{'invisible': [('boolean_tl','=',False)]}">
-                    <field name="team_member_ids" widget="one2many"/>
+                    <field name="team_member_ids" widget="one2many">
+                        <tree>
+                            <field name="partner_id"/>
+                            <field name="vat"/>
+                        </tree>
+                    </field>
                 </page>
             </xpath>
 
