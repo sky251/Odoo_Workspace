@@ -3,13 +3,83 @@
     <template id="contacts_form_views" name="Contacts form">
         <t t-call="website.layout">
             <t t-set="title">Contacts List</t>
-            <div class="partner_form_view" t-foreach="partner" t-as="partner_desc">
-                <div class=" col-mdleft_section">
-                    <span t-field="partner_desc.image_1920"
-                          t-options='{"widget":"image"}'/>
+            <div class="product_main_wrapper" t-foreach="partner" t-as="partner_desc">
+                <div class="product_inner_wrapper">
+                    <div class="row product_row">
+
+                        <div class="col-xs-12 col-md-9 product_right_block">
+                            <h1 class="product_title_h1">
+                                <t t-esc="partner_desc.name"/>
+                            </h1>
+                            <br/>
+                            <h5 class="product_title">
+                                <b>
+                                    <u>Email:</u>
+                                </b>&#160;
+                                <t t-esc="partner_desc.email"/>
+                            </h5>
+                            <br/>
+                            <h5 class="product_title">
+                                <b>
+                                    <u>Phone:</u>
+                                </b>&#160;
+                                <t t-esc="partner_desc.phone"/>
+                            </h5>
+                            <br/>
+                            <h5 class="product_title">
+                                <b>
+                                    <u>Address:</u>
+                                </b>&#160;
+
+                                <t t-esc="partner_desc.street"/>&#160;
+                                <t t-esc="partner_desc.city"/>&#160;<br/>
+                                <t t-esc="partner_desc.state_id.name"/>&#160;
+                                <t t-esc="partner_desc.zip"/>&#160;<br/>
+                                <t t-esc="partner_desc.country_id.name"/>
+                                <!--                                <t t-foreach="partner_desc.contact_address" t-as="address">-->
+                                <!--                                    <t t-esc="address.city"/>-->
+                            </h5>
+                            <br/>
+                            <h5 t-if="partner_desc.boolean_tl" class="product_title">
+                                <b>
+                                    <u>Team Lead:</u>
+                                </b>&#160;
+                                <input type="checkbox" disabled="true"
+                                       t-att-checked="(partner_desc.boolean_tl) and 'checked'"/>
+                            </h5>
+                        </div>
+
+
+                        <div class="col-xs-12 col-md-3 product_left_block">
+                            <div class="product_img_wrapper">
+                                <span t-field="partner_desc.image_1920" class="product_item_image"
+                                      t-options='{"widget":"image"}'/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1 t-esc="partner_desc.contact_address"/>
             </div>
+
+            <t t-foreach="partner" t-as="partner_desc">
+                <div t-if="partner_desc.boolean_tl" class="product_main_wrapper table_2">
+                    <table class="table custom_table">
+                        <thed class="thead-light">
+                            <tr>
+                                <th>Team Member</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thed>
+                        <tbody>
+                            <tr t-foreach="partner.team_member_ids" t-as="team">
+                                <td t-esc="team.name"/>
+                                <td t-esc="team.email"/>
+                                <td t-esc="team.phone"/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
         </t>
     </template>
 </odoo>

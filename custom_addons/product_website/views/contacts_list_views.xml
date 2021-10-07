@@ -29,7 +29,11 @@
                                             </div>
                                         </td>
                                         <td class="contact_name_col display_web">
-                                            <t t-esc="contact.name"/>
+                                            <a class="btn btn-primary" target="_blank"
+                                               t-attf-href="/contact/#{contact.id}">
+                                                <t t-esc="contact.name"/>
+                                            </a>
+
                                         </td>
                                         <td class="contact_email_col display_web">
                                             <t t-esc="contact.email"/>
@@ -41,7 +45,8 @@
                                             <t t-esc="contact.contact_address"/>
                                         </td>
                                         <td class="contact_tl_col display_web">
-                                            <t t-if="contact.boolean_tl == True"><input type="checkbox" checked="checked" onclick="return false;"/></t>
+                                            <input type="checkbox" disabled="disabled"
+                                                   t-att-checked="(contact.boolean_tl) and 'checked'"/>
                                         </td>
                                     </tr>
                                 </t>

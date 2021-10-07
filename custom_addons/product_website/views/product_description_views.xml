@@ -18,7 +18,7 @@
                             </u>
                             <h5>Price :
                                 <span t-esc="product_desc.list_price"/>
-                                <i class="fa fa-euro" style="font-size:16px"></i>
+                                <i class="fa fa-euro" style="font-size:16px"/>
                             </h5>
                             <h5>Type :
                                 <span t-esc="product_desc.type"/>
