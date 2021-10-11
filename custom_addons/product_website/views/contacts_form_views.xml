@@ -2,7 +2,7 @@
 <odoo>
     <template id="contacts_form_views" name="Contacts form">
         <t t-call="website.layout">
-            <t t-set="title">Contacts List</t>
+            <t t-set="title">Contacts Form </t>
             <div class="product_main_wrapper" t-foreach="partner" t-as="partner_desc">
                 <div class="product_inner_wrapper">
                     <div class="row product_row">
@@ -80,6 +80,25 @@
                     </table>
                 </div>
             </t>
+
+            <div class="" style="margin: 100px 0px;" t-foreach="partner" t-as="partner_desc">
+                <form enctype="multipart/form-data" method="post" action="/partner_update">
+                    <input type="hidden" name="id" t-att-value="partner_desc.id"/>
+                    <label>Name:</label>
+                    <input type="text" name="name" t-att-value="partner_desc.name"/>
+                    <br/>
+                    <label>Email:</label>
+                    <input type="text" name="email" t-att-value="partner_desc.email"/>
+                    <br/>
+                    <label>Phone:</label>
+                    <input type="text" name="phone" t-att-value="partner_desc.phone"/>
+                    <br/>
+                    <label>Address:</label>
+                    <input type="text" name="address" t-att-value="partner_desc.street"/>
+                    <br/>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </div>
         </t>
     </template>
 </odoo>

@@ -8,7 +8,6 @@ class SaleOrder(models.Model):
     total_capacity = fields.Float(string=_("Total Capacity"), readonly=True)
 
     def total_cap_on_button_click(self):
-
         for order in self:
             total_capacity = 0
             for line in order.order_line:
