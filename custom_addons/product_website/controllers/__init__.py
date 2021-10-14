@@ -1,2 +1,1 @@
-from . import product_controllers
-from . import res_partner
+from . import product_controllers, res_partner

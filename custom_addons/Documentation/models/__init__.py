@@ -1,3 +1,1 @@
-from . import document
-from . import docutag
-from . import docuversion
+from . import document, docutag, docuversion

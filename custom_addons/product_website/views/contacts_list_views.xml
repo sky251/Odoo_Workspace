@@ -39,7 +39,7 @@
                                             </div>
                                         </td>
                                         <td class="contact_name_col display_web">
-                                            <a class="btn btn-primary" target="_blank"
+                                            <a class="btn btn-primary custom_a" target="_blank"
                                                t-attf-href="/contact/#{contact.id}">
                                                 <t t-esc="contact.name"/>
                                             </a>
@@ -74,17 +74,21 @@
             <div class="oe_structure">
                 <div class="container">
                     <div class="" style="margin: 100px 0px;">
-                        <form method="post" action="/contact/">
+                        <form method="post" action="/create_new_cont">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <label>Name:</label>
-                            <input type="text" name="name"/>
+                            <input type="text" name="name" required="1"/>
                             <br/>
                             <label>Email:</label>
-                            <input type="text" name="email"/>
+                            <input type="text" name="email" required="1"/>
                             <br/>
                             <label>Phone:</label>
-                            <input type="text" name="phone"/>
+                            <input type="text" name="phone" required="1"/>
                             <br/>
+                            <!--                            <div class="col-md-6">-->
+                            <!--                                <label for="image_1920" class="form-label">Passport Photo*</label>-->
+                            <!--                                <input type="file" class="form-control" id="image_1920" name="image_1920" />-->
+                            <!--                            </div>-->
                             <input type="submit" value="Submit"/>
                         </form>
                     </div>

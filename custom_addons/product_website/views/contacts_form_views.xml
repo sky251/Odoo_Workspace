@@ -2,11 +2,13 @@
 <odoo>
     <template id="contacts_form_views" name="Contacts form">
         <t t-call="website.layout">
-            <t t-set="title">Contacts Form </t>
+            <t t-set="title">Contacts Form</t>
             <div class="product_main_wrapper" t-foreach="partner" t-as="partner_desc">
+<!--                <a class="btn btn-primary custom_a" target="_blank"-->
+<!--                   t-attf-href="/contact/create_new_contact" value="Update Contact">Update Contact-->
+<!--                </a>-->
                 <div class="product_inner_wrapper">
                     <div class="row product_row">
-
                         <div class="col-xs-12 col-md-9 product_right_block">
                             <h1 class="product_title_h1">
                                 <t t-esc="partner_desc.name"/>

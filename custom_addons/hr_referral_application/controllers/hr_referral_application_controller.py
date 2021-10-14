@@ -1,6 +1,7 @@
 from odoo import http
 from odoo.http import request, route
 
+
 class ReferalApplication(http.Controller):
     @http.route("/referral_program", type="http", website=True, auth="user")
     def referral_program(self):

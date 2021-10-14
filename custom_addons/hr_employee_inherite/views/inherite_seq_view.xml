@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="hr_seq_inherite_view" model="ir.ui.view">
+        <field name="name">hr.seq.inherite.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <!-- Wizard Pop Up Button -->
+            <xpath expr="//header" position="inside">
+                <button name='%(hr_wizard_action)d' type='action' string='Wizard' class='btn btn-outline-info'/>
+            </xpath>
+            <!-- Sequence -->
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <group>
+                    <group>
+                        <h4>
+                            <field name="sequence" readonly="1"/>
+                        </h4>
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

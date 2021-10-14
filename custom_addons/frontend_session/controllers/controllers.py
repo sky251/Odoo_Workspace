@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import json
+
 from odoo import http
-from odoo.http import request, route
 from odoo.addons.website.controllers.main import Website
+from odoo.http import request, route
 
 
 class Controller(http.Controller):

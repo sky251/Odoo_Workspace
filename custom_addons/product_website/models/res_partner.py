@@ -11,6 +11,7 @@ class TeamMember(models.Model):
     phone = fields.Char(related="member_id.phone", string="Name")
     member_id = fields.Many2one("res.partner", string="Member")
 
+
 class ResPartner(models.Model):
     _inherit = "res.partner"
 

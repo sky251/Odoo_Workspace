@@ -1,5 +1,6 @@
-from odoo import api, models, fields
 from openerp.exceptions import ValidationError
+
+from odoo import api, fields, models
 
 
 class SchoolProfile(models.Model):

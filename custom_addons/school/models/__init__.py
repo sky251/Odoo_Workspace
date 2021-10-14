@@ -1,4 +1,1 @@
-from . import res_partner
-from . import school
-from . import student
-from . import setttings
+from . import res_partner, school, setttings, student
