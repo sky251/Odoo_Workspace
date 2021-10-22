@@ -3,13 +3,13 @@ from datetime import datetime
 
 import odoorpc
 
-odoo = odoorpc.ODOO("127.0.0.1", port=8014)
-odoo.login("v14_sale_order_script", "admin", "admin")
+odoo = odoorpc.ODOO("127.0.0.1", port=9999)
+odoo.login("odoo_rpc_db1", "admin", "admin")
 
 start_time = datetime.now()
 
 with open(
-    "/home/odoo/workspace/custom-addons/data_migration/odoorpc_script/sale_order.csv",
+    "/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/odoorpc_script/sale_order.csv",
     newline="",
 ) as csv_file:
     csv_file = csv.DictReader(csv_file)
@@ -18,9 +18,7 @@ with open(
         rec = dict(row)
         print("\n\n read sale record ===================", rec)
         if excel_row >= 2:
-            sale_order_id = odoo.env["sale.order"].search(
-                [("name", "=", rec["Order Reference"].strip())]
-            )
+            sale_order_id = odoo.env["sale.order"].search([("name", "=", rec["Order Reference"].strip())])
             print("===sale-order id====", sale_order_id)
             sale_order_id = odoo.env["sale.order"].browse(sale_order_id)
             print("======sale-order record-====", sale_order_id)
@@ -52,7 +50,7 @@ with open(
         excel_row += 1
 
 with open(
-    "/home/odoo/workspace/custom-addons/data_migration/odoorpc_script/sale_order_line.csv",
+    "/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/odoorpc_script/sale_order_line.csv",
     newline="",
 ) as csv_file:
     csv_file = csv.DictReader(csv_file)
@@ -94,7 +92,7 @@ with open(
 
 
 with open(
-    "/home/odoo/workspace/custom-addons/data_migration/odoorpc_script/sale_order.csv",
+    "/home/odoo/Documents/GitHub/Odoo_Workspace/custom_addons/odoorpc_script/sale_order.csv",
     newline="",
 ) as csv_file:
     csv_file = csv.DictReader(csv_file)
