@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
 
 
@@ -21,8 +22,5 @@ class TeamMember(models.Model):
 
         team_lead = fields.Boolean(string=_("Team lead"))
         team_lead_ids = fields.One2many(
-            "team.member",
-            "partner_id",
-            # domain="[('partner_id', 'not in','team_lead_ids')]",
-            string=_("Team member"),
+            "team.member", "partner_id", string=_("Team member")
         )

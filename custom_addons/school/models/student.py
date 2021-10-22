@@ -21,7 +21,7 @@ class StudentProfile(models.Model):
         string=" Upload student image", max_width=100, max_height=100
     )
     school_select_id = fields.Many2one("school.profile", string="Select School")
-    sc_select_id = fields.Many2many("school.profile", string="Selectssss")
+    sc_select_ids = fields.Many2many("school.profile", string="Selectssss")
     user_signature = fields.Binary(string="Signature")
     is_parking = fields.Boolean(
         related="school_select_id.parking", string="Is parking", store=True
