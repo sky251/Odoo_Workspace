@@ -6,7 +6,7 @@ class ConstructionSite(models.Model):
     _description = "Construction Site"
     _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string="Name", required=True)
+    name = fields.Char(string="Name", required=True, tracking=True)
     reference = fields.Char(string="Construction Site Code", required=True)
     display_name = fields.Char(string="Display Name", compute="_compute_display_name")
     scheduled_date = fields.Datetime(string="Material Requirement Date")

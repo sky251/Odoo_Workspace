@@ -2,7 +2,7 @@
 
 {
     "name": "Construction site",
-    "summary": """""",
+    "summary": """Construction site related information""",
     "description": """""",
     "author": "Patel Akash",
     "website": "https://www.aktivsoftware.com/",

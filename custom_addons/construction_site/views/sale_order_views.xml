@@ -5,11 +5,13 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+
             <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
                 <button name="%(action_construction_site)d" string="Construction" type="action"
                         class="oe_stat_button"
-                        icon="fa-square-o"/>
+                        icon="fa-wrench"/>
             </xpath>
+
         </field>
     </record>
 </odoo>

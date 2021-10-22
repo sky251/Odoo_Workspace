@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <!-- LIST VIEW -->
     <record id="construction_site_list_view" model="ir.ui.view">
-        <field name="name">construction site list view</field>
+        <field name="name">construction.site.list.view</field>
         <field name="model">construction.site</field>
         <field name="arch" type="xml">
             <tree>
@@ -15,8 +16,9 @@
         </field>
     </record>
 
+    <!-- FORM VIEW -->
     <record id="construction_site_form_view" model="ir.ui.view">
-        <field name="name">construction site form view</field>
+        <field name="name">construction.site.form.view</field>
         <field name="model">construction.site</field>
         <field name="arch" type="xml">
             <form>
@@ -74,16 +76,36 @@
                     <field name="message_ids"/>
                     <field name="activity_ids"/>
                 </div>
+
             </form>
         </field>
     </record>
 
+    <!-- SEARCH VIEW -->
+    <record id="docu_item_search_view" model="ir.ui.view">
+        <field name="name">construction.site.search.view</field>
+        <field name="model">construction.site</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="reference"/>
+                <field name="general_contractor_purchase_order_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Purchase Order" name="version" context="{'group_by':'general_contractor_purchase_order_id'}"/>
+                    <filter string="Name" name="item_type" context="{'group_by':'name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- ACTION -->
     <record id="action_construction_site" model="ir.actions.act_window">
         <field name="name">Construction Site</field>
         <field name="res_model">construction.site</field>
         <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- MENUITEMS -->
     <menuitem id="Construction_site_root_menu" name="Construction Site"/>
     <menuitem name="Construction site" id="construction_site_menu" action="action_construction_site"
               parent="Construction_site_root_menu"/>
