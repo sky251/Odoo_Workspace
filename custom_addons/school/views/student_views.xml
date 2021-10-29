@@ -106,20 +106,20 @@
                         </group>
                     </group>
 
-                    <notebook>
-                        <page string="Student Many2many">
-                            <group>
-                                <field name="sc_select_ids">
-                                    <tree editable="top">
-                                        <field name="name"/>
-                                        <field name="email"/>
-                                        <field name="phone"/>
-                                        <field name="parking"/>
-                                    </tree>
-                                </field>
-                            </group>
-                        </page>
-                    </notebook>
+<!--                    <notebook>-->
+<!--                        <page string="Student Many2many">-->
+<!--                            <group>-->
+<!--                                <field name="sc_select_ids">-->
+<!--                                    <tree editable="top">-->
+<!--                                        <field name="name"/>-->
+<!--                                        <field name="email"/>-->
+<!--                                        <field name="phone"/>-->
+<!--                                        <field name="parking"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </group>-->
+<!--                        </page>-->
+<!--                    </notebook>-->
                 </sheet>
             </form>
         </field>

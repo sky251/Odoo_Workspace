@@ -5,7 +5,8 @@ from odoo.exceptions import ValidationError
 class SchoolProfile(models.Model):
     _name = "school.profile"
     _description = "School Information"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+
+    # _inherit = ["mail.thread", "mail.activity.mixin"]
 
     # _rec_name = "name"
 
@@ -99,8 +100,8 @@ class SchoolProfile(models.Model):
     #         if record.result < 33.0:
     #             raise ValidationError("YOU ARE FAIL!!!!")
 
-    def button_on_click(self):
-        print("smart button click")
+    # def button_on_click(self):
+    #     print("smart button click")
 
     @api.depends("delivery_count")
     def _compute_picking_ids(self):
@@ -109,24 +110,41 @@ class SchoolProfile(models.Model):
                 [("school_select_id.id", "=", self.id)]
             )
 
-    def button_click(self):
-        print("smart button click")
-        self.ensure_one()
-        return {
-            "type": "ir.actions.act_window",
-            "name": "student",
-            "view_mode": "tree",
-            "res_model": "student.profile",
-            "domain": [("school_select_id.id", "=", self.id)],
-        }
+    # def button_click(self):
+    #     print("smart button click")
+    #     self.ensure_one()
+    #     return {
+    #         "type": "ir.actions.act_window",
+    #         "name": "student",
+    #         "view_mode": "tree",
+    #         "res_model": "student.profile",
+    #         "domain": [("school_select_id.id", "=", self.id)],
+    #     }
 
-    @api.model
-    def name_create(self, name):
-        print("name_create calling...", name)
-        rtn = super(StudentProfile, self).name_create(name)
-        return rtn
+    # @api.model
+    # def name_create(self, name):
+    #     print("name_create calling...", name)
+    #     rtn = super(StudentProfile, self).name_create(name)
+    #     return rtn
 
-    def send_mail(self):
-        template_id = self.env.ref('school.school_mail_template_view').id
-        template = self.env['mail.template'].browse(template_id)
-        template.send_mail(self.id, force_send=True)
+    def school_send_mail(self):
+        delivery_count = self.env["student.profile"].search([("school_select_id.id", "=", self.id)]).read(
+            ['student_email'])
+        count = len(delivery_count)
+        email_list = []
+        for email in range(0, count):
+            email_list.append(delivery_count[email]['student_email'])
+        template = self.env.ref('school.school_mail_template_view')
+
+        print("\n\n\n\n\n\n\n\n template ", email_list)
+        print("\n\n\n\n\n\n\n\n temphdfghlate ", count)
+        print("\n\n\n\n\n\n\n\n particular student ", delivery_count[1]['student_email'])
+
+    # email_list = ["akash.p@icreativetechnolabs.com","komal.p@icreativetechnolabs.com"]
+    # # email_count = len(email_add)
+    # # print("\n\n\n\n\nahsdfklb",len(email_add))
+        for email in email_list:
+            print(" strrrrrfinal Email",email)
+            # print("studenttttttttt", each, self.id)
+            template.send_mail(self.id, email_values={'email_to': email})
+        print("mail senddddddddddddddddddd")
