@@ -30,7 +30,11 @@
                 <header>
                     <button type="action" string="Form" class="btn btn-primary" icon="fa-edit"
                             name="%(school.action_create_wizard)d"/>
-<!--                    attributes -->
+                    <button id="mail_button" name="send_mail" string="Send Email" icon="fa-envelope-o"
+                            class="btn btn-primary" type="object" />
+
+
+                    <!--                    attributes -->
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

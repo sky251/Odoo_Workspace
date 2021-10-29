@@ -13,7 +13,7 @@
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
                             <div>
                                 <img t-att-src="kanban_image('student.profile','student_img',record.id.raw_value)"
-                                     style="margin: auto; width:10rem;"
+                                     style="margin: auto; width:10rem;" alt="Student Image"
                                 />
                             </div>
                             <!--                            <div class="o_kanban_image_fill_left d-none d-md-block">-->
@@ -32,7 +32,6 @@
             </kanban>
         </field>
     </record>
-
 
     <record id="student_list_view" model="ir.ui.view">
         <field name="name">student_profile.list.view</field>
@@ -87,13 +86,17 @@
                                 <field name="name" placeholder=" Student Name"/>
                             </h2>
                             <field name="student_email" placeholder="school email address"/>
+                            <field name="student_address"/>
+                            <field name="student_city"/>
+                            <field name="student_dist"/>
+                            <field name="student_state"/>
                             <field name="is_parking" attrs="{'invisible': [('state','=','confirm')]}"/>
                             <field name="calculate"/>
                             <field name="student_phone" widget="phone"
                                    attrs="{'required': [('state','=','confirm')], 'invisible': [('state','=','draft')]}"/>
                             <field name="student_result"/>
                             <field name="school_select_id"/>
-                            <field name="user_signature" widget="signature"/>
+                            <field name="student_signature" widget="signature"/>
                         </group>
                         <group>
                             <field name='student_img' filename="upld_schl_img_name" nolabel="1" widget="image"
@@ -106,7 +109,7 @@
                     <notebook>
                         <page string="Student Many2many">
                             <group>
-                                <field name="sc_select_id">
+                                <field name="sc_select_ids">
                                     <tree editable="top">
                                         <field name="name"/>
                                         <field name="email"/>

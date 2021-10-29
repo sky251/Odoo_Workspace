@@ -16,13 +16,17 @@ class StudentProfile(models.Model):
     name = fields.Char(string="Student name")
     student_email = fields.Char(string="Email")
     student_phone = fields.Char(string="Phone")
+    student_address = fields.Char(string="Address")
+    student_city = fields.Char(string="City")
+    student_dist = fields.Char(string="Dist")
+    student_state = fields.Char(string="State")
     student_result = fields.Float(string="Result")
     student_img = fields.Image(
         string=" Upload student image", max_width=100, max_height=100
     )
     school_select_id = fields.Many2one("school.profile", string="Select School")
     sc_select_ids = fields.Many2many("school.profile", string="Selectssss")
-    user_signature = fields.Binary(string="Signature")
+    student_signature = fields.Binary(string="Signature")
     is_parking = fields.Boolean(
         related="school_select_id.parking", string="Is parking", store=True
     )

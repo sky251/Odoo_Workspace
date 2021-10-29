@@ -7,17 +7,38 @@
             <field name="model_id" ref="school.model_school_profile"/>
             <field name="email_from">${(object.email.email_formatted) |safe}</field>
             <field name="email_to">${object.student_data_ids.student_email}</field>
-            <field name="subject">School name:(Ref ${object.name})</field>
+            <field name="subject">School name:${object.name}</field>
             <field name="body_html" type="html">
-                <div style="margin: 0px; padding: 0px;">
-                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                        Dear
-                        <strong>${object.student_data_ids.name}</strong>,
+                <div style="margin: 0px; padding: 0px; border:1px solid black;">
+                    <h3>${object.student_data_ids.name}</h3>
+                    <br/>
+                    <br/>
+                    <address>
+                        ${object.student_data_ids.student_address},
                         <br/>
+                        ${object.student_data_ids.student_city},
                         <br/>
-                        Here is your course:<strong>${object.courses}</strong>
-                        and fees:<strong>${object.fees}</strong>
-                    </p>
+                        ${object.student_data_ids.student_dist},
+                        <br/>
+                        ${object.student_data_ids.student_state},
+                        <br/>
+                    </address>
+                    <br/>
+                    <br/>
+                    <pre>
+                        <span>Dear<h5>${object.student_data_ids.name}</h5>,
+                        </span>
+                        <p>      First of all,Thank you for selecting Kite college</p>
+                        Here is your course:<strong>${object.courses}</strong>,
+                        and selected course fee:<strong>${object.fees}</strong>
+                    </pre>
+                    <hr/>
+                    <div>
+                        <pre>
+                            ${object.student_signature | safe}
+                            your Signature
+                        </pre>
+                    </div>
                 </div>
             </field>
             <field name="report_template" ref="report_school_detail"/>

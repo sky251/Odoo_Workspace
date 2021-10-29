@@ -9,7 +9,9 @@
     "depends": ["mail", "website_sale"],
     "data": [
         "security/ir.model.access.csv",
+        "security/school_security.xml",
         "data/school_website_data.xml",
+        "data/school_mail_template.xml",
         "wizard/create_wizard_views.xml",
         "views/controllers_views.xml",
         "views/school_views.xml",
@@ -17,8 +19,7 @@
         "wizard/create_wizard_views.xml",
         "report/student_detail_report.xml",
         "report/school_detail_report.xml",
-        "views/school_settings_views.xml",
-        "data/school_mail_template.xml",
+        # "views/school_settings_views.xml",
     ],
     "demo": [
         "data/school_data.xml",

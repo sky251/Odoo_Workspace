@@ -17,6 +17,9 @@
 
                     <div class="contacts_list_wrapper">
                         <table class="contact_list_tbl">
+                            <div id="scroll_top">
+                                <i class="fa fa-arrow-up"/>
+                            </div>
                             <thead class="thead-dark">
                                 <tr>
                                     <th class="contact_image_col display_web">ID</th>
@@ -35,7 +38,8 @@
                                         <td class="contact_image_col">
                                             <div class="contact_image_main_wrapper">
                                                 <div class="contact_image_wrapper">
-                                                    <img t-att-src="'/web/image/res.partner/%s/image_1920' % contact.id" class="contact_image"/>
+                                                    <img t-att-src="'/web/image/res.partner/%s/image_1920' % contact.id"
+                                                         class="contact_image"/>
                                                 </div>
                                                 <div class="display_mobile contact_mobile_details_wrapper">
                                                     <t t-esc="contact.name"/>
@@ -53,7 +57,8 @@
                                             <t t-esc="contact.email"/>
                                         </td>
                                         <td class="contact_name_col display_web">
-                                            <input type="checkbox" disabled="true" t-att-checked="(contact.team_lead) and 'checked'"/>
+                                            <input type="checkbox" disabled="true"
+                                                   t-att-checked="(contact.team_lead) and 'checked'"/>
                                         </td>
                                     </tr>
                                 </t>

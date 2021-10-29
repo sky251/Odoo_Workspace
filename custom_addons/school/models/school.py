@@ -1,6 +1,5 @@
-from openerp.exceptions import ValidationError
-
 from odoo import api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class SchoolProfile(models.Model):
@@ -126,3 +125,8 @@ class SchoolProfile(models.Model):
         print("name_create calling...", name)
         rtn = super(StudentProfile, self).name_create(name)
         return rtn
+
+    def send_mail(self):
+        template_id = self.env.ref('school.school_mail_template_view').id
+        template = self.env['mail.template'].browse(template_id)
+        template.send_mail(self.id, force_send=True)

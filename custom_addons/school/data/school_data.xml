@@ -58,7 +58,8 @@
         <field name="student_email">akash@gmail.com</field>
         <field name="student_phone">013254697854</field>
         <field name="student_result">98</field>
-        <field name="sc_select_id" eval="[(6, 0, [ref('school_data_1'),ref('school_data_2')])]"/>
+        <field name="school_select_id" ref="school.school_data_1"/>
+        <field name="sc_select_ids" eval="[(6, 0, [ref('school_data_1'),ref('school_data_2')])]"/> <!--Many2many -->
     </record>
 
     <record id="student_data_2" model="student.profile">

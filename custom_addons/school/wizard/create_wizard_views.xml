@@ -11,10 +11,10 @@
                     </group>
                 </sheet>
             </form>
-<!--            <footer>-->
-<!--                <button id="button_wizard" string="Cancel" name="cancel_object"-->
-<!--                        class="btn btn-outline-danger" type="object"/>-->
-<!--            </footer>-->
+            <!--            <footer>-->
+            <!--                <button id="button_wizard" string="Cancel" name="cancel_object"-->
+            <!--                        class="btn btn-outline-danger" type="object"/>-->
+            <!--            </footer>-->
         </field>
     </record>
 
@@ -24,4 +24,15 @@
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>
+
+<!--    <record id="xx" model="ir.actions.act_window">-->
+<!--        <field name="name">Update Task</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">create.wizard</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--        <field name="target">new</field>-->
+<!--        &lt;!&ndash; TODO: check if we need this &ndash;&gt;-->
+<!--        <field name="binding_model_id" ref="sale.model_sale_order"/>-->
+<!--        &lt;!&ndash;            <field name="binding_view_types">form,list</field>&ndash;&gt;-->
+<!--    </record>-->
 </odoo>

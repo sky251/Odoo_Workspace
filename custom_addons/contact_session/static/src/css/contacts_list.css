@@ -78,3 +78,13 @@ a:hover {
     cursor: pointer;
     background: #dcdcdc;
 }
+
+#scroll_top{
+    background:rgba(0,0,0,0.3);
+    width:20px;
+    height:30px;
+    position:fixed;
+    right:350px;
+    bottom:30px;
+    text-align: center;
+}

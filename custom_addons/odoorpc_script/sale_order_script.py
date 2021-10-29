@@ -16,20 +16,18 @@ with open(
     excel_row = 2
     for row in csv_file:
         rec = dict(row)
-        print("\n\n read sale record ===================", rec)
         if excel_row >= 2:
             sale_order_id = odoo.env["sale.order"].search([("name", "=", rec["Order Reference"].strip())])
-            print("===sale-order id====", sale_order_id)
+            print("sale-order id====>>>>>", sale_order_id)
             sale_order_id = odoo.env["sale.order"].browse(sale_order_id)
-            print("======sale-order record-====", sale_order_id)
+            print("sale-order record-====>>>", sale_order_id)
 
             partner_id = odoo.env["res.partner"].search(
                 [("name", "=", rec["Customer"])]
             )
-            print("===partner_id-====", partner_id)
+            print("partner_id-====>>>", partner_id)
 
             if not partner_id:
-                print("===if not partner-===")
                 partner = odoo.env["res.partner"].create({"name": rec["Customer"]})
                 partner_id.append(partner)
                 print("====partner_id===", partner_id)
@@ -109,19 +107,14 @@ with open(
             print("===order id-=record===", order_id)
 
             if rec["Status"].strip() == "Quotation":
-                print("=====state in Quotation====")
                 order_id.action_draft()
             if rec["Status"].strip() == "Quotation Sent":
-                print("=====state in sent====")
                 order_id.action_quotation_sent()
             if rec["Status"].strip() == "Sales Order":
-                print("=====state in sale====")
                 order_id.action_confirm()
             if rec["Status"].strip() == "Locked":
-                print("===== state in done====")
                 order_id.state = "done"
             if rec["Status"].strip() == "Cancelled":
-                print("=====state in cancel====")
                 order_id.action_cancel()
 
 # Below print statements are used to get the start and end timings of the script execution.
