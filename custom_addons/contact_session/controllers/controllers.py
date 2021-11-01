@@ -57,7 +57,7 @@ class Contact(http.Controller):
             data["error"] = e
         return data
 
-    @http.route("/get/error/dialog", type="json", auth="public")
+    @http.route("/get/error/dialog", type="http", auth="public")
     def get_error_dialog(self, **kw):
         markup = (request.env["ir.ui.view"].sudo()._render_template("contact_session.error_dialog_template", kw))
         return markup

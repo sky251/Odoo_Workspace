@@ -20,6 +20,8 @@ class SchoolData(models.AbstractModel):
             students_list.append(st_name)
         print("student id", students)
         print("student list", students_list)
+        
+
         return {
             "doc_model": "school.profile",
             "data": data,
