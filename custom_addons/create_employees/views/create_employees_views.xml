@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="create_employee_list_view" model="ir.ui.view">
+        <field name="name">create employees list view</field>
+        <field name="model">create.employees</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="d_o_b"/>
+                <field name="age"/>
+                <field name="job_position"/>
+                <field name="expected_salary"/>
+                <field name="affordable_salary"/>
+                <field name="extra_amount"/>
+                <field name="monthly_amount"/>
+                <field name="monthly_amount"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_employee_form_view" model="ir.ui.view">
+        <field name="name">create employees form view</field>
+        <field name="model">create.employees</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button id="calculate_yearly" name="calculate_yearly" string="Calculate yearly"
+                            class="btn btn-primary" type="object"/>
+                    <button id="button_done" name="calculate_yearly" string="Calculate monthly"
+                            class="btn btn-primary" type="object"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" placeholder="Employee Name"/>
+                            <field name="d_o_b"/>
+                            <field name="age"/>
+                            <field name="expected_salary"/>
+                            <field name="job_position"/>
+                            <field name="affordable_salary"/>
+                            <field name="extra_amount"/>
+                            <field name="monthly_amount" />
+                            <field name="yearly_amount"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="create_employees_action_view" model="ir.actions.act_window">
+        <field name="name">Create Employees</field>
+        <field name="res_model">create.employees</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="create_employees_root_menu" name="Create Employees"/>
+    <menuitem name="Employee" id="create_employee_menu" action="create_employees_action_view"
+              parent="create_employees_root_menu"/>
+
+
+</odoo>
+
+
