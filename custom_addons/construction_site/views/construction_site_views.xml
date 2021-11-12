@@ -110,4 +110,5 @@
     <menuitem name="Construction site" id="construction_site_menu" action="action_construction_site"
               parent="Construction_site_root_menu"/>
 
+
 </odoo>

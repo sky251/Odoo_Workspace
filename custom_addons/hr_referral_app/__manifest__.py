@@ -16,6 +16,7 @@
     # always loaded
     "data": [
         "security/ir.model.access.csv",
+        "security/security.xml",
         "views/hr_ref_app_views.xml",
     ],
     "installable": True,

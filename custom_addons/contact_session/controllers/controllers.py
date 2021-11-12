@@ -37,7 +37,7 @@ class Contact(http.Controller):
     def create_new_contact(self, **kw):
         states = request.env["res.country.state"].sudo().search([])
         countries = request.env["res.country"].sudo().search([])
-        return request.render("contact_session.contact_form_template",{"countries": countries,"states": states,},)
+        return request.render("contact_session.contact_form_template", {"countries": countries, "states": states, }, )
 
     @http.route("/get/filtered/states", type="json", auth="public")
     def get_filtered_states(self, **kw):

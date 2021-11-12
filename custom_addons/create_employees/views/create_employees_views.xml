@@ -17,6 +17,7 @@
                 <field name="monthly_amount"/>
                 <field name="start_date"/>
                 <field name="end_date"/>
+                <field name="gender"/>
             </tree>
         </field>
     </record>
@@ -27,9 +28,9 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button id="calculate_yearly" name="calculate_yearly" string="Calculate yearly"
+                    <button id="calculate_yearly" name="calculate_amount" string="Calculate yearly"
                             class="btn btn-primary" type="object"/>
-                    <button id="button_done" name="calculate_yearly" string="Calculate monthly"
+                    <button id="button_done" name="calculate_amount" string="Calculate monthly"
                             class="btn btn-primary" type="object"/>
                 </header>
                 <sheet>
@@ -42,10 +43,11 @@
                             <field name="job_position"/>
                             <field name="affordable_salary"/>
                             <field name="extra_amount"/>
-                            <field name="monthly_amount" />
+                            <field name="monthly_amount"/>
                             <field name="yearly_amount"/>
                             <field name="start_date"/>
                             <field name="end_date"/>
+                            <field name="gender" groups="create_employees.allow_employee_details"/>
                         </group>
                     </group>
                 </sheet>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_ref_app_task" model="ir.module.category">
+            <field name="name">Hr Reff App</field>
+            <field name="description">Helps you handle your quotations, sale orders and invoicing.</field>
+        </record>
+
+        <record id="hr_ref_app_1" model="res.groups">
+            <field name="name">Hr 1</field>
+            <field name="category_id" ref="hr_ref_app_task"/>
+        </record>
+
+        <record id="he_ref_app_2" model="res.groups">
+            <field name="name">Hr 2</field>
+            <field name="category_id" ref="hr_ref_app_task"/>
+        </record>
+    </data>
+</odoo>

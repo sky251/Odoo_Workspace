@@ -8,7 +8,7 @@ class SchoolData(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         print("\n\n\n===> _get_report_callingggg", self)
-        print("\n\n\n===> docids_callingggg", docids)
+        print("\n\n\n===> docids_", docids)
 
         docs = self.env["school.profile"].browse(docids)
         students = self.env["student.profile"].search(

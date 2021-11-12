@@ -46,15 +46,15 @@ class ContactController(http.Controller):
     @http.route("/create_new_cont", type="http", website=True, auth="public")
     def crt_new_cont(self, **kw):
         # contacts = request.env["res.partner"].sudo().search().read(["email"])
-        em = request.env["res.partner"].search([]).read(["email"])
-        email_list = []
-        for e in em:
-            email_list.append(e["email"])
-        email = kw.get("email")
-        if email in email_list:
-            print("\n\n\n\n\n\n Email already used \n\n\n\n\n\n")
-            return request.render("product_website.create_new_contact")
-        else:
+        # em = request.env["res.partner"].search([]).read(["email"])
+        # email_list = []
+        # for e in em:
+        #     email_list.append(e["email"])
+        # email = kw.get("email")
+        # if email in email_list:
+        #     print("\n\n\n\n\n\n Email already used \n\n\n\n\n\n")
+        #     return request.render("product_website.create_new_contact")
+        # else:
             print("\n\n\n\n Else part \n\n\n")
             vals = {
                 "name": kw.get("name"),
@@ -65,5 +65,4 @@ class ContactController(http.Controller):
             print("=============vals==============", vals)
             request.env["res.partner"].sudo().create(vals)
             return request.redirect("/contact/")
-
-        return request.render("product_website.create_new_contact")
+            return request.render("product_website.create_new_contact")

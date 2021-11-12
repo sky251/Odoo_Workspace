@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="allow_employee_details" model="res.groups">
+        <field name="name">Allow Employee Information</field>
+    </record>
+</odoo>

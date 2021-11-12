@@ -18,10 +18,12 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "wizard/construction_site_wizard_views.xml",
         "views/construction_site_views.xml",
         "views/sale_order_views.xml",
         "views/purchase_views.xml",
         "views/project_task_views.xml",
+        "report/student_detail_report.xml",
     ],
     "installable": True,
     "application": True,
