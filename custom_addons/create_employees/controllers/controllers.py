@@ -51,8 +51,16 @@ class CreateEmployees(http.Controller):
             values.update({'submit': True, 'filtered_employee': filtered_employee, 'jp': jp})
         return request.render("create_employees.employee_details_template", values)
 
-    @http.route(["/my/check_existing_order", "//my/check_existing_order/<int:page>"], type='http', auth="user",website=True)
+    @http.route(["/my/check_existing_order", "//my/check_existing_order/<int:page>"], type='http', auth="user",
+                website=True)
     def portal_menu(self):
+        total_count = 4
+        pager = portal_pager(
+            url="/my/quotes",
+            url_args={'total_count': total_count},
+            total=total_count,
+            page=page,
+        )
         print("\n\n\n\n\n\n portal menu \n\n\n\n\n")
 
 # class CreateEmployeePortal(portal.PortalPayment):
