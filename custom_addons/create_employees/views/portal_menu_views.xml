@@ -7,17 +7,10 @@
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">New Custom Portal</t>
                 <t t-set="url" t-value="'/my/check_existing_order'"/>
-                <t t-set="placeholder_count" t-value="'total'"/>
+                <t t-set="placeholder_count" t-value="'my_count'"/>
             </t>
         </xpath>
     </template>
 
 </odoo>
 
-        <!--<xpath expr="//div[hasclass('o_portal_docs')]" position="inside">-->
-        <!--<t t-call="portal.portal_docs_entry">-->
-        <!--    <t t-set="title">Timesheets</t>-->
-        <!--    <t t-set="url" t-value="'/my/timesheets'"/>-->
-        <!--    <t t-set="placeholder_count" t-value="'timesheet_count'"/>-->
-        <!--</t>-->
-        <!--</xpath>-->

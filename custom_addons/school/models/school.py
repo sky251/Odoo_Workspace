@@ -94,6 +94,7 @@ class SchoolProfile(models.Model):
     #  'unique(phone)',
     #  "please enter another phone number, Given phone number already exist.")
 
+    #User Define Constainss
     # @api.constrains('result')
     # def _check_something(self):
     #     for record in self:
@@ -126,25 +127,8 @@ class SchoolProfile(models.Model):
     #     print("name_create calling...", name)
     #     rtn = super(StudentProfile, self).name_create(name)
     #     return rtn
-
+    #
     def school_send_mail(self):
-        delivery_count = self.env["student.profile"].search([("school_select_id.id", "=", self.id)]).read(
-            ['student_email'])
-        count = len(delivery_count)
-        email_list = []
-        for email in range(0, count):
-            email_list.append(delivery_count[email]['student_email'])
         template = self.env.ref('school.school_mail_template_view')
-
-        print("\n\n\n\n\n\n\n\n template ", email_list)
-        print("\n\n\n\n\n\n\n\n temphdfghlate ", count)
-        print("\n\n\n\n\n\n\n\n particular student ", delivery_count[1]['student_email'])
-
-    # email_list = ["akash.p@icreativetechnolabs.com","komal.p@icreativetechnolabs.com"]
-    # # email_count = len(email_add)
-    # # print("\n\n\n\n\nahsdfklb",len(email_add))
-        for email in email_list:
-            print(" strrrrrfinal Email",email)
-            # print("studenttttttttt", each, self.id)
-            template.send_mail(self.id, email_values={'email_to': email})
-        print("mail senddddddddddddddddddd")
+        print("\n\n\n\n\n\nstudenttttttttt")
+        template.send_mail(self.id)

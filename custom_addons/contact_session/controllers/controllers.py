@@ -12,12 +12,7 @@ class Contact(http.Controller):
         contacts = request.env["res.partner"].sudo().search([])
         return request.render("contact_session.contacts_list", {"contacts": contacts})
 
-    @http.route(
-        "/contact/<model('res.partner'):contact>",
-        type="http",
-        website=True,
-        auth="public",
-    )
+    @http.route("/contact/<model('res.partner'):contact>",type="http",website=True,auth="public",)
     def contact_details(self, contact):
         domain = []
         if contact.country_id:

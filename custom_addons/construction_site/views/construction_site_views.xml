@@ -106,9 +106,9 @@
     </record>
 
     <!-- MENUITEMS -->
-    <menuitem id="Construction_site_root_menu" name="Construction Site"/>
+    <menuitem id="construction_site_root_menu" name="Construction Site"/>
     <menuitem name="Construction site" id="construction_site_menu" action="action_construction_site"
-              parent="Construction_site_root_menu"/>
+              parent="construction_site_root_menu"/>
 
 
 </odoo>

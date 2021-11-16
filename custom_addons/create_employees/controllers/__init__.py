@@ -1,1 +1,2 @@
-from . import controllers
+from . import main
+from . import portal

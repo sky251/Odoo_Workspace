@@ -5,34 +5,10 @@ odoo.define("contacts", function (require) {
 
     $(document).ready(function(){
 
-//      SCROLL TOP
-//        if ($('scroll_top').scrollTop() > 100){
-//
-//            }
-
-    //Scroll Button Hide
-    $('html').scroll(function(e){
-        if ($('html').scroll() > 200) {
-        console.log(" if scrolling")
-        $('#scroll_top').fadeIn();
-        }
-        else {
-        console.log("else calling")
-        $('#scroll_top').fadeOut();}
-        });
-
     //Scroll To Top
     $('#scroll_top').click(function(e){
-        console.log(" Scroll btn called");
-        $('html').scrollTop(0,'slow');return false;
+        $('body').animate({scrollTop: 0},800,"swing");
         });
-
-//        $('#scroll_top').hide(function(e){
-//            if ($(this)scrollTop() > 100)
-//              $('body').scrollTop(0,1000);
-////              $('body').animate({scrollTop: 0},800);
-////              console.log("Scroll event trigger " + $('body').animate({scrollTop: 0},400))
-//        });
 
 
 //      FOR MAKING THE LIST ROW CLICKABLE
@@ -94,13 +70,13 @@ odoo.define("contacts", function (require) {
 //      FOR SEARCHING IN THE CONTACT LIST
         $("#filter_table").on("keypress", function(e) {
             console.log("e.keyCode----", e.keyCode)
-            if (e.keyCode == 13 || e.keyCode == 8)
-            {
+//            if (e.keyCode == 13)
+//            {
                 var value = $(this).val().toLowerCase();
                 $(".contact_list_tbl tbody tr").filter(function() {
                     $(this).toggle($(this).find(".contact_name_col").text().toLowerCase().indexOf(value) > -1)
                 });
-            }
+//            }
         });
 
         $("#country_id").on("change", function(e) {

@@ -28,7 +28,7 @@
                     <pre>
 <!--                        <span>Dear<h5>${object.student_data_ids.name}</h5>,-->
 <!--                        </span>-->
-                        <p>      First of all,Thank you for selecting Kite college</p>
+                        <p>      First of all,Thank you for selecting our college</p>
                         Here is your course:<strong>${object.courses}</strong>,
                         and selected course fee:<strong>${object.fees}</strong>
                     </pre>

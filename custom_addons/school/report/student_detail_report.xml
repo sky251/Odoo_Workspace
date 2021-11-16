@@ -62,7 +62,7 @@
     <record id="report_student_detail" model="ir.actions.report">
         <field name="name">Student</field>
         <field name="model">student.profile</field>
-        <field name="report_type">html</field>
+        <field name="report_type">qweb-pdf</field>
         <field name="report_name">school.report_student_detail_template</field>
         <field name="report_file">school.report_student_detail</field>
         <field name="binding_model_id" ref="model_student_profile"/>
