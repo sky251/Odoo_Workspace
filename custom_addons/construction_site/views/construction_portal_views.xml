@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
+    <template id="portal_my_home_menu_construction" name="Portal layout : sales menu entries" inherit_id="portal.portal_breadcrumbs" priority="20">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'const_site'" t-attf-class="breadcrumb-item #{'active ' if not sites else ''}">
+                <a t-if="sites" t-attf-href="/my/check_construction_site?{{ keep_query() }}">Construction Sites</a>
+                <t t-else="">Construction Sites</t>
+            </li>
+        </xpath>
+    </template>
+
+
     <template id="portal_my_home_construction_site" name="Construction Site" inherit_id="portal.portal_my_home"
               customize_show="True" priority="30">
         <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">

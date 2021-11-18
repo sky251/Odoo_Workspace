@@ -1,33 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-<!--    <template id="portal_my_construction_site" name="My Construction Sites">-->
-<!--        <t t-call="portal.portal_layout">-->
-<!--            &lt;!&ndash;            <t t-set="breadcrumbs_searchbar" t-value="True"/>&ndash;&gt;-->
-
-<!--            <t t-call="portal.portal_searchbar">-->
-<!--                <t t-set="title">Construction 345 Sites</t>-->
-<!--            </t>-->
-<!--            <table>-->
-<!--                <thead>-->
-<!--                    <tr class="active">-->
-<!--                        <th>-->
-<!--                            <span class='d-none d-md-inline'>Construction Site #</span>-->
-<!--                        </th>-->
-<!--                        <th>-->
-<!--                            <span class='d-none d-md-inline'>Reference Code</span>-->
-<!--                        </th>-->
-<!--                    </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                    <tr>-->
-<!--                        <td>asdf</td>-->
-<!--                        <td>adsf</td>-->
-<!--                    </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--        </t>-->
-
-<!--    </template>-->
 
     <template id="portal_my_construction_site" name="My Construction Sites">
         <t t-call="portal.portal_layout">
@@ -42,25 +14,30 @@
             <t t-if="sites" t-call="portal.portal_table">
                 <thead>
                     <tr class="active">
-                        <th>
-                            <span class='d-none d-md-inline'>Sales Order #</span>
-                            <span class='d-block d-md-none'>Ref.</span>
+                        <th class="text-center">
+                            <span class='d-none d-md-inline'>Name</span>
                         </th>
-                        <th class="text-right">Order Date</th>
                         <th class="text-center">Reference Code</th>
-                        <th class="text-right">Total</th>
+                        <th class="text-center">Scheduled Date</th>
+                        <th class="text-center">State</th>
                     </tr>
                 </thead>
                 <t t-foreach="sites" t-as="site">
                     <tr>
-                        <td><t t-esc="site.name"/></td>
-                        <td class="text-right">
-                            <span t-esc="site.scheduled_date"/>
+                        <td class="text-center">
+                            <a t-attf-href="/my/check_construction_site/#{site.name}">
+                                <t t-esc="site.name"/>
+                            </a>
                         </td>
                         <td class="text-center">
                             <t t-esc="site.reference"/>
                         </td>
-                        <td class="text-right"><span t-field="site.name"/></td>
+                        <td class="text-center">
+                            <t t-esc="site.scheduled_date"/>
+                        </td>
+                        <td class="text-center">
+                            <t t-esc="site.state"/>
+                        </td>
                     </tr>
                 </t>
             </t>
