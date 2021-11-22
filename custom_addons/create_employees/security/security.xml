@@ -4,4 +4,5 @@
     <record id="allow_employee_details" model="res.groups">
         <field name="name">Allow Employee Information</field>
     </record>
+
 </odoo>

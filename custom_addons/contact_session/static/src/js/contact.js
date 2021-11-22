@@ -79,6 +79,17 @@ odoo.define("contacts", function (require) {
 //            }
         });
 
+
+        $("#add_member_btn").click(function(){
+            $(".table tbody tr").last().after(
+            '<tr>'+
+                    '<td>1</td>'+
+                    '<td>2</td>'+
+                    '<td>3</td>'+
+            '</tr>'
+            );
+        });
+
         $("#country_id").on("change", function(e) {
             $('#contact_form_submit_btn').attr("disabled", "disabled");
             let state_ele = $('#state_id');

@@ -19,12 +19,15 @@ class Contact(http.Controller):
             domain.append(("country_id", "=", contact.country_id.id))
         states = request.env["res.country.state"].sudo().search(domain)
         countries = request.env["res.country"].sudo().search([])
+        members = request.env["res.partner"].sudo().search([])
+
         return request.render(
             "contact_session.contact_form_template",
             {
                 "partner": contact,
                 "countries": countries,
                 "states": states,
+                "members": members,
             },
         )
 
@@ -32,7 +35,13 @@ class Contact(http.Controller):
     def create_new_contact(self, **kw):
         states = request.env["res.country.state"].sudo().search([])
         countries = request.env["res.country"].sudo().search([])
-        return request.render("contact_session.contact_form_template", {"countries": countries, "states": states, }, )
+
+        data = {
+            "countries": countries,
+            "states": states,
+
+        }
+        return request.render("contact_session.contact_form_template",data)
 
     @http.route("/get/filtered/states", type="json", auth="public")
     def get_filtered_states(self, **kw):

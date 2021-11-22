@@ -4,6 +4,11 @@
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/css" href="/contact_session/static/src/css/contact_details.css"/>
             <link rel="stylesheet" type="text/css" href="/contact_session/static/src/css/contacts_list.css"/>
+            <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+            ></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!--            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"-->
+<!--            ></script>-->
 
             <script type="text/javascript" src="/contact_session/static/src/js/contact.js"></script>
         </xpath>

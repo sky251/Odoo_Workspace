@@ -79,3 +79,14 @@ class ConstructionSite(models.Model):
     def action_close(self):
         for rec in self:
             rec.state = "closed"
+
+    def open_wizard(self):
+        print("\n\n\n\n\n\ncall wizard function 1")
+        return {
+            'type': 'ir.actions.act_window',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'view_id': 'construction_site_wizard_views_action',
+            'res_model': 'construction.wizard',
+            'target': 'new',
+        }

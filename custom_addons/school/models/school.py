@@ -123,7 +123,7 @@ class SchoolProfile(models.Model):
     #     }
 
     # @api.model
-    # def name_create(self, name):
+    # def name_create(self, name): #
     #     print("name_create calling...", name)
     #     rtn = super(StudentProfile, self).name_create(name)
     #     return rtn

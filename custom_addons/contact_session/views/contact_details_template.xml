@@ -92,6 +92,21 @@
                                             </div>
                                         </div>
 
+                                        <div class="row form_input_wrapper">
+                                            <div class="col-md-9">
+                                                <select id="member_id" class="form-control">
+                                                    <option value="">Select Team Member</option>
+                                                    <t t-foreach="members" t-as="member">
+                                                        <option>
+                                                            <t t-esc="member.name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <input type="button" class="btn btn-primary" id="add_member_btn">Add Member</input>                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="col-md-3 partner_image_wrapper">
                                         <div class="partner_image_block">
@@ -125,12 +140,17 @@
                                             <td t-esc="team.name"/>
                                             <td t-esc="team.email"/>
                                         </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <div class="">
-                            <button class="btn btn-primary" id="contact_form_submit_btn" type="submit">Save</button>
+                            <button class="btn btn-success" id="contact_form_submit_btn" type="submit">Save</button>
                         </div>
                     </form>
                 </div>

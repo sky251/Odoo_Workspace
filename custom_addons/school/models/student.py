@@ -54,20 +54,20 @@ class StudentProfile(models.Model):
         return dict
 
     @api.model_create_multi  # or   @api.model
-    def create(self, vals):
+    def create(self, vals):   # record set
         rtn = super(StudentProfile, self).create(vals)
         return rtn
 
-    def write(self, vals):
+    def write(self, vals):  #Boolean
         rtn = super(StudentProfile, self).write(vals)
         return rtn
 
-    def unlink(self):
+    def unlink(self): #Record set
         rtn = super(StudentProfile, self).unlink()
         print("\n\n\nrtn", rtn)
         return rtn
 
-    def copy(self, default={}):
+    def copy(self, default={}): #record ste
         default["name"] = "copy(" + self.name + ")"
         print("\n\n\nself data", self)
         rtn = super(StudentProfile, self).copy(default=default)

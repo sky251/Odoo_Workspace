@@ -16,9 +16,12 @@
         "website",
     ],
     "data": [
+        "security/construction_security.xml",
         "security/ir.model.access.csv",
         "views/construction_site_views.xml",
         "wizard/construction_site_wizard_views.xml",
+        "wizard/action_views.xml",
+
         "views/sale_order_views.xml",
         "views/purchase_views.xml",
         "views/project_task_views.xml",

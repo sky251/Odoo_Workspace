@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_const_link" model="ir.actions.act_window">
+        <field name="name">Construction</field>
+        <field name="res_model">construction.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="construction_site.construction_site_wizard_views_action"/>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_construction_site"/>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>
