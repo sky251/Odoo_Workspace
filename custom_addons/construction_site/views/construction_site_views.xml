@@ -106,14 +106,14 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="construction_server_action" model="ir.actions.server">
-        <field name="name">Open Wizard</field>
-        <field name="model_id" ref="model_construction_site"/>
-        <field name="binding_model_id" ref="model_construction_site"/>
-        <field name="state">code</field>
-<!--        (to call pythone fun())-->
-        <field name="code">records.open_wizard()</field>
-    </record>
+<!--    <record id="construction_server_action" model="ir.actions.server">-->
+<!--        <field name="name">Open Wizard</field>-->
+<!--        <field name="model_id" ref="model_construction_site"/>-->
+<!--        <field name="binding_model_id" ref="model_construction_site"/>-->
+<!--        <field name="state">code</field>-->
+<!--&lt;!&ndash;        (to call pythone fun())&ndash;&gt;-->
+<!--        <field name="code">records.open_wizard()</field>-->
+<!--    </record>-->
 
 
     <!-- MENUITEMS -->

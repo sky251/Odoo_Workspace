@@ -5,6 +5,8 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     site_count = fields.Integer(string="Site Count", compute="_compute_count_site")
+    state = fields.Selection(selection_add=[('meeting', 'Meeting')])
+
 
     def _compute_count_site(self):
         for site in self:
