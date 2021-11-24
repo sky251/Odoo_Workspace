@@ -4,7 +4,7 @@ from odoo import models, fields, api
 class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
 
-    order = fields.Char(related="member_id.order_line", string="Order")
+    order_line_cus = fields.Char(string="Order Line")
 
-    partner_id = fields.Many2one("purchase.order.line", string="zzz")
-    member_id = fields.Many2one("purchase.order.line", string="Member")
+    # partner_id = fields.Many2one("purchase.order.line", string="zzz")
+    # member_id = fields.Many2one("purchase.order.line", string="Member")
