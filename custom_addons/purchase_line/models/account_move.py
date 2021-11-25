@@ -6,5 +6,3 @@ class AccountMoveLine(models.Model):
 
     order_line_cus = fields.Char(string="Order Line")
 
-    # partner_id = fields.Many2one("purchase.order.line", string="zzz")
-    # member_id = fields.Many2one("purchase.order.line", string="Member")
