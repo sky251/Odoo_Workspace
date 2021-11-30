@@ -1,5 +1,5 @@
 {
-    "name": "Sale Management",
+    "name": "Purchase",
     "version": "14.0.1.0.0",
     "category": "sale",
     "summary": "Sale management system",

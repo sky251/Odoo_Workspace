@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="contact_form_inherit" model="ir.ui.view">
+        <field name="name">contact form inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="credit_limit" widget="boolean"/>
+                <field name="credit_limit_score" attrs="{'invisible': [('credit_limit','==',False)]}"/>
+                <field name="blocking_limit" widget="boolean"/>
+                <field name="blocking_limit_score" attrs="{'invisible': [('blocking_limit','==',False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

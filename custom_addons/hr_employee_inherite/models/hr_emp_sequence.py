@@ -8,7 +8,6 @@ class HrEmployee(models.Model):
 
     @api.model
     def create(self, vals):
-        vals["sequence"] = (
-            self.env["ir.sequence"].next_by_code("hr.employee.sequence.code") or "New"
-        )
+        print("\n\n\n\n nxtttt",vals)
+        vals["sequence"] = (self.env["ir.sequence"].next_by_code("hr.employee.sequence.code") or "New")
         return super(HrEmployee, self).create(vals)

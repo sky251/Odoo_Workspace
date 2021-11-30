@@ -12,7 +12,7 @@
         "security/ir.model.access.csv",
         "data/sequence_view.xml",
         "wizard/test_wizard_view.xml",
-        "views/inherit_seq_view.xml",
+        "views/inherite_seq_view.xml",
     ],
     "installable": True,
     "application": True,

@@ -1,0 +1,23 @@
+{
+    "name": "Credit Blocking Limit",
+    "version": "14.0.1.0.0",
+    "category": "",
+    "summary": "",
+    "sequence": 1,
+    "author": "Patel Akash",
+    "website": "https://www.aktivesoftware.com/",
+    "description": "",
+    "depends": ["base","sale_management","website"],
+    "data": [
+        "data/partner_menu.xml",
+        "data/partner_mail_template.xml",
+        "views/assets.xml",
+        "views/res_partner_views.xml",
+        "views/partner_template_views.xml",
+        "views/res_partner_settings.xml",
+    ],
+    "demo": [],
+    "installable": True,
+    "auto_install": False,
+    "application": True,
+}

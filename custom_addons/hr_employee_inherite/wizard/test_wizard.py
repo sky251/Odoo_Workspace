@@ -10,5 +10,7 @@ class Wizardtest(models.TransientModel):
 
     def test_wizard(self):
         context = self._context
+        print("\n\n\n\n\n\n context[active_id]",context)
         employee = self.env["hr.employee"].browse(context["active_id"])
+        print("\n\n\n\n\n\n context[active_id]",context["active_id"])
         employee.mobile_phone = self.name

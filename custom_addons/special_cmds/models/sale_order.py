@@ -9,7 +9,7 @@ class SaleOrder(models.Model):
     )
 
     def update_m2m_button(self):
-        print("\n\n\n\n\n UPDATE M2m BUTTON")
+        print("\n\n\n\n\n UPDATE M2m and O2m BUTTON")
 
         """ (0,0,{}) -->  CREATE NEW RECORD IN DATABASE"""
         # range_list = []
@@ -29,10 +29,11 @@ class SaleOrder(models.Model):
         # self.custom_partner_ids= [(3,14)]
 
         """ (4,id) -->  ADD EXISTING RECORD IN DATABASE"""
-        # self.custom_partner_ids = [(4,27)]
+        # self.custom_partner_ids = [(4,27),(4,28)]
 
         """ (5,) -->  UNLINK ALL RECORD FROM FIELD BUT NOT PERMENENT """
         # self.custom_partner_ids = [(5,)]
 
         """ (6,0,[IDs]) -->  REMOVE RECORD FROM DATABASE """
         self.custom_partner_ids = [(6, 0, [14, 23, 33])]
+
