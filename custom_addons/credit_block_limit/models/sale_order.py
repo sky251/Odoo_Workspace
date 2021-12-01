@@ -18,7 +18,6 @@ class SaleOrder(models.Model):
             total_amount += rtn.amount_total
             for amount in rtn.env['sale.order'].search([('partner_id', '=', rtn.partner_id.id), ('state', 'in', ['draft', 'sent'])]):
                 total_amount = total_amount + amount.amount_total
-                print(amount)
             if credit_score < total_amount:
                 if email_to:
                     template = rtn.env.ref('credit_block_limit.partner_mail_template_view')
