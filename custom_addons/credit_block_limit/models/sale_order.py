@@ -7,15 +7,17 @@ class SaleOrder(models.Model):
 
     @api.model
     def create(self,vals):
+        print("\n\n\n\n\n\n Before Valsss",vals)
         rtn = super(SaleOrder, self).create(vals)
-        print("rtnnn\n\n\n\n\n",rtn)
+        print("\n\n\n\n\n\n After Valsss",vals)
+        # print("rtnnn\n\n\n\n\n",rtn)
 
         credit_score,blocking_score = rtn.partner_id.credit_limit_score,rtn.partner_id.blocking_limit_score
         email_to = rtn.env['ir.config_parameter'].get_param("credit_block_limit.email_to")
         print("\n\n\n\n email_to",email_to)
-        if credit_score:
+        if credit_score :
             total_amount = 0
-            total_amount += rtn.amount_total
+            # total_amount += rtn.amount_total
             for amount in rtn.env['sale.order'].search([('partner_id', '=', rtn.partner_id.id), ('state', 'in', ['draft', 'sent'])]):
                 total_amount = total_amount + amount.amount_total
             if credit_score < total_amount:

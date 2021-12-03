@@ -14,6 +14,8 @@ class ConstructionSite(models.Model):
     @api.depends("name", "reference")
     def _compute_display_name(self):
         for data in self:
+            x = self.env['sale.order'].search([(1, '=', 1)])
+            print("\n\n\n\nx",x)
             data.display_name = f"[{data.reference}] {data.name}"
 
     state = fields.Selection(
@@ -79,7 +81,6 @@ class ConstructionSite(models.Model):
     def action_close(self):
         for rec in self:
             rec.state = "closed"
-
 
     # not working
     # def open_wizard(self):

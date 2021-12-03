@@ -7,7 +7,7 @@
     "author": "Patel Akash",
     "website": "https://www.aktivesoftware.com/",
     "description": "",
-    "depends": ["base","sale_management","website"],
+    "depends": ["sale_management","website"],
     "data": [
         "data/partner_menu.xml",
         "data/partner_mail_template.xml",
