@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_template_view" name="Product Details">
+        <t t-call="website.layout">
+            <div class="oe_structure my-2">
+                <div class="container">
+                    <h1 class="product_lable">Online Store</h1>
+                    <hr/>
+                    <h5>Products</h5>
+                    <form class="form-inline" action="/product_update">
+                        <div class="row">
+                            <t t-foreach="products" t-as="product">
+                                <input type="hidden" name="product_id" id="product"
+                                       t-att-value="(product) and product.id"/>
+
+                                <div class="col-sm">
+                                    <div class="card my-2" style="width: 18rem;">
+                                        <img t-att-src="'/web/image/product.template/%s/image_1920' % product.id"
+                                             class="card-img-top" alt="Product image"/>
+                                        <div class="card-body">
+                                            <div class="card-title">
+                                                <input type="text" t-attf-name="#{product.id}_name" id="name" placeholder="Name"
+                                                       class="form-control" t-att-value="(product) and product.name"/>
+                                            </div>
+
+                                            <h5 class="card-title text-primary" name="list_price">
+                                                $
+                                                <t t-esc="product.list_price"/>
+                                            </h5>
+
+                                            <p class="text-muted">Quantity</p>
+                                            <input type="number" id="quantity" name="quantity" min="1" max="5"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <div class="full_width">
+                            <hr/>
+                            <div class="text-center">
+                                <button class="btn btn-success center" id="product_form_submit_btn" type="submit">Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="product_update_template_view" name="Product Update">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container">
+                    <h1>Product Name Updated</h1>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

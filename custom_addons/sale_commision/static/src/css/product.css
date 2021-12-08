@@ -1,0 +1,17 @@
+.product_lable{
+padding-left: 60px;
+}
+
+.row{
+margin:5px;
+}
+
+img{
+padding:10px;
+height:200px;
+width:50px;
+}
+
+.full_width{
+    width:100%;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="contact_form_inherit" model="ir.ui.view">
+        <field name="name">contact form inherited</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                <button type="object" name="open_tree_view" class="oe_stat_button" icon="fa-calculator" groups="sales_team.group_sale_manager">
+                    <field name="total_amount" widget="statinfo" string="Sales Commission History”"/>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

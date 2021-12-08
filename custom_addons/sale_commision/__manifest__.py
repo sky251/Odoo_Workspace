@@ -1,0 +1,22 @@
+{
+    "name": "Sale Order Commission",
+    "version": "14.0.1.0.0",
+    "category": "sale",
+    "summary": "",
+    "sequence": 1,
+    "author": "Patel Akash",
+    "website": "https://www.aktivesoftware.com/",
+    "description": "",
+    "depends": ["sale_management", "website"],
+    "data": [
+        "data/product_menu.xml",
+        "views/assets.xml",
+        "views/sale_order_views.xml",
+        "views/res_partner_views.xml",
+        "views/products_template.xml",
+    ],
+    "demo": [],
+    "installable": True,
+    "auto_install": False,
+    "application": True,
+}
