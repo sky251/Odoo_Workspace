@@ -39,6 +39,7 @@
                             <field name="name" placeholder="Employee Name"/>
                             <field name="d_o_b"/>
                             <field name="age"/>
+                            <field name="documents"/>
                             <field name="expected_salary"/>
                             <field name="job_position"/>
                             <field name="affordable_salary"/>

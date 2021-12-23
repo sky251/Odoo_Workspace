@@ -34,6 +34,8 @@ class CreateEmployees(models.Model):
     monthly_amount = fields.Float(string="Monthly Amount", readonly=True)
     start_date = fields.Date(string="Start Date")
     end_date = fields.Date(string="End Date")
+    documents = fields.Binary(string="Documents")
+
 
 
     def calculate_amount(self):
